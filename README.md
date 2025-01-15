@@ -3,8 +3,8 @@
 
 <center><font face="Viner Hand ITC" size="4"> Shirmohammad Tavangari | AI Researcher</font> </center>
 
-<font face="Comic Sans MS" size="3">
-<size="2"<br><center> I am a Research Assistant at City University of Hong Kong.</center></size>
+<font face="Dancing Script" size="3">
+<br><center> I am a Research Assistant at City University of Hong Kong.</center>
 <br><center> Prior to that, worked As a Visiting Research at Stanford University and  UBC and Harvard University. </center>
 <br><center> Since 2020, Collaborating as an AI Scientist with Dr.Aref Yelghi's group and Dr.Asef Yilki Lab. </center> 
 <br><center> My Research Interests: Artificial Intelligence, Machine Learning and Mathematical. </center>
