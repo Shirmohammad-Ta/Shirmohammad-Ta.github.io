@@ -1,9 +1,9 @@
                                 <html><TITLE> Shirmohammad Tavangari's Home Page</TITLE>
 <body>
 
-<center><b><font face="Viner Hand ITC" size="5">Shirmohammad (Mirass) Tavangari</font> </b></center>
+<center><b><font face="Shadows into light" size="5">Shirmohammad (Mirass) Tavangari</font> </b></center>
 
-<font face="Comic Sans MS" >
+<font face="Caveat" >
 <br><center> AI Research Assistant at UC Berkeley, working with Prof.Guo Chen. </center>
 <br><center> And, I have been collaborating as a Scientist with Prof.Aref Yelghi's group since 2020. </center>
 <br><center> Research Interests: Machine Learning, Deep Learning and Math. </center>
