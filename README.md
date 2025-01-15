@@ -1,9 +1,9 @@
 <html>
 <body>
 
-<center><font face="Viner Hand ITC" size="4"> Shirmohammad Tavangari | AI Researcher</font> </center>
+<center><b><font face="Viner Hand ITC" size="4"> Shirmohammad Tavangari | AI Researcher</font></b> </center>
 
-<font face="ِDancing Script" size="3">
+<font face="ِDancing Script" size="2">
 <br><center> I am a Research Assistant at City University of Hong Kong.</center>
 <br><center> Prior to that, worked As a Visiting Research at Stanford University and  UBC and Harvard University. </center>
 <br><center> Since 2020, Collaborating as an AI Scientist with Dr.Aref Yelghi's group and Dr.Asef Yilki Lab. </center> 
