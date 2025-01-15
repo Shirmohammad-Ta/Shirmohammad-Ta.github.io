@@ -11,6 +11,6 @@
 <br><center> Award: Young Scientist Award 2022 || Talk: TEDxSanabaad 2016 || Journal: Editorial Board . </center>
 <br><center> And In the beginning, I was born and raised in a small city called <a href=" https://www.google.com/search?sca_esv=6a4b1638fe2fa6e5&sca_upv=1&sxsrf=ACQVn0-S2WHDvlg8ofhlcIlZdrIDBWKejw:1713032499830&q=bandar+torkaman&tbm=isch&source=lnms&prmd=ivmnsbtz&sa=X&ved=2ahUKEwiBj5Ct57-FAxXixuYEHbISBf4Q0pQJegQIDhAB&biw=1920&bih=809&dpr=1"> Bandar-e Torkaman </a>, Iran.</center></font>
 
-<br><center>    Google Scholar Profile <a href=" https://www.https://scholar.google.ca/citations?user=bQH5c0cAAAAJ&hl=en"> </a></center></font>
+<br><center>    <a href=" https://www.https://scholar.google.ca/citations?user=bQH5c0cAAAAJ&hl=en"> Google Scholar Profile </a></center>
  
   
