@@ -1,4 +1,4 @@
-                                                          #Shirmohammad Tavangari | AI Researcher
+                                                          Shirmohammad Tavangari | AI Researcher
 
                                                                                                                                                          
 
