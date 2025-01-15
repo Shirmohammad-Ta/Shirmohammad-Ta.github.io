@@ -13,5 +13,6 @@
 
 <br><center>    <a href="https://scholar.google.ca/citations?user=bQH5c0cAAAAJ&hl=en"> Google Scholar Profile </a></center>
 <br><center>    <a href="https://www.amazon.ca/Computing-Intelligence-Capital-Market-1154/dp/3031577078">Book: Computing Intelligence in Capital Market by Springer Nature </a></center>
- 
+<br><center>    <a href="https://arxiv.org/search/?query=Shirmohammad+Tavangari&searchtype=all&source=header">  arXiv Research Profile on AI and Math </a></center>
+<br><center>    <a href="https://www.youtube.com/watch?v=k6GCBSVcEDA">   My TED Talk in TEDxSanabaad  </a></center>
   
