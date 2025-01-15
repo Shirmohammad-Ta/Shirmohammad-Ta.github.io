@@ -1,7 +1,7 @@
 <html>
 <body>
 
-<center><b><font face="Viner Hand ITC" size="4">Shirmohammad (Mirass) Tavangari</font> </b></center>
+<center><font face="Viner Hand ITC" size="4"> Shirmohammad Tavangari | AI Researcher</font> </center>
 
 <font face="Comic Sans MS" size="3">
 <br><center> I am a Research Assistant at City University of Hong Kong.</center>
