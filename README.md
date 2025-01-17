@@ -8,7 +8,7 @@
         body {
             font-family: 'Shadows Into Light', cursive;
             text-align: center;
-            margin-top: 20px;
+            margin-top: 50px;
         }
         .header {
             font-size: 24px;
