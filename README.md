@@ -16,7 +16,7 @@
             color: black;
         }
     </style>
-    <title>Shirmohammad Tavangari</title>
+    
 </head>
 <body>
     <div class="header">
