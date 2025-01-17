@@ -26,7 +26,7 @@
             margin-bottom: 20px;
         }
     </style>
-    <title>Shirmohammad Tavangari</title>
+   
 </head>
 <body>
     <div class="content">
