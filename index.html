@@ -22,20 +22,37 @@
     }
 
     h1 {
-      font-size: 2.5rem;         /* 👈 کوچکتر شد */
+      font-size: 2.5rem;
       font-weight: normal;
       margin: 0;
-      padding-bottom: 3px;     /* 👈 فاصله کمتر شد */
+      padding-bottom: 3px;
       text-align: center;
     }
 
-    p {
+    /* بخش معرفی با عکس سمت چپ */
+    .intro-container {
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      gap: 20px;
+      max-width: 900px;
+      margin-top: 30px;
+      flex-wrap: wrap;
+    }
+
+    .profile-pic {
+      width: 140px;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .intro-text {
       font-size: 1.4rem;
-      max-width: 700px;
-      line-height: 1.6;
-      white-space: pre-line;
-      text-align: center;
-      margin: 0;
+      line-height: 1.8;
+      text-align: left;
+      max-width: 600px;
     }
 
     .scholar-link, .arxiv-link, .ted-link {
@@ -69,78 +86,59 @@
 
   <h1>Shirmohammad Tavangari</h1>
 
-  <p>
-    I am a Research Assistant at City University of Hong Kong, working with Prof. Minming Li!
-    Previously, I was at Stanford University and UBC and NUS!
-    My Research interests: AI, ML, Math. Won the Young Scientist Award, 2022!
-  </p>
+  <div class="intro-container">
+    <img src="me.jpg" alt="Shirmohammad Tavangari" class="profile-pic" />
+    <div class="intro-text">
+      I am a Research Assistant at City University of Hong Kong, working with Prof. Minming Li!<br>
+      Previously, I was at Stanford University and UBC and NUS!<br>
+      My Research interests: AI, ML, Math. Won the Young Scientist Award, 2022!
+    </div>
+  </div>
 
-<br>
+  <br><br>
 
-<br><br>
-<div class="link-section">
-    
-    <a href="https://scholar.google.ca/citations?hl=en&user=bQH5c0cAAAAJ&view_op=list_works&authuser=1" target="_blank" rel="noopener noreferrer"> Google Scholar Profile</a>
-</div>
+  <div class="link-section">
+    <a href="https://scholar.google.ca/citations?hl=en&user=bQH5c0cAAAAJ&view_op=list_works&authuser=1" target="_blank" rel="noopener noreferrer">Google Scholar Profile</a>
+  </div>
 
-<div class="link-section">
-    
+  <div class="link-section">
     <a href="https://arxiv.org/search/?query=Shirmohammad+Tavangari&searchtype=all&source=header" target="_blank" rel="noopener noreferrer">arXiv Research Profile on AI and Math</a>
-</div>
+  </div>
 
+  <div class="link-section">
+    <a href="https://www.youtube.com/watch?v=k6GCBSVcEDA" target="_blank" rel="noopener noreferrer">My TED Speaker in TEDxSanabaad</a>
+  </div>
 
-<div class="link-section">
-    
-    <a href="https://www.youtube.com/watch?v=k6GCBSVcEDA" target="_blank" rel="noopener noreferrer">  My TED Speaker in TEDxSanabaad </a>
-</div>
-
-
-
-<div class="link-section">
-    
+  <div class="link-section">
     <a href="https://github.com/Shirmohammad-Ta" target="_blank" rel="noopener noreferrer">Explore My GitHub Projects and </a>
-   
     <a href="https://www.kaggle.com/smtavangari" target="_blank" rel="noopener noreferrer">Kaggle Projects</a>
   </div>
 
-<div class="link-section">
-    
+  <div class="link-section">
     <a href="https://scholar.google.com/citations?hl=en&user=XhsmWO4AAAAJ&view_op=list_works&sortby=pubdate" target="_blank" rel="noopener noreferrer">As an AI Scientist working with Dr.Aref Yelghi and </a>
-   
     <a href="https://www.asefyilki.com/" target="_blank" rel="noopener noreferrer">Dr.Asef Yelghi Lab</a>
   </div>
 
-
-<div class="link-section">
-    
-    <a href="https://link.springer.com/book/10.1007/978-3-031-57708-6" target="_blank" rel="noopener noreferrer">My Editor books Published by Springer Nature: First Book 2024 ,  </a>
-   
-    <a href="https://www.springer.com/series/7092/books?page=10&srsltid=AfmBOoppi7HKf78O03NJIYhxiofcZRG2p4edNIiDN4fZXznaSyIF3d0m" target="_blank" rel="noopener noreferrer">Second Book 2025</a>
+  <div class="link-section">
+    <a href="https://link.springer.com/book/10.1007/978-3-031-57708-6" target="_blank" rel="noopener noreferrer">My Editor books Published by Springer Nature: First Book 2024, </a>
+    <a href="https://www.springer.com/series/7092/books?page=10" target="_blank" rel="noopener noreferrer">Second Book 2025</a>
   </div>
 
-
-<div class="link-section">
-    
+  <div class="link-section">
     <a href="https://www.ijaemr.com/editorial" target="_blank" rel="noopener noreferrer">Associate Editor in the International Journal of Advanced Engineering and Management Research</a>
-</div>
-<div class="link-section">
-    
-    <a href="https://generatedp.com/index.php/bit/editorialboard" target="_blank" rel="noopener noreferrer">Associate Editor in the Journal  of Breakthroughs in Information Technology</a>
-</div>
+  </div>
 
+  <div class="link-section">
+    <a href="https://generatedp.com/index.php/bit/editorialboard" target="_blank" rel="noopener noreferrer">Associate Editor in the Journal of Breakthroughs in Information Technology</a>
+  </div>
 
-<div class="link-section">
-    
-    <a href="https://www.opastpublishers.com/editor-info/shirmohammad-tavangari-3169" target="_blank" rel="noopener noreferrer">Editorial Board in the Journal of Mathematical Techniques and Computational Mathematics </a>
-</div>
+  <div class="link-section">
+    <a href="https://www.opastpublishers.com/editor-info/shirmohammad-tavangari-3169" target="_blank" rel="noopener noreferrer">Editorial Board in the Journal of Mathematical Techniques and Computational Mathematics</a>
+  </div>
 
-
-
-
-<div class="link-section"><h4>
-    
-    <a href="https://www.google.com/search?sca_esv=6a4b1638fe2fa6e5&sca_upv=1&sxsrf=ACQVn0-S2WHDvlg8ofhlcIlZdrIDBWKejw:1713032499830&q=bandar+torkaman&source=lnms&prmd=ivmnsbtz&sa=X&ved=2ahUKEwiBj5Ct57-FAxXixuYEHbISBf4Q0pQJegQIDhAB&biw=1920&bih=809&dpr=1&udm=2" target="_blank" rel="noopener noreferrer">And in the beginning, I was born and raised in a small city called Bandar-e Torkaman , Iran. </a>
-</h4></div>
+  <div class="link-section">
+    <a href="https://www.google.com/search?q=bandar+torkaman" target="_blank" rel="noopener noreferrer">And in the beginning, I was born and raised in a small city called Bandar-e Torkaman, Iran.</a>
+  </div>
 
 </body>
 </html>
