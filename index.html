@@ -164,141 +164,132 @@
   }
 </style>
 <style>
-  .links-grid {
+  .section-grid {
+    max-width: 1150px;
+    margin: 50px auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-    max-width: 1200px;
-    margin: 40px auto;
-    padding: 10px;
+    gap: 45px;
     font-family: "Inter", sans-serif;
   }
 
-  .link-box {
-    background: #ffffff;
-    border: 1px solid #e5e7eb;
-    border-radius: 18px;
-    padding: 25px 28px;
-    transition: all 0.25s ease;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.03);
+  .section-block h2 {
+    font-size: 1.35rem;
+    margin-bottom: 15px;
+    color: #143668;
+    font-weight: 700;
+    letter-spacing: 0.5px;
   }
 
-  .link-box:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 26px rgba(0,0,0,0.08);
-    border-color: #d0d7e2;
+  .section-block ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
   }
 
-  .icon-large {
-    font-size: 34px;
-    margin-bottom: 12px;
-    opacity: 0.85;
+  .section-block li {
+    margin: 8px 0;
+    font-size: 1.05rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
   }
 
-  .link-box h3 {
-    font-size: 19px;
-    margin: 6px 0 14px 0;
-    color: #111827;
-    font-weight: 600;
-  }
-
-  .link-box a {
-    display: block;
-    margin: 4px 0;
+  .section-block li::before {
+    content: "▹";
     color: #2563eb;
-    font-weight: 500;
+    font-size: 1.2rem;
+  }
+
+  .section-block a {
+    color: #2563eb;
     text-decoration: none;
+    transition: 0.2s;
   }
 
-  .link-box a:hover {
-    text-decoration: underline;
+  .section-block a:hover {
+    color: #ff3b30;
   }
 
-  @media(max-width: 900px){
-    .links-grid { grid-template-columns: repeat(2, 1fr); }
+  @media (max-width: 900px) {
+    .section-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
-  @media(max-width: 600px){
-    .links-grid { grid-template-columns: 1fr; }
+
+  @media (max-width: 600px) {
+    .section-grid {
+      grid-template-columns: 1fr;
+    }
   }
 </style>
 
-<div class="links-grid">
-
-  <div class="link-box">
-    <div class="icon-large">📚</div>
-    <h3>Academic Works</h3>
-    <a href="https://stanford.academia.edu/ShirmohammadTavangari">Academia.edu (Latest)</a>
-    <a href="https://arxiv.org/search/?query=Shirmohammad+Tavangari">arXiv Research</a>
+<div class="section-grid">
+  
+  <div class="section-block">
+    <h2>Research Profiles</h2>
+    <ul>
+      <li><a href="#">Google Scholar</a></li>
+      <li><a href="#">arXiv Publications</a></li>
+      <li><a href="#">Academia.edu</a></li>
+      <li><a href="#">ResearchGate</a></li>
+    </ul>
   </div>
 
-  <div class="link-box">
-    <div class="icon-large">🧠</div>
-    <h3>Patents & Talks</h3>
-    <a href="https://otl.stanford.edu/patent">Stanford Patent</a>
-    <a href="https://www.youtube.com/watch?v=k6GCBSVcEDA">TEDx Talk</a>
+  <div class="section-block">
+    <h2>Projects & Open-Source</h2>
+    <ul>
+      <li><a href="#">GitHub</a></li>
+      <li><a href="#">Binary-Survivor (PyPI)</a></li>
+      <li><a href="#">Survivor-Optimizer (PyPI)</a></li>
+      <li><a href="#">Kaggle Profile</a></li>
+    </ul>
   </div>
 
-  <div class="link-box">
-    <div class="icon-large">💻</div>
-    <h3>Open-Source Projects</h3>
-    <a href="https://github.com/Shirmohammad-Ta">GitHub</a>
-    <a href="https://pypi.org/project/binary-survivor/">Binary-Survivor</a>
-    <a href="https://pypi.org/project/survivor-optimizer/">Survivor-Optimizer</a>
-    <a href="https://www.kaggle.com/smtavangari">Kaggle</a>
+  <div class="section-block">
+    <h2>Talks & Patents</h2>
+    <ul>
+      <li><a href="#">Stanford Patent</a></li>
+      <li><a href="#">TEDxSanabad Talk</a></li>
+      <li><a href="#">Conference Talks</a></li>
+    </ul>
   </div>
 
-  <div class="link-box">
-    <div class="icon-large">🏛️</div>
-    <h3>Academic Collabs</h3>
-    <a href="https://www.harvard.edu/">Harvard</a>
-    <a href="https://www.ubc.ca/">UBC</a>
-    <a href="https://nus.edu.sg/">NUS</a>
-    <a href="https://scholar.google.com/citations?user=XhsmWO4AAAAJ">Google Scholar</a>
+  <div class="section-block">
+    <h2>Academic Collaborations</h2>
+    <ul>
+      <li><a href="#">Stanford Medicine</a></li>
+      <li><a href="#">Mila – Quebec AI Institute</a></li>
+      <li><a href="#">UBC Collaborations</a></li>
+      <li><a href="#">Harvard Connections</a></li>
+    </ul>
   </div>
 
-  <div class="link-box">
-    <div class="icon-large">🚀</div>
-    <h3>Industry & Startups</h3>
-    <a href="https://nelladerm.com/">NellaDerm Inc</a>
-    <a href="https://myeczema.app/">Myeczema.app</a>
-    <a href="https://startup.google.com/programs/">Google Research Grant 2025</a>
+  <div class="section-block">
+    <h2>Editorial & Reviewing</h2>
+    <ul>
+      <li><a href="#">Associate Editor – Applied Intelligence</a></li>
+      <li><a href="#">Springer Nature Reviewer</a></li>
+      <li><a href="#">AAAI Reviewer</a></li>
+    </ul>
   </div>
 
-  <div class="link-box">
-    <div class="icon-large">📖</div>
-    <h3>Books & Journals</h3>
-    <a href="https://link.springer.com/book/10.1007/978-3-031-57708-6">Springer Book 2024</a>
-    <a href="https://link.springer.com/journal/10489">Applied Intelligence (Editor)</a>
-    <a href="https://link.springer.com/journal/10994">Springer Reviewer</a>
-  </div>
-
-  <div class="link-box">
-    <div class="icon-large">🎤</div>
-    <h3>Conferences</h3>
-    <a href="https://aaai.org/conference/aaai/">AAAI Reviewer</a>
-    <a href="https://wcnc2019.ieee-wcnc.org/program.html">IEEE WCNC</a>
-    <a href="https://www.icacds.com/">ICACDS Advisory</a>
-  </div>
-
-  <div class="link-box">
-    <div class="icon-large">🤖</div>
-    <h3>AI Playground</h3>
-    <a href="https://philosophy-ai-simulator-bnaqelec5c5ulsxxb47ust.streamlit.app/">Philosophy AI Simulator</a>
-  </div>
-
-  <div class="link-box">
-    <div class="icon-large">🌍</div>
-    <h3>Origins</h3>
-    <a href="https://www.google.com/search?q=bandar+torkaman">Bandar-e Torkaman, Iran</a>
+  <div class="section-block">
+    <h2>Startups & Industry</h2>
+    <ul>
+      <li><a href="#">NellaDerm Inc</a></li>
+      <li><a href="#">MyEczema.app</a></li>
+      <li><a href="#">Google Research Funding</a></li>
+    </ul>
   </div>
 
 </div>
-
 
  
 </br></br></br>
 </body>
 </html>
+
 
 
 
