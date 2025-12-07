@@ -125,305 +125,543 @@
 
 
 <style>
-  .modern-links-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-    max-width: 1300px;
+/* Main links section styles */
+.links-container {
+    max-width: 1000px;
     margin: 40px auto;
-    font-family: 'Segoe UI', 'Tahoma', 'Vazirmatn', sans-serif;
-  }
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+}
 
-  .modern-link-card {
+/* Link card */
+.link-card {
     background: white;
     border-radius: 16px;
-    padding: 25px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-    transition: all 0.3s ease;
+    padding: 22px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
     border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     position: relative;
     overflow: hidden;
-  }
+}
 
-  .modern-link-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 35px rgba(37, 99, 235, 0.1);
-  }
+.link-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+    border-color: #0077cc;
+}
 
-  .modern-link-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 4px;
-    background: linear-gradient(90deg, #2563eb, #7c3aed);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-
-  .modern-link-card:hover::before {
-    opacity: 1;
-  }
-
-  .card-icon {
-    font-size: 1.8rem;
-    margin-bottom: 15px;
-    display: inline-block;
-    padding: 10px;
-    border-radius: 12px;
-    background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(124, 58, 237, 0.1));
-    color: #2563eb;
-  }
-
-  .modern-link-card h3 {
-    margin-bottom: 18px;
-    color: #1e293b;
-    font-size: 1.4rem;
-    font-weight: 700;
-  }
-
-  .link-list {
-    list-style: none;
-  }
-
-  .link-item {
-    margin-bottom: 14px;
-    padding-bottom: 14px;
-    border-bottom: 1px dashed #e2e8f0;
-  }
-
-  .link-item:last-child {
-    margin-bottom: 0;
-    padding-bottom: 0;
-    border-bottom: none;
-  }
-
-  .link-item a {
+/* Card header with icon */
+.card-header {
     display: flex;
     align-items: center;
-    color: #334155;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.2s ease;
-    font-size: 0.95rem;
-  }
+    margin-bottom: 18px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #f0f0f0;
+}
 
-  .link-item a:hover {
-    color: #2563eb;
-  }
+.card-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    font-size: 18px;
+    flex-shrink: 0;
+}
 
-  .link-item i {
-    margin-left: 8px;
-    color: #2563eb;
-    font-size: 0.85rem;
-  }
-
-  .badge {
-    display: inline-block;
-    font-size: 0.7rem;
-    padding: 2px 8px;
-    border-radius: 20px;
-    margin-right: 8px;
-    font-weight: 600;
-    background: #06b6d4;
+/* Different colors for icons */
+.icon-academia {
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
     color: white;
-  }
+}
 
-  .badge.new {
-    background: #10b981;
-  }
+.icon-research {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+}
 
-  .badge.hot {
-    background: #ef4444;
-  }
+.icon-industry {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    color: white;
+}
 
-  @media(max-width: 1100px) {
-    .modern-links-container {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
+.icon-publications {
+    background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+    color: white;
+}
 
-  @media(max-width: 768px) {
-    .modern-links-container {
-      grid-template-columns: 1fr;
-      gap: 20px;
-      padding: 0 15px;
+.icon-editorial {
+    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+    color: white;
+}
+
+.icon-conference {
+    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+    color: #333;
+}
+
+.icon-awards {
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    color: #333;
+}
+
+.icon-personal {
+    background: linear-gradient(135deg, #d4fc79 0%, #96e6a1 100%);
+    color: #333;
+}
+
+.card-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Link styles */
+.link-items {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.link-item {
+    display: flex;
+    align-items: flex-start;
+    padding: 10px 0;
+    border-bottom: 1px dashed #f0f0f0;
+    transition: all 0.2s;
+}
+
+.link-item:last-child {
+    border-bottom: none;
+}
+
+.link-item:hover {
+    background-color: rgba(0, 119, 204, 0.03);
+    padding-left: 8px;
+    border-radius: 6px;
+}
+
+.link-icon {
+    margin-right: 12px;
+    font-size: 14px;
+    color: #0077cc;
+    margin-top: 3px;
+    flex-shrink: 0;
+}
+
+.link-content {
+    flex: 1;
+}
+
+.link-content a {
+    color: #444;
+    text-decoration: none;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    font-weight: 500;
+    transition: color 0.2s;
+    display: block;
+}
+
+.link-content a:hover {
+    color: #0077cc;
+}
+
+.link-desc {
+    font-size: 0.85rem;
+    color: #666;
+    margin-top: 3px;
+    line-height: 1.4;
+}
+
+/* Date and tag labels */
+.link-tag {
+    display: inline-block;
+    background: #f8f9fa;
+    color: #666;
+    font-size: 0.75rem;
+    padding: 2px 8px;
+    border-radius: 10px;
+    margin-left: 8px;
+    border: 1px solid #eaeaea;
+}
+
+.link-year {
+    display: inline-block;
+    background: #e3f2fd;
+    color: #0077cc;
+    font-size: 0.75rem;
+    padding: 2px 8px;
+    border-radius: 10px;
+    margin-top: 5px;
+    font-weight: 600;
+}
+
+/* Sections with multiple links */
+.multi-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 5px;
+}
+
+.multi-link {
+    background: #f8f9fa;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    transition: all 0.2s;
+    border: 1px solid #eaeaea;
+}
+
+.multi-link:hover {
+    background: #e3f2fd;
+    border-color: #0077cc;
+}
+
+.multi-link a {
+    color: #555;
+    text-decoration: none;
+}
+
+.multi-link a:hover {
+    color: #0077cc;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .links-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
     }
     
-    .modern-link-card {
-      padding: 20px;
+    .link-card {
+        padding: 18px;
     }
-  }
+}
+
+@media (max-width: 480px) {
+    .card-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .card-icon {
+        margin-bottom: 10px;
+    }
+}
 </style>
 
-<div class="modern-links-container">
-  <div class="modern-link-card">
-    <div class="card-icon">📚</div>
-    <h3>Academic Works</h3>
-    <ul class="link-list">
-      <li class="link-item">
-        <a href="https://stanford.academia.edu/ShirmohammadTavangari" target="_blank">
-          Latest Works on Academia.edu (2025)
-          <span class="badge new">New</span>
-        </a>
-      </li>
-      <li class="link-item">
-        <a href="https://arxiv.org/search/?query=Shirmohammad+Tavangari&searchtype=all&source=header" target="_blank">
-          AI & Math Research on arXiv
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-      </li>
-    </ul>
-  </div>
+<!-- Font Awesome Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <div class="modern-link-card">
-    <div class="card-icon">📝</div>
-    <h3>Patents & Talks</h3>
-    <ul class="link-list">
-      <li class="link-item">
-        <a href="https://otl.stanford.edu/patent" target="_blank">
-          Stanford Patent: Mind as Boltzmann Machine
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-      </li>
-      <li class="link-item">
-        <a href="https://www.youtube.com/watch?v=k6GCBSVcEDA" target="_blank">
-          TEDx Talk at Sanabaad
-          <i class="fas fa-play-circle"></i>
-        </a>
-      </li>
-    </ul>
-  </div>
-
-  <div class="modern-link-card">
-    <div class="card-icon">💻</div>
-    <h3>Projects & Open Source</h3>
-    <ul class="link-list">
-      <li class="link-item">
-        <a href="https://github.com/Shirmohammad-Ta" target="_blank">
-          GitHub Projects
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-      </li>
-      <li class="link-item">
-        <a href="https://www.kaggle.com/smtavangari" target="_blank">
-          Kaggle Projects
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-      </li>
-      <li class="link-item">
-        <a href="https://pypi.org/project/binary-survivor/" target="_blank">
-          PyPI: Binary-Survivor
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-      </li>
-    </ul>
-  </div>
-
-  <div class="modern-link-card">
-    <div class="card-icon">🏫</div>
-    <h3>Academic Collaborations</h3>
-    <ul class="link-list">
-      <li class="link-item">
-        <a href="https://www.harvard.edu/" target="_blank">
-          Harvard University
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-      </li>
-      <li class="link-item">
-        <a href="https://scholar.google.com/citations?hl=en&user=XhsmWO4AAAAJ&view_op=list_works&sortby=pubdate" target="_blank">
-          Google Scholar Profile
-          <span class="badge">H-index</span>
-        </a>
-      </li>
-    </ul>
-  </div>
-
-  <div class="modern-link-card">
-    <div class="card-icon">🏢</div>
-    <h3>Industry & Startups</h3>
-    <ul class="link-list">
-      <li class="link-item">
-        <a href="https://nelladerm.com/" target="_blank">
-          Chief AI Scientist at NellaDerm Inc
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-      </li>
-      <li class="link-item">
-        <a href="https://myeczema.app/" target="_blank">
-          Myeczema.app Official Launch
-          <span class="badge hot">Hot</span>
-        </a>
-      </li>
-    </ul>
-  </div>
-
-  <div class="modern-link-card">
-    <div class="card-icon">📖</div>
-    <h3>Books & Journals</h3>
-    <ul class="link-list">
-      <li class="link-item">
-        <a href="https://link.springer.com/book/10.1007/978-3-031-57708-6" target="_blank">
-          Springer Nature: First Book 2024
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-      </li>
-      <li class="link-item">
-        <a href="https://www.springer.com/series/7092/books?page=10" target="_blank">
-          Second Book 2025
-          <span class="badge new">New</span>
-        </a>
-      </li>
-    </ul>
-  </div>
-
-  <div class="modern-link-card">
-    <div class="card-icon">🎤</div>
-    <h3>Conferences & Committees</h3>
-    <ul class="link-list">
-      <li class="link-item">
-        <a href="https://aaai.org/conference/aaai/" target="_blank">
-          AAAI Reviewer
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-      </li>
-      <li class="link-item">
-        <a href="https://camad2023.ieee-camad.org/committees/technical-program-committee" target="_blank">
-          IEEE CAMAD Technical Committee
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-      </li>
-    </ul>
-  </div>
-
-  <div class="modern-link-card">
-    <div class="card-icon">🤖</div>
-    <h3>AI Demos</h3>
-    <ul class="link-list">
-      <li class="link-item">
-        <a href="https://philosophy-ai-simulator-bnaqelec5c5ulsxxb47ust.streamlit.app/" target="_blank">
-          Philosophy-to-Emotion Simulator
-          <i class="fas fa-robot"></i>
-        </a>
-      </li>
-    </ul>
-  </div>
-
-  <div class="modern-link-card">
-    <div class="card-icon">🌏</div>
-    <h3>Origins</h3>
-    <ul class="link-list">
-      <li class="link-item">
-        <a href="https://www.google.com/search?sca_esv=0381ce655eb7fe96&sxsrf=AE3TifOPBLvWoYLBy1lemqRDI9q4rpHaqw:1752624840545&q=bandar+torkaman" target="_blank">
-          Born and Raised in Bandar-e Torkaman, Iran
-          <i class="fas fa-globe-asia"></i>
-        </a>
-      </li>
-    </ul>
-  </div>
+<div class="links-container">
+    
+    <!-- Academic Works Card -->
+    <div class="link-card">
+        <div class="card-header">
+            <div class="card-icon icon-academia">
+                <i class="fas fa-graduation-cap"></i>
+            </div>
+            <h3 class="card-title">Academic Works</h3>
+        </div>
+        <div class="link-items">
+            <div class="link-item">
+                <div class="link-icon"><i class="fas fa-external-link-alt"></i></div>
+                <div class="link-content">
+                    <a href="https://stanford.academia.edu/ShirmohammadTavangari" target="_blank" rel="noopener noreferrer">My Latest Works on Academia.edu</a>
+                    <div class="link-desc">Published papers and research</div>
+                    <span class="link-year">2025</span>
+                </div>
+            </div>
+            <div class="link-item">
+                <div class="link-icon"><i class="fas fa-brain"></i></div>
+                <div class="link-content">
+                    <a href="https://arxiv.org/search/?query=Shirmohammad+Tavangari&searchtype=all&source=header" target="_blank" rel="noopener noreferrer">arXiv Research Profile in AI and Mathematics</a>
+                    <div class="link-desc">Research preprints in AI and Mathematics</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Inventions & Research Card -->
+    <div class="link-card">
+        <div class="card-header">
+            <div class="card-icon icon-research">
+                <i class="fas fa-flask"></i>
+            </div>
+            <h3 class="card-title">Inventions & Research</h3>
+        </div>
+        <div class="link-items">
+            <div class="link-item">
+                <div class="link-icon"><i class="fas fa-university"></i></div>
+                <div class="link-content">
+                    <a href="https://otl.stanford.edu/patent" target="_blank" rel="noopener noreferrer">Stanford University Patent: Mind as Boltzmann Machine</a>
+                    <div class="link-desc">Patent registered at Stanford Technology Licensing Office</div>
+                </div>
+            </div>
+            <div class="link-item">
+                <div class="link-icon"><i class="fab fa-youtube"></i></div>
+                <div class="link-content">
+                    <a href="https://www.youtube.com/watch?v=k6GCBSVcEDA" target="_blank" rel="noopener noreferrer">TEDxSanabaad Speaker</a>
+                    <div class="link-desc">Speaker at TEDxSanabaad event</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Coding Projects Card -->
+    <div class="link-card">
+        <div class="card-header">
+            <div class="card-icon icon-editorial">
+                <i class="fas fa-code"></i>
+            </div>
+            <h3 class="card-title">Coding Projects</h3>
+        </div>
+        <div class="link-items">
+            <div class="link-item">
+                <div class="link-icon"><i class="fab fa-github"></i></div>
+                <div class="link-content">
+                    <div>Explore My Projects</div>
+                    <div class="multi-links">
+                        <div class="multi-link">
+                            <a href="https://github.com/Shirmohammad-Ta" target="_blank" rel="noopener noreferrer">GitHub</a>
+                        </div>
+                        <div class="multi-link">
+                            <a href="https://www.kaggle.com/smtavangari" target="_blank" rel="noopener noreferrer">Kaggle</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="link-item">
+                <div class="link-icon"><i class="fab fa-python"></i></div>
+                <div class="link-content">
+                    <div>PyPI Packages</div>
+                    <div class="multi-links">
+                        <div class="multi-link">
+                            <a href="https://pypi.org/project/binary-survivor/" target="_blank" rel="noopener noreferrer">Binary-Survivor</a>
+                        </div>
+                        <div class="multi-link">
+                            <a href="https://pypi.org/project/survivor-optimizer/" target="_blank" rel="noopener noreferrer">Survivor-Optimizer</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Academic Collaborations Card -->
+    <div class="link-card">
+        <div class="card-header">
+            <div class="card-icon icon-academia">
+                <i class="fas fa-handshake"></i>
+            </div>
+            <h3 class="card-title">Academic Collaborations</h3>
+        </div>
+        <div class="link-items">
+            <div class="link-item">
+                <div class="link-icon"><i class="fas fa-user-friends"></i></div>
+                <div class="link-content">
+                    <a href="https://scholar.google.com/citations?hl=en&user=XhsmWO4AAAAJ&view_op=list_works&sortby=pubdate" target="_blank" rel="noopener noreferrer">Collaboration with Dr. Aref Yelghi</a>
+                    <div class="link-desc">As an AI Scientist</div>
+                </div>
+            </div>
+            <div class="link-item">
+                <div class="link-icon"><i class="fas fa-university"></i></div>
+                <div class="link-content">
+                    <div>Collaborations with Global Universities</div>
+                    <div class="multi-links">
+                        <div class="multi-link">
+                            <a href="https://www.harvard.edu/" target="_blank" rel="noopener noreferrer">Harvard</a>
+                        </div>
+                        <div class="multi-link">
+                            <a href="https://www.ubc.ca/" target="_blank" rel="noopener noreferrer">UBC</a>
+                        </div>
+                        <div class="multi-link">
+                            <a href="https://nus.edu.sg/" target="_blank" rel="noopener noreferrer">NUS</a>
+                        </div>
+                        <div class="multi-link">
+                            <a href="https://www.cityu.edu.hk/" target="_blank" rel="noopener noreferrer">CityU HK</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Industry Activities Card -->
+    <div class="link-card">
+        <div class="card-header">
+            <div class="card-icon icon-industry">
+                <i class="fas fa-industry"></i>
+            </div>
+            <h3 class="card-title">Industry Activities</h3>
+        </div>
+        <div class="link-items">
+            <div class="link-item">
+                <div class="link-icon"><i class="fas fa-user-tie"></i></div>
+                <div class="link-content">
+                    <a href="https://nelladerm.com/" target="_blank" rel="noopener noreferrer">Chief AI Scientist at NellaDerm Inc</a>
+                </div>
+            </div>
+            <div class="link-item">
+                <div class="link-icon"><i class="fas fa-award"></i></div>
+                <div class="link-content">
+                    <a href="https://startup.google.com/programs/" target="_blank" rel="noopener noreferrer">Google Research Grant</a>
+                    <div class="link-desc">Awarded to Eczema.app for AI research in Eczema</div>
+                    <span class="link-year">2025</span>
+                </div>
+            </div>
+            <div class="link-item">
+                <div class="link-icon"><i class="fas fa-rocket"></i></div>
+                <div class="link-content">
+                    <a href="https://myeczema.app/" target="_blank" rel="noopener noreferrer">Myeczema.app has officially launched!</a>
+                </div>
+            </div>
+            <div class="link-item">
+                <div class="link-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                <div class="link-content">
+                    <a href="https://www.amolikamankidy.com/" target="_blank" rel="noopener noreferrer">Mentor to Amolika Mankidy from University of British Columbia</a>
+                </div>
+            </div>
+            <div class="link-item">
+                <div class="link-icon"><i class="fas fa-handshake"></i></div>
+                <div class="link-content">
+                    <a href="https://mailchi.mp/naturalproductscanada/nelladerm-crush-vegain-and-more-21421471?e=694cd49dfe" target="_blank" rel="noopener noreferrer">NellaDerm x Google Partnership</a>
+                    <div class="link-desc">Highlighted by Natural Products Canada (NPC)</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Publications & Editorship Card -->
+    <div class="link-card">
+        <div class="card-header">
+            <div class="card-icon icon-publications">
+                <i class="fas fa-book"></i>
+            </div>
+            <h3 class="card-title">Publications & Editorship</h3>
+        </div>
+        <div class="link-items">
+            <div class="link-item">
+                <div class="link-icon"><i class="fas fa-edit"></i></div>
+                <div class="link-content">
+                    <a href="https://link.springer.com/book/10.1007/978-3-031-57708-6" target="_blank" rel="noopener noreferrer">Editor Books Published by Springer Nature</a>
+                    <div class="multi-links">
+                        <div class="multi-link">
+                            <a href="https://link.springer.com/book/10.1007/978-3-031-57708-6" target="_blank" rel="noopener noreferrer">First Book (2024)</a>
+                        </div>
+                        <div class="multi-link">
+                            <a href="https://www.springer.com/series/7092/books?page=10" target="_blank" rel="noopener noreferrer">Second Book (2025)</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="link-item">
+                <div class="link-icon"><i class="fas fa-newspaper"></i></div>
+                <div class="link-content">
+                    <a href="https://link.springer.com/journal/10489/editorial-board" target="_blank" rel="noopener noreferrer">Associate Editor at Applied Intelligence Journal</a>
+                    <div class="link-desc">Springer Nature</div>
+                </div>
+            </div>
+            <div class="link-item">
+                <div class="link-icon"><i class="fas fa-search"></i></div>
+                <div class="link-content">
+                    <div>Reviewer for Prestigious Journals</div>
+                    <div class="multi-links">
+                        <div class="multi-link">
+                            <a href="http://academic.oup.com/comjnl" target="_blank" rel="noopener noreferrer">Oxford</a>
+                        </div>
+                        <div class="multi-link">
+                            <a href="https://www.sciencedirect.com/journal/decision-support-systems" target="_blank" rel="noopener noreferrer">Elsevier</a>
+                        </div>
+                        <div class="multi-link">
+                            <a href="https://link.springer.com/journal/10994" target="_blank" rel="noopener noreferrer">Springer</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Conferences & Committees Card -->
+    <div class="link-card">
+        <div class="card-header">
+            <div class="card-icon icon-conference">
+                <i class="fas fa-microphone"></i>
+            </div>
+            <h3 class="card-title">Conferences & Committees</h3>
+        </div>
+        <div class="link-items">
+            <div class="link-item">
+                <div class="link-icon"><i class="fas fa-users"></i></div>
+                <div class="link-content">
+                    <div>Conference & Organizational Activities</div>
+                    <div class="multi-links">
+                        <div class="multi-link">
+                            <a href="https://aaai.org/conference/aaai/" target="_blank" rel="noopener noreferrer">Reviewer: AAAI</a>
+                        </div>
+                        <div class="multi-link">
+                            <a href="https://wcnc2019.ieee-wcnc.org/program.html" target="_blank" rel="noopener noreferrer">Session Chair: IEEE WCNC</a>
+                        </div>
+                        <div class="multi-link">
+                            <a href="https://www.icacds.com/" target="_blank" rel="noopener noreferrer">Advisor Board: ICACDS</a>
+                        </div>
+                        <div class="multi-link">
+                            <a href="https://crgconferences.com/biomaterials/2024/" target="_blank" rel="noopener noreferrer">Organization Committee: Bio Mat</a>
+                        </div>
+                        <div class="multi-link">
+                            <a href="https://camad2023.ieee-camad.org/committees/technical-program-committee" target="_blank" rel="noopener noreferrer">TPC: IEEE CAMAD</a>
+                        </div>
+                        <div class="multi-link">
+                            <a href="https://iceece2021.avrasya.edu.tr/conference-advisory-scientific-committee/" target="_blank" rel="noopener noreferrer">Scientific Committee: ICEECE</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Personal Information Card -->
+    <div class="link-card">
+        <div class="card-header">
+            <div class="card-icon icon-personal">
+                <i class="fas fa-user"></i>
+            </div>
+            <h3 class="card-title">Personal Information</h3>
+        </div>
+        <div class="link-items">
+            <div class="link-item">
+                <div class="link-icon"><i class="fas fa-graduation-cap"></i></div>
+                <div class="link-content">
+                    <a href="https://scholar.google.ca/citations?hl=en&user=JmpmBXsAAAAJ&scilu=&scisig=AKwmTV4AAAAAaTChBIYNDkNIvr-cCba3CXQnCV0&gmla=AKzYXQ2hCX_tXf0Wjju3yHCxiwICJHSnbH8z867ooiwpMCaw0R_jF2o2wDh5WB2QtX8MKvctv1nfp-TMn3OA6Sutrnc08XxmxlPKD08&sciund=14295722954873781951" target="_blank" rel="noopener noreferrer">Google Scholar Profile</a>
+                </div>
+            </div>
+            <div class="link-item">
+                <div class="link-icon"><i class="fas fa-laptop-code"></i></div>
+                <div class="link-content">
+                    <a href="https://philosophy-ai-simulator-bnaqelec5c5ulsxxb47ust.streamlit.app/" target="_blank" rel="noopener noreferrer">Demo: Philosophy-to-Emotion Simulator</a>
+                    <div class="link-desc">Artificial Intelligence + Philosophy</div>
+                </div>
+            </div>
+            <div class="link-item">
+                <div class="link-icon"><i class="fas fa-map-marker-alt"></i></div>
+                <div class="link-content">
+                    <a href="https://www.google.com/search?q=bandar+torkaman" target="_blank" rel="noopener noreferrer">Born and raised in Bandar-e Torkaman, Iran</a>
+                    <div class="link-desc">My origins and roots</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
 </div>
-
 <script>
   // Add Font Awesome for icons (if not already on your site)
   if (!document.querySelector('link[href*="font-awesome"]')) {
@@ -435,6 +673,7 @@
 </script>
 </body>
 </html>
+
 
 
 
