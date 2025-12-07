@@ -164,131 +164,138 @@
   }
 </style>
 <style>
-  .section-grid {
-    max-width: 1150px;
-    margin: 50px auto;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 45px;
+  body {
+    background: #f7f9fc;
     font-family: "Inter", sans-serif;
   }
 
-  .section-block h2 {
+  .modern-grid {
+    max-width: 1200px;
+    margin: 60px auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+
+  .modern-item {
+    padding: 25px 28px;
+    backdrop-filter: blur(14px);
+    background: rgba(255, 255, 255, 0.55);
+    border-radius: 18px;
+    border: 1px solid rgba(200, 200, 200, 0.4);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+    transition: 0.25s ease;
+  }
+
+  .modern-item:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+    background: rgba(255, 255, 255, 0.75);
+  }
+
+  .modern-item h3 {
     font-size: 1.35rem;
-    margin-bottom: 15px;
-    color: #143668;
+    margin-bottom: 10px;
+    color: #0f1c39;
     font-weight: 700;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.3px;
   }
 
-  .section-block ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-
-  .section-block li {
-    margin: 8px 0;
-    font-size: 1.05rem;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .section-block li::before {
-    content: "▹";
-    color: #2563eb;
-    font-size: 1.2rem;
-  }
-
-  .section-block a {
-    color: #2563eb;
+  .modern-item a {
+    display: block;
+    margin: 6px 0;
+    font-size: 1.03rem;
+    color: #0f62fe;
     text-decoration: none;
     transition: 0.2s;
   }
 
-  .section-block a:hover {
+  .modern-item a:hover {
     color: #ff3b30;
+    transform: translateX(3px);
   }
 
   @media (max-width: 900px) {
-    .section-grid {
+    .modern-grid {
       grid-template-columns: repeat(2, 1fr);
     }
   }
 
-  @media (max-width: 600px) {
-    .section-grid {
+  @media (max-width: 640px) {
+    .modern-grid {
       grid-template-columns: 1fr;
     }
   }
 </style>
 
-<div class="section-grid">
-  
-  <div class="section-block">
-    <h2>Research Profiles</h2>
-    <ul>
-      <li><a href="#">Google Scholar</a></li>
-      <li><a href="#">arXiv Publications</a></li>
-      <li><a href="#">Academia.edu</a></li>
-      <li><a href="#">ResearchGate</a></li>
-    </ul>
+<div class="modern-grid">
+
+  <div class="modern-item">
+    <h3>📚 Academic Works</h3>
+    <a href="#">Academia.edu</a>
+    <a href="#">arXiv Publications</a>
   </div>
 
-  <div class="section-block">
-    <h2>Projects & Open-Source</h2>
-    <ul>
-      <li><a href="#">GitHub</a></li>
-      <li><a href="#">Binary-Survivor (PyPI)</a></li>
-      <li><a href="#">Survivor-Optimizer (PyPI)</a></li>
-      <li><a href="#">Kaggle Profile</a></li>
-    </ul>
+  <div class="modern-item">
+    <h3>📝 Patents & Talks</h3>
+    <a href="#">Stanford Patent</a>
+    <a href="#">TEDx Talk</a>
   </div>
 
-  <div class="section-block">
-    <h2>Talks & Patents</h2>
-    <ul>
-      <li><a href="#">Stanford Patent</a></li>
-      <li><a href="#">TEDxSanabad Talk</a></li>
-      <li><a href="#">Conference Talks</a></li>
-    </ul>
+  <div class="modern-item">
+    <h3>💻 Open Source</h3>
+    <a href="#">GitHub Projects</a>
+    <a href="#">PyPI Packages</a>
+    <a href="#">Kaggle</a>
   </div>
 
-  <div class="section-block">
-    <h2>Academic Collaborations</h2>
-    <ul>
-      <li><a href="#">Stanford Medicine</a></li>
-      <li><a href="#">Mila – Quebec AI Institute</a></li>
-      <li><a href="#">UBC Collaborations</a></li>
-      <li><a href="#">Harvard Connections</a></li>
-    </ul>
+  <div class="modern-item">
+    <h3>🏫 Collaboration</h3>
+    <a href="#">Harvard</a>
+    <a href="#">UBC</a>
+    <a href="#">NUS</a>
+    <a href="#">CityU HK</a>
   </div>
 
-  <div class="section-block">
-    <h2>Editorial & Reviewing</h2>
-    <ul>
-      <li><a href="#">Associate Editor – Applied Intelligence</a></li>
-      <li><a href="#">Springer Nature Reviewer</a></li>
-      <li><a href="#">AAAI Reviewer</a></li>
-    </ul>
+  <div class="modern-item">
+    <h3>🏢 Industry</h3>
+    <a href="#">NellaDerm (Chief AI Scientist)</a>
+    <a href="#">Myeczema.app</a>
+    <a href="#">Google Research Grant</a>
   </div>
 
-  <div class="section-block">
-    <h2>Startups & Industry</h2>
-    <ul>
-      <li><a href="#">NellaDerm Inc</a></li>
-      <li><a href="#">MyEczema.app</a></li>
-      <li><a href="#">Google Research Funding</a></li>
-    </ul>
+  <div class="modern-item">
+    <h3>📖 Books & Journals</h3>
+    <a href="#">Springer Nature Book 2024</a>
+    <a href="#">Second Book 2025</a>
+    <a href="#">Applied Intelligence (AE)</a>
+  </div>
+
+  <div class="modern-item">
+    <h3>🎤 Committees</h3>
+    <a href="#">AAAI Reviewer</a>
+    <a href="#">IEEE Committees</a>
+    <a href="#">Advisory Boards</a>
+  </div>
+
+  <div class-d="modern-item">
+    <h3>🤖 AI Demos</h3>
+    <a href="#">Philosophy-AI Simulator</a>
+  </div>
+
+  <div class="modern-item">
+    <h3>🌍 Origins</h3>
+    <a href="#">Bandar-e Torkaman</a>
   </div>
 
 </div>
+
 
  
 </br></br></br>
 </body>
 </html>
+
 
 
 
