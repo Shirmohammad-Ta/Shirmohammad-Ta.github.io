@@ -6,7 +6,7 @@
   <title>Shirmohammad Tavangari | Stanford Medicine</title>
 
   <!-- فونت‌ها -->
-  <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&family=Caveat&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&family=Caveat&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
 
   <style>
     /* پایه صفحه */
@@ -20,12 +20,13 @@
       align-items: center;
       padding: 40px 20px;
       color: #333;
+      font-size: 0.92rem; /* کوچکتر شدن کلی متن */
     }
 
     /* عنوان اصلی */
     h1 {
       font-family: 'Shadows Into Light', cursive;
-      font-size: 3rem;
+      font-size: 2.3rem; /* کمتر از 3rem */
       color: #1a3d7c;
       margin: 0;
       text-align: center;
@@ -36,49 +37,48 @@
     .intro-container {
       display: flex;
       align-items: flex-start;
-      gap: 25px;
-      max-width: 900px;
+      gap: 22px;
+      max-width: 880px;
       margin-top: 30px;
       flex-wrap: wrap;
       background: #ffffff;
-      border-radius: 15px;
-      padding: 25px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      border-radius: 14px;
+      padding: 22px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.07);
       transition: transform 0.3s, box-shadow 0.3s;
     }
 
     .intro-container:hover {
       transform: translateY(-3px);
-      box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+      box-shadow: 0 10px 26px rgba(0,0,0,0.12);
     }
 
     /* عکس پروفایل */
     .profile-pic {
-      width: 160px;
-      height: 160px;
+      width: 150px;
+      height: 150px;
       object-fit: cover;
       border-radius: 50%;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.18);
       transition: transform 0.3s;
     }
 
     .profile-pic:hover {
-      transform: scale(1.05);
+      transform: scale(1.04);
     }
 
     /* متن معرفی */
     .intro-text {
-      font-size: 1.25rem;
-      line-height: 1.8;
+      font-size: 1.05rem; /* قبلاً 1.25rem بود */
+      line-height: 1.65;
       max-width: 600px;
       color: #2b2b2b;
     }
 
-    /* لینک‌ها در معرفی */
+    /* لینک‌ها */
     .intro-text a {
       font-family: 'Caveat', cursive;
-      font-weight: 500;
-      font-size: 1rem;
+      font-size: 0.95rem; /* کوچکتر */
       color: #1a73e8;
       text-decoration: none;
       transition: color 0.3s, transform 0.2s;
@@ -86,58 +86,25 @@
 
     .intro-text a:hover {
       color: #ff5a5f;
-      transform: scale(1.05);
+      transform: scale(1.03);
     }
 
     /* بخش دانشگاه‌ها */
-    .universities-section {
-      margin-top: 60px;
-      text-align: center;
-      width: 100%;
-      max-width: 900px;
-    }
-
     .universities-section h3 {
-      font-size: 2rem;
-      margin-bottom: 25px;
+      font-size: 1.6rem; /* کمتر از 2rem */
+      margin-bottom: 20px;
       font-weight: 500;
       color: #1a3d7c;
     }
 
-    .university-logos {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 25px;
-    }
-
-    .logo-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      transition: transform 0.3s, box-shadow 0.3s;
-      cursor: pointer;
-    }
-
-    .logo-item:hover {
-      transform: scale(1.08);
-      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-    }
-
     .logo-item img {
-      width: 130px;
-      height: 130px;
-      object-fit: contain;
-      border-radius: 10px;
-      margin-bottom: 10px;
+      width: 110px; /* کوچکتر */
+      height: 110px;
+      border-radius: 8px;
     }
 
     .logo-item p {
-      font-size: 1.1rem;
-      font-family: 'Caveat', cursive;
-      margin: 0;
-      color: #333;
+      font-size: 1rem;
     }
   </style>
 </head>
@@ -152,7 +119,9 @@
       My research spans Artificial Intelligence, Machine Learning, and Applied Mathematics. I am honored as a TEDxSanabad Speaker, recipient of the Young Scientist Award 2022, and Editor of AI-focused volumes published by Springer Nature. Currently, I serve as Associate Editor for Springer Applied Intelligence.
     </div>
   </div>
+</body>
 
+  <br></br>
 
   <style>
   .links-container {
@@ -269,6 +238,7 @@
 </br></br></br>
 </body>
 </html>
+
 
 
 
