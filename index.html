@@ -164,131 +164,142 @@
   }
 </style>
 <style>
-  .links-container {
+  .links-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-    max-width: 1100px;
-    margin: auto;
-    font-family: 'Arial', sans-serif;
+    gap: 25px;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 10px;
+    font-family: "Inter", sans-serif;
   }
 
-  .link-card {
-    background: #f4f4f9;
-    border-radius: 12px;
-    padding: 15px 20px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    transition: transform 0.2s, box-shadow 0.2s;
+  .link-box {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 18px;
+    padding: 25px 28px;
+    transition: all 0.25s ease;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.03);
   }
 
-  .link-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  .link-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 26px rgba(0,0,0,0.08);
+    border-color: #d0d7e2;
   }
 
-  .link-card a {
-    display: inline-block;
-    margin: 5px 0;
-    color: #1a73e8;
-    text-decoration: none;
+  .icon-large {
+    font-size: 34px;
+    margin-bottom: 12px;
+    opacity: 0.85;
+  }
+
+  .link-box h3 {
+    font-size: 19px;
+    margin: 6px 0 14px 0;
+    color: #111827;
+    font-weight: 600;
+  }
+
+  .link-box a {
+    display: block;
+    margin: 4px 0;
+    color: #2563eb;
     font-weight: 500;
+    text-decoration: none;
   }
 
-  .link-card a:hover {
+  .link-box a:hover {
     text-decoration: underline;
   }
 
-  .link-card h3 {
-    margin-bottom: 8px;
-    color: #333;
-  }
-
-  /* ریسپانسیو برای موبایل */
   @media(max-width: 900px){
-    .links-container { grid-template-columns: repeat(2, 1fr); }
+    .links-grid { grid-template-columns: repeat(2, 1fr); }
   }
   @media(max-width: 600px){
-    .links-container { grid-template-columns: 1fr; }
+    .links-grid { grid-template-columns: 1fr; }
   }
 </style>
 
-<div class="links-container">
+<div class="links-grid">
 
-  <!-- 9 CARDS EXACTLY IN 3×3 -->
-  <div class="link-card">
-    <h3>📚 Academic Works</h3>
-    <a href="https://stanford.academia.edu/ShirmohammadTavangari" target="_blank">Latest Works on Academia.edu (2025)</a><br>
-    <a href="https://arxiv.org/search/?query=Shirmohammad+Tavangari&searchtype=all&source=header" target="_blank">AI & Math Research on arXiv</a>
+  <div class="link-box">
+    <div class="icon-large">📚</div>
+    <h3>Academic Works</h3>
+    <a href="https://stanford.academia.edu/ShirmohammadTavangari">Academia.edu (Latest)</a>
+    <a href="https://arxiv.org/search/?query=Shirmohammad+Tavangari">arXiv Research</a>
   </div>
 
-  <div class="link-card">
-    <h3>📝 Patents & Talks</h3>
-    <a href="https://otl.stanford.edu/patent" target="_blank">Stanford Patent: Mind as Boltzmann Machine</a><br>
-    <a href="https://www.youtube.com/watch?v=k6GCBSVcEDA" target="_blank">TEDx Talk at Sanabaad</a>
+  <div class="link-box">
+    <div class="icon-large">🧠</div>
+    <h3>Patents & Talks</h3>
+    <a href="https://otl.stanford.edu/patent">Stanford Patent</a>
+    <a href="https://www.youtube.com/watch?v=k6GCBSVcEDA">TEDx Talk</a>
   </div>
 
-  <div class="link-card">
-    <h3>💻 Projects & Open Source</h3>
-    <a href="https://github.com/Shirmohammad-Ta" target="_blank">GitHub Projects</a><br>
-    <a href="https://www.kaggle.com/smtavangari" target="_blank">Kaggle Projects</a><br>
-    <a href="https://pypi.org/project/binary-survivor/" target="_blank">PyPI: Binary-Survivor</a><br>
-    <a href="https://pypi.org/project/survivor-optimizer/" target="_blank">PyPI: Survivor-Optimizer</a>
+  <div class="link-box">
+    <div class="icon-large">💻</div>
+    <h3>Open-Source Projects</h3>
+    <a href="https://github.com/Shirmohammad-Ta">GitHub</a>
+    <a href="https://pypi.org/project/binary-survivor/">Binary-Survivor</a>
+    <a href="https://pypi.org/project/survivor-optimizer/">Survivor-Optimizer</a>
+    <a href="https://www.kaggle.com/smtavangari">Kaggle</a>
   </div>
 
-  <div class="link-card">
-    <h3>🏫 Collaborations & Academia</h3>
-    <a href="https://www.harvard.edu/" target="_blank">Harvard University</a>,
-    <a href="https://www.ubc.ca/" target="_blank">UBC</a>,
-    <a href="https://nus.edu.sg/" target="_blank">NUS</a>,
-    <a href="https://www.cityu.edu.hk/" target="_blank">City University of Hong Kong</a><br>
-    <a href="https://scholar.google.com/citations?hl=en&user=XhsmWO4AAAAJ&view_op=list_works&sortby=pubdate" target="_blank">Google Scholar Profile</a>
+  <div class="link-box">
+    <div class="icon-large">🏛️</div>
+    <h3>Academic Collabs</h3>
+    <a href="https://www.harvard.edu/">Harvard</a>
+    <a href="https://www.ubc.ca/">UBC</a>
+    <a href="https://nus.edu.sg/">NUS</a>
+    <a href="https://scholar.google.com/citations?user=XhsmWO4AAAAJ">Google Scholar</a>
   </div>
 
-  <div class="link-card">
-    <h3>🏢 Industry & Startups</h3>
-    <a href="https://nelladerm.com/" target="_blank">Chief AI Scientist at NellaDerm Inc</a><br>
-    <a href="https://myeczema.app/" target="_blank">Myeczema.app Official Launch</a><br>
-    <a href="https://www.amolikamankidy.com/" target="_blank">Mentorship: Amolika Mankidy</a><br>
-    <a href="https://mailchi.mp/naturalproductscanada/nelladerm-crush-vegain-and-more-21421471?e=694cd49dfe" target="_blank">Health Tech News: NellaDerm x Google</a><br>
-    <a href="https://startup.google.com/programs/" target="_blank">Google Research Grant – Eczema.app 2025</a>
+  <div class="link-box">
+    <div class="icon-large">🚀</div>
+    <h3>Industry & Startups</h3>
+    <a href="https://nelladerm.com/">NellaDerm Inc</a>
+    <a href="https://myeczema.app/">Myeczema.app</a>
+    <a href="https://startup.google.com/programs/">Google Research Grant 2025</a>
   </div>
 
-  <div class="link-card">
-    <h3>📖 Books & Journals</h3>
-    <a href="https://link.springer.com/book/10.1007/978-3-031-57708-6" target="_blank">Springer Nature: First Book 2024</a><br>
-    <a href="https://www.springer.com/series/7092/books?page=10" target="_blank">Second Book 2025</a><br>
-    <a href="https://link.springer.com/journal/10489/editorial-board" target="_blank">Associate Editor, Applied Intelligence</a><br>
-    <a href="http://academic.oup.com/comjnl" target="_blank">Reviewer: Oxford Journals</a>,
-    <a href="https://www.sciencedirect.com/journal/decision-support-systems" target="_blank">Elsevier</a>,
-    <a href="https://link.springer.com/journal/10994" target="_blank">Springer</a>
+  <div class="link-box">
+    <div class="icon-large">📖</div>
+    <h3>Books & Journals</h3>
+    <a href="https://link.springer.com/book/10.1007/978-3-031-57708-6">Springer Book 2024</a>
+    <a href="https://link.springer.com/journal/10489">Applied Intelligence (Editor)</a>
+    <a href="https://link.springer.com/journal/10994">Springer Reviewer</a>
   </div>
 
-  <div class="link-card">
-    <h3>🎤 Conferences & Committees</h3>
-    <a href="https://aaai.org/conference/aaai/" target="_blank">AAAI Reviewer</a>,
-    <a href="https://wcnc2019.ieee-wcnc.org/program.html" target="_blank">IEEE WCNC Session Chair</a><br>
-    <a href="https://www.icacds.com/" target="_blank">ICACDS Advisor Board</a>,
-    <a href="https://crgconferences.com/biomaterials/2024/" target="_blank">Bio Mat Org Committee</a><br>
-    <a href="https://camad2023.ieee-camad.org/committees/technical-program-committee" target="_blank">IEEE CAMAD TPC (30+)</a>,
-    <a href="https://iceece2021.avrasya.edu.tr/conference-advisory-scientific-committee/" target="_blank">ICEECE Scientific Committee</a>
+  <div class="link-box">
+    <div class="icon-large">🎤</div>
+    <h3>Conferences</h3>
+    <a href="https://aaai.org/conference/aaai/">AAAI Reviewer</a>
+    <a href="https://wcnc2019.ieee-wcnc.org/program.html">IEEE WCNC</a>
+    <a href="https://www.icacds.com/">ICACDS Advisory</a>
   </div>
 
-  <div class="link-card">
-    <h3>🤖 AI Demos & Fun</h3>
-    <a href="https://philosophy-ai-simulator-bnaqelec5c5ulsxxb47ust.streamlit.app/" target="_blank">Philosophy-to-Emotion Simulator</a>
+  <div class="link-box">
+    <div class="icon-large">🤖</div>
+    <h3>AI Playground</h3>
+    <a href="https://philosophy-ai-simulator-bnaqelec5c5ulsxxb47ust.streamlit.app/">Philosophy AI Simulator</a>
   </div>
 
-  <div class="link-card">
-    <h3>🌏 Origins</h3>
-    <a href="https://www.google.com/search?sca_esv=0381ce655eb7fe96&sxsrf=AE3TifOPBLvWoYLBy1lemqRDI9q4rpHaqw:1752624840545&q=bandar+torkaman" target="_blank">Born and Raised in Bandar-e Torkaman, Iran</a>
+  <div class="link-box">
+    <div class="icon-large">🌍</div>
+    <h3>Origins</h3>
+    <a href="https://www.google.com/search?q=bandar+torkaman">Bandar-e Torkaman, Iran</a>
   </div>
 
 </div>
+
 
  
 </br></br></br>
 </body>
 </html>
+
 
 
 
