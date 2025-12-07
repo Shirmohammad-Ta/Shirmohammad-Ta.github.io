@@ -1,950 +1,766 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shirmohammad Tavangari | AI Researcher | Stanford Medicine</title>
-  
-  <!-- فونت‌ها و آیکون‌ها -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Code+Pro:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
-  <style>
-    /* متغیرهای CSS */
-    :root {
-      --primary: #1a3d7c;
-      --secondary: #0d47a1;
-      --accent: #ff5a5f;
-      --light: #f8f9fa;
-      --dark: #212529;
-      --gray: #6c757d;
-      --light-blue: #e6f0fa;
-      --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-      --transition: all 0.3s ease;
-    }
-    
-    /* ریست و پایه */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    
-    body {
-      font-family: 'Inter', sans-serif;
-      line-height: 1.6;
-      color: var(--dark);
-      background-color: #f9f9f9;
-      overflow-x: hidden;
-    }
-    
-    a {
-      text-decoration: none;
-      color: inherit;
-      transition: var(--transition);
-    }
-    
-    ul {
-      list-style: none;
-    }
-    
-    .container {
-      width: 100%;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-    
-    .section {
-      padding: 80px 0;
-    }
-    
-    .section-title {
-      font-size: 2.2rem;
-      font-weight: 700;
-      color: var(--primary);
-      margin-bottom: 20px;
-      position: relative;
-      display: inline-block;
-    }
-    
-    .section-title:after {
-      content: '';
-      position: absolute;
-      bottom: -8px;
-      left: 0;
-      width: 60px;
-      height: 4px;
-      background-color: var(--accent);
-      border-radius: 2px;
-    }
-    
-    .btn {
-      display: inline-block;
-      padding: 12px 28px;
-      background-color: var(--primary);
-      color: white;
-      border-radius: 6px;
-      font-weight: 600;
-      border: none;
-      cursor: pointer;
-      transition: var(--transition);
-    }
-    
-    .btn:hover {
-      background-color: var(--secondary);
-      transform: translateY(-2px);
-    }
-    
-    .btn-accent {
-      background-color: var(--accent);
-    }
-    
-    .btn-accent:hover {
-      background-color: #e04a4f;
-    }
-    
-    /* هدر */
-    .header {
-      background: linear-gradient(rgba(26, 61, 124, 0.9), rgba(26, 61, 124, 0.8)), url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
-      background-size: cover;
-      background-position: center;
-      color: white;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      position: relative;
-    }
-    
-    /* نوار ناوبری */
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 25px 5%;
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 1000;
-      background-color: rgba(26, 61, 124, 0.95);
-      backdrop-filter: blur(10px);
-    }
-    
-    .logo {
-      font-size: 1.8rem;
-      font-weight: 700;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    
-    .logo i {
-      color: var(--accent);
-    }
-    
-    .nav-links {
-      display: flex;
-      gap: 30px;
-    }
-    
-    .nav-links a {
-      font-weight: 500;
-      position: relative;
-    }
-    
-    .nav-links a:after {
-      content: '';
-      position: absolute;
-      bottom: -5px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background-color: var(--accent);
-      transition: var(--transition);
-    }
-    
-    .nav-links a:hover:after {
-      width: 100%;
-    }
-    
-    .mobile-menu-btn {
-      display: none;
-      font-size: 1.5rem;
-      cursor: pointer;
-    }
-    
-    /* محتوای هدر */
-    .hero {
-      flex: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 0 5%;
-      margin-top: 60px;
-    }
-    
-    .hero-content {
-      max-width: 900px;
-    }
-    
-    .hero h1 {
-      font-size: 3.2rem;
-      font-weight: 800;
-      margin-bottom: 20px;
-      line-height: 1.2;
-    }
-    
-    .hero-subtitle {
-      font-size: 1.4rem;
-      font-weight: 400;
-      margin-bottom: 30px;
-      opacity: 0.9;
-    }
-    
-    .hero-btns {
-      display: flex;
-      gap: 15px;
-      justify-content: center;
-      margin-top: 40px;
-    }
-    
-    /* بخش معرفی */
-    .intro-section {
-      background-color: white;
-    }
-    
-    .intro-card {
-      display: flex;
-      align-items: center;
-      gap: 50px;
-      background-color: white;
-      border-radius: 16px;
-      padding: 50px;
-      box-shadow: var(--card-shadow);
-      margin-top: -100px;
-      position: relative;
-      z-index: 10;
-    }
-    
-    .profile-img-container {
-      flex-shrink: 0;
-    }
-    
-    .profile-img {
-      width: 250px;
-      height: 250px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 8px solid var(--light-blue);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-    }
-    
-    .intro-text {
-      flex: 1;
-    }
-    
-    .intro-text h2 {
-      font-size: 2rem;
-      color: var(--primary);
-      margin-bottom: 20px;
-    }
-    
-    .intro-text p {
-      font-size: 1.1rem;
-      margin-bottom: 20px;
-      color: var(--dark);
-      line-height: 1.8;
-    }
-    
-    .highlight {
-      color: var(--accent);
-      font-weight: 600;
-    }
-    
-    /* بخش لینک‌های حرفه‌ای */
-    .links-section {
-      background-color: #f8f9fa;
-    }
-    
-    .links-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-      gap: 30px;
-      margin-top: 40px;
-    }
-    
-    .link-card {
-      background-color: white;
-      border-radius: 12px;
-      padding: 30px;
-      box-shadow: var(--card-shadow);
-      transition: var(--transition);
-      border-top: 4px solid var(--primary);
-    }
-    
-    .link-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-    }
-    
-    .link-card-header {
-      display: flex;
-      align-items: center;
-      margin-bottom: 20px;
-    }
-    
-    .link-icon {
-      width: 50px;
-      height: 50px;
-      background-color: var(--light-blue);
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-right: 15px;
-      color: var(--primary);
-      font-size: 1.2rem;
-    }
-    
-    .link-card h3 {
-      font-size: 1.4rem;
-      color: var(--primary);
-    }
-    
-    .link-item {
-      margin-bottom: 15px;
-      padding-bottom: 15px;
-      border-bottom: 1px solid #eee;
-    }
-    
-    .link-item:last-child {
-      margin-bottom: 0;
-      padding-bottom: 0;
-      border-bottom: none;
-    }
-    
-    .link-item a {
-      display: block;
-      font-weight: 600;
-      color: var(--dark);
-      margin-bottom: 5px;
-    }
-    
-    .link-item a:hover {
-      color: var(--accent);
-    }
-    
-    .link-desc {
-      font-size: 0.9rem;
-      color: var(--gray);
-      margin-bottom: 8px;
-    }
-    
-    .link-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 8px;
-    }
-    
-    .link-tag {
-      background-color: var(--light-blue);
-      color: var(--primary);
-      font-size: 0.75rem;
-      padding: 3px 10px;
-      border-radius: 20px;
-      font-weight: 500;
-    }
-    
-    /* بخش دانشگاه‌ها و همکاری‌ها */
-    .institutions-section {
-      background-color: white;
-    }
-    
-    .institutions-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 30px;
-      margin-top: 40px;
-    }
-    
-    .institution-card {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      padding: 25px;
-      background-color: white;
-      border-radius: 12px;
-      box-shadow: var(--card-shadow);
-      transition: var(--transition);
-    }
-    
-    .institution-card:hover {
-      transform: translateY(-5px);
-    }
-    
-    .institution-logo {
-      width: 80px;
-      height: 80px;
-      background-color: var(--light-blue);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 15px;
-      color: var(--primary);
-      font-size: 1.8rem;
-    }
-    
-    .institution-name {
-      font-weight: 600;
-      color: var(--primary);
-      margin-bottom: 5px;
-    }
-    
-    .institution-role {
-      font-size: 0.9rem;
-      color: var(--gray);
-    }
-    
-    /* فوتر */
-    .footer {
-      background-color: var(--primary);
-      color: white;
-      padding: 60px 0 30px;
-    }
-    
-    .footer-content {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 40px;
-      margin-bottom: 40px;
-    }
-    
-    .footer-section {
-      flex: 1;
-      min-width: 250px;
-    }
-    
-    .footer-section h3 {
-      font-size: 1.4rem;
-      margin-bottom: 20px;
-      position: relative;
-      padding-bottom: 10px;
-    }
-    
-    .footer-section h3:after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 40px;
-      height: 3px;
-      background-color: var(--accent);
-    }
-    
-    .footer-links {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-    
-    .footer-links a:hover {
-      color: var(--accent);
-      padding-left: 5px;
-    }
-    
-    .social-links {
-      display: flex;
-      gap: 15px;
-      margin-top: 20px;
-    }
-    
-    .social-link {
-      width: 40px;
-      height: 40px;
-      background-color: rgba(255, 255, 255, 0.1);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: var(--transition);
-    }
-    
-    .social-link:hover {
-      background-color: var(--accent);
-      transform: translateY(-3px);
-    }
-    
-    .footer-bottom {
-      text-align: center;
-      padding-top: 30px;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      font-size: 0.9rem;
-      opacity: 0.8;
-    }
-    
-    /* رسپانسیو */
-    @media (max-width: 992px) {
-      .hero h1 {
-        font-size: 2.8rem;
-      }
-      
-      .intro-card {
-        flex-direction: column;
-        text-align: center;
-        gap: 30px;
-      }
-      
-      .profile-img {
-        width: 200px;
-        height: 200px;
-      }
-    }
-    
-    @media (max-width: 768px) {
-      .navbar {
-        padding: 20px 5%;
-      }
-      
-      .nav-links {
-        position: fixed;
-        top: 80px;
-        left: -100%;
-        width: 100%;
-        height: calc(100vh - 80px);
-        background-color: var(--primary);
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-        padding-top: 40px;
-        gap: 30px;
-        transition: left 0.3s ease;
-      }
-      
-      .nav-links.active {
-        left: 0;
-      }
-      
-      .mobile-menu-btn {
-        display: block;
-      }
-      
-      .hero h1 {
-        font-size: 2.3rem;
-      }
-      
-      .hero-subtitle {
-        font-size: 1.1rem;
-      }
-      
-      .hero-btns {
-        flex-direction: column;
-        align-items: center;
-      }
-      
-      .btn {
-        width: 100%;
-        max-width: 250px;
-      }
-      
-      .section-title {
-        font-size: 1.8rem;
-      }
-      
-      .links-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-    
-    @media (max-width: 576px) {
-      .hero h1 {
-        font-size: 2rem;
-      }
-      
-      .intro-card {
-        padding: 30px 20px;
-      }
-      
-      .section {
-        padding: 60px 0;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shirmohammad Tavangari - AI Researcher at Stanford Medicine</title>
+    
+    <!-- فونت‌های ساده و کلاسیک -->
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&family=Open+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* متغیرهای رنگ */
+        :root {
+            --primary: #2c3e50;
+            --secondary: #7f8c8d;
+            --accent: #3498db;
+            --light: #f5f7fa;
+            --border: #e0e0e0;
+            --text: #333333;
+        }
+        
+        /* ریست پایه */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.7;
+            color: var(--text);
+            background-color: white;
+            font-size: 16px;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* تایپوگرافی */
+        h1, h2, h3, h4 {
+            font-family: 'Lora', serif;
+            font-weight: 600;
+            color: var(--primary);
+            line-height: 1.3;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--border);
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        
+        p {
+            margin-bottom: 20px;
+        }
+        
+        a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        a:hover {
+            color: #2980b9;
+            text-decoration: underline;
+        }
+        
+        /* هدر ساده */
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .site-title {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+        }
+        
+        .site-subtitle {
+            font-size: 1.3rem;
+            font-weight: 300;
+            opacity: 0.9;
+        }
+        
+        /* بخش اصلی */
+        .main-content {
+            display: flex;
+            gap: 50px;
+            margin-bottom: 60px;
+        }
+        
+        /* سایدبار */
+        .sidebar {
+            width: 300px;
+            flex-shrink: 0;
+        }
+        
+        .profile-section {
+            margin-bottom: 40px;
+        }
+        
+        .profile-photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 8px solid var(--light);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 25px;
+        }
+        
+        .contact-info {
+            background-color: var(--light);
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .contact-item i {
+            color: var(--accent);
+            width: 20px;
+        }
+        
+        /* محتوای اصلی */
+        .content {
+            flex: 1;
+        }
+        
+        .section {
+            margin-bottom: 50px;
+        }
+        
+        /* کارت‌های ساده */
+        .simple-card {
+            background-color: white;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 25px;
+            transition: box-shadow 0.3s;
+        }
+        
+        .simple-card:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .card-icon {
+            width: 50px;
+            height: 50px;
+            background-color: var(--light);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+            font-size: 1.2rem;
+        }
+        
+        .card-title {
+            font-size: 1.4rem;
+            margin-bottom: 0;
+        }
+        
+        /* لیست لینک‌ها */
+        .link-list {
+            list-style: none;
+        }
+        
+        .link-item {
+            padding: 15px 0;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .link-item:last-child {
+            border-bottom: none;
+        }
+        
+        .link-title {
+            font-weight: 600;
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
+        
+        .link-description {
+            font-size: 0.95rem;
+            color: var(--secondary);
+            margin-bottom: 8px;
+        }
+        
+        .link-meta {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .tag {
+            background-color: var(--light);
+            color: var(--secondary);
+            font-size: 0.8rem;
+            padding: 3px 10px;
+            border-radius: 4px;
+        }
+        
+        /* جدول ساده */
+        .simple-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        
+        .simple-table th {
+            background-color: var(--light);
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+            border-bottom: 2px solid var(--border);
+        }
+        
+        .simple-table td {
+            padding: 15px;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .simple-table tr:hover {
+            background-color: rgba(0,0,0,0.02);
+        }
+        
+        /* فوتر */
+        footer {
+            background-color: var(--primary);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            margin-top: 50px;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        
+        .footer-links {
+            display: flex;
+            gap: 25px;
+        }
+        
+        .footer-links a {
+            color: rgba(255,255,255,0.8);
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .copyright {
+            font-size: 0.9rem;
+            opacity: 0.7;
+            margin-top: 20px;
+        }
+        
+        /* رسپانسیو */
+        @media (max-width: 900px) {
+            .main-content {
+                flex-direction: column;
+            }
+            
+            .sidebar {
+                width: 100%;
+            }
+            
+            .profile-section {
+                text-align: center;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .site-title {
+                font-size: 2.2rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.7rem;
+            }
+            
+            .simple-table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+        
+        /* افکت‌های ساده */
+        .highlight {
+            background-color: rgba(52, 152, 219, 0.1);
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+        
+        .note {
+            background-color: var(--light);
+            border-left: 4px solid var(--accent);
+            padding: 15px 20px;
+            margin: 25px 0;
+            border-radius: 0 4px 4px 0;
+        }
+    </style>
 </head>
 
 <body>
-  <!-- هدر -->
-  <header class="header">
-    <!-- نوار ناوبری -->
-    <nav class="navbar">
-      <div class="logo">
-        <i class="fas fa-brain"></i>
-        <span>Shirmohammad Tavangari</span>
-      </div>
-      
-      <div class="mobile-menu-btn">
-        <i class="fas fa-bars"></i>
-      </div>
-      
-      <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#intro">About</a></li>
-        <li><a href="#links">Portfolio</a></li>
-        <li><a href="#institutions">Affiliations</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-    
-    <!-- محتوای اصلی هدر -->
-    <div class="hero" id="home">
-      <div class="hero-content">
-        <h1>Shirmohammad Tavangari</h1>
-        <div class="hero-subtitle">AI Researcher at Stanford Medicine | Chief AI Scientist at NellaDerm Inc. | Springer Nature Editor</div>
-        <div class="hero-btns">
-          <a href="#intro" class="btn">Learn More</a>
-          <a href="#links" class="btn btn-accent">View Portfolio</a>
+    <!-- هدر -->
+    <header>
+        <div class="container">
+            <h1 class="site-title">Shirmohammad Tavangari</h1>
+            <p class="site-subtitle">AI Researcher at Stanford University School of Medicine</p>
         </div>
-      </div>
-    </div>
-  </header>
-  
-  <!-- بخش معرفی -->
-  <section class="section intro-section" id="intro">
+    </header>
+
     <div class="container">
-      <div class="intro-card">
-        <div class="profile-img-container">
-          <img src="Me.jpeg" alt="Shirmohammad Tavangari" class="profile-img">
+        <div class="main-content">
+            <!-- سایدبار -->
+            <aside class="sidebar">
+                <div class="profile-section">
+                    <img src="Me.jpeg" alt="Shirmohammad Tavangari" class="profile-photo">
+                    <h3>About Me</h3>
+                    <p>Artificial Intelligence Researcher at Stanford Medicine. Chief AI Scientist at NellaDerm Inc. TEDx Speaker and Springer Nature Editor.</p>
+                </div>
+                
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-university"></i>
+                        <span>Stanford University School of Medicine</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>research@stanford.edu</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Stanford, California</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-briefcase"></i>
+                        <span>Chief AI Scientist at NellaDerm</span>
+                    </div>
+                </div>
+                
+                <div class="contact-info">
+                    <h3>Quick Links</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-graduation-cap"></i>
+                        <a href="#academic">Academic Works</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-flask"></i>
+                        <a href="#research">Research & Inventions</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-code"></i>
+                        <a href="#coding">Coding Projects</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-industry"></i>
+                        <a href="#industry">Industry Activities</a>
+                    </div>
+                </div>
+            </aside>
+            
+            <!-- محتوای اصلی -->
+            <main class="content">
+                <!-- بخش معرفی -->
+                <section class="section">
+                    <h2>Professional Profile</h2>
+                    <p>I am an <span class="highlight">Artificial Intelligence Researcher</span> at <a href="https://med.stanford.edu/" target="_blank">Stanford University School of Medicine</a>, collaborating with Prof. Jayakumar Rajadas. I also work with Prof. Isabeau Prémont-Schwarz at Mila and serve as <span class="highlight">Chief AI Scientist</span> at <a href="https://nelladerm.com/" target="_blank">NellaDerm Inc.</a>, leading AI initiatives funded by a Google grant.</p>
+                    
+                    <p>My research spans <span class="highlight">Artificial Intelligence, Machine Learning, and Applied Mathematics</span>. I am honored as a TEDxSanabad Speaker, recipient of the Young Scientist Award 2022, and Editor of AI-focused volumes published by Springer Nature. Currently, I serve as Associate Editor for Springer Applied Intelligence.</p>
+                    
+                    <div class="note">
+                        <p><strong>Research Focus:</strong> Healthcare AI, Machine Learning in Medicine, Computational Neuroscience, Applied Mathematics</p>
+                    </div>
+                </section>
+                
+                <!-- بخش آثار آکادمیک -->
+                <section class="section" id="academic">
+                    <div class="simple-card">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <h3 class="card-title">Academic Works</h3>
+                        </div>
+                        
+                        <ul class="link-list">
+                            <li class="link-item">
+                                <span class="link-title">
+                                    <a href="https://stanford.academia.edu/ShirmohammadTavangari" target="_blank">Academia.edu Profile</a>
+                                </span>
+                                <span class="link-description">Published papers and research publications</span>
+                                <div class="link-meta">
+                                    <span class="tag">Academic</span>
+                                    <span class="tag">Publications</span>
+                                    <span class="tag">2025</span>
+                                </div>
+                            </li>
+                            <li class="link-item">
+                                <span class="link-title">
+                                    <a href="https://arxiv.org/search/?query=Shirmohammad+Tavangari&searchtype=all&source=header" target="_blank">arXiv Research Profile</a>
+                                </span>
+                                <span class="link-description">Research preprints in AI and Mathematics</span>
+                                <div class="link-meta">
+                                    <span class="tag">Research</span>
+                                    <span class="tag">AI</span>
+                                    <span class="tag">Mathematics</span>
+                                </div>
+                            </li>
+                            <li class="link-item">
+                                <span class="link-title">Springer Nature Books</span>
+                                <span class="link-description">Edited AI-focused volumes published by Springer</span>
+                                <div class="link-meta">
+                                    <a href="https://link.springer.com/book/10.1007/978-3-031-57708-6" target="_blank" class="tag">First Book (2024)</a>
+                                    <a href="https://www.springer.com/series/7092/books?page=10" target="_blank" class="tag">Second Book (2025)</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                
+                <!-- بخش تحقیقات و اختراعات -->
+                <section class="section" id="research">
+                    <div class="simple-card">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <i class="fas fa-flask"></i>
+                            </div>
+                            <h3 class="card-title">Research & Inventions</h3>
+                        </div>
+                        
+                        <ul class="link-list">
+                            <li class="link-item">
+                                <span class="link-title">
+                                    <a href="https://otl.stanford.edu/patent" target="_blank">Stanford University Patent</a>
+                                </span>
+                                <span class="link-description">"Mind as Boltzmann Machine" patent registered at Stanford Technology Licensing Office</span>
+                                <div class="link-meta">
+                                    <span class="tag">Patent</span>
+                                    <span class="tag">Neuroscience</span>
+                                </div>
+                            </li>
+                            <li class="link-item">
+                                <span class="link-title">
+                                    <a href="https://www.youtube.com/watch?v=k6GCBSVcEDA" target="_blank">TED Speaker at TEDxSanabaad</a>
+                                </span>
+                                <span class="link-description">Featured speaker at TEDx event</span>
+                                <div class="link-meta">
+                                    <span class="tag">Public Speaking</span>
+                                    <span class="tag">TEDx</span>
+                                </div>
+                            </li>
+                            <li class="link-item">
+                                <span class="link-title">Journal Reviewer</span>
+                                <span class="link-description">Reviewer for prestigious academic journals</span>
+                                <div class="link-meta">
+                                    <a href="http://academic.oup.com/comjnl" target="_blank" class="tag">Oxford</a>
+                                    <a href="https://www.sciencedirect.com/journal/decision-support-systems" target="_blank" class="tag">Elsevier</a>
+                                    <a href="https://link.springer.com/journal/10994" target="_blank" class="tag">Springer</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                
+                <!-- بخش پروژه‌های کدنویسی -->
+                <section class="section" id="coding">
+                    <div class="simple-card">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <h3 class="card-title">Coding Projects</h3>
+                        </div>
+                        
+                        <ul class="link-list">
+                            <li class="link-item">
+                                <span class="link-title">GitHub & Kaggle Projects</span>
+                                <span class="link-description">Explore my coding projects and datasets</span>
+                                <div class="link-meta">
+                                    <a href="https://github.com/Shirmohammad-Ta" target="_blank" class="tag">GitHub</a>
+                                    <a href="https://www.kaggle.com/smtavangari" target="_blank" class="tag">Kaggle</a>
+                                </div>
+                            </li>
+                            <li class="link-item">
+                                <span class="link-title">PyPI Packages</span>
+                                <span class="link-description">Published Python packages</span>
+                                <div class="link-meta">
+                                    <a href="https://pypi.org/project/binary-survivor/" target="_blank" class="tag">Binary-Survivor</a>
+                                    <a href="https://pypi.org/project/survivor-optimizer/" target="_blank" class="tag">Survivor-Optimizer</a>
+                                </div>
+                            </li>
+                            <li class="link-item">
+                                <span class="link-title">
+                                    <a href="https://philosophy-ai-simulator-bnaqelec5c5ulsxxb47ust.streamlit.app/" target="_blank">Philosophy-to-Emotion Simulator Demo</a>
+                                </span>
+                                <span class="link-description">AI + Philosophy interactive demo</span>
+                                <div class="link-meta">
+                                    <span class="tag">Demo</span>
+                                    <span class="tag">AI</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                
+                <!-- بخش فعالیت‌های صنعتی -->
+                <section class="section" id="industry">
+                    <div class="simple-card">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <i class="fas fa-industry"></i>
+                            </div>
+                            <h3 class="card-title">Industry Activities</h3>
+                        </div>
+                        
+                        <ul class="link-list">
+                            <li class="link-item">
+                                <span class="link-title">
+                                    <a href="https://nelladerm.com/" target="_blank">Chief AI Scientist at NellaDerm Inc</a>
+                                </span>
+                                <span class="link-description">Leading AI research in health tech</span>
+                                <div class="link-meta">
+                                    <span class="tag">Leadership</span>
+                                    <span class="tag">Health Tech</span>
+                                </div>
+                            </li>
+                            <li class="link-item">
+                                <span class="link-title">
+                                    <a href="https://startup.google.com/programs/" target="_blank">Google Research Grant</a>
+                                </span>
+                                <span class="link-description">Awarded to Eczema.app for AI research in Eczema</span>
+                                <div class="link-meta">
+                                    <span class="tag">Grant</span>
+                                    <span class="tag">2025</span>
+                                </div>
+                            </li>
+                            <li class="link-item">
+                                <span class="link-title">
+                                    <a href="https://myeczema.app/" target="_blank">Myeczema.app Official Launch</a>
+                                </span>
+                                <span class="link-description">AI-powered eczema management platform</span>
+                                <div class="link-meta">
+                                    <span class="tag">Product</span>
+                                    <span class="tag">Launch</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                
+                <!-- بخش همکاری‌های آکادمیک -->
+                <section class="section">
+                    <h2>Academic Collaborations</h2>
+                    
+                    <table class="simple-table">
+                        <thead>
+                            <tr>
+                                <th>Institution</th>
+                                <th>Role/Collaboration</th>
+                                <th>Location</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Stanford University</td>
+                                <td>AI Researcher, School of Medicine</td>
+                                <td>California, USA</td>
+                            </tr>
+                            <tr>
+                                <td>Mila (Quebec AI Institute)</td>
+                                <td>Research Collaboration</td>
+                                <td>Montreal, Canada</td>
+                            </tr>
+                            <tr>
+                                <td>NellaDerm Inc.</td>
+                                <td>Chief AI Scientist</td>
+                                <td>USA</td>
+                            </tr>
+                            <tr>
+                                <td>Springer Nature</td>
+                                <td>Associate Editor, Applied Intelligence</td>
+                                <td>Global</td>
+                            </tr>
+                            <tr>
+                                <td>Harvard University</td>
+                                <td>Research Collaboration</td>
+                                <td>Massachusetts, USA</td>
+                            </tr>
+                            <tr>
+                                <td>University of British Columbia</td>
+                                <td>Research Collaboration</td>
+                                <td>Vancouver, Canada</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <div class="note">
+                        <p><strong>Note:</strong> Also collaborating with National University of Singapore (NUS) and City University of Hong Kong (CityU HK).</p>
+                    </div>
+                </section>
+                
+                <!-- بخش افتخارات -->
+                <section class="section">
+                    <h2>Awards & Honors</h2>
+                    
+                    <div class="simple-card">
+                        <ul class="link-list">
+                            <li class="link-item">
+                                <span class="link-title">Young Scientist Award 2022</span>
+                                <span class="link-description">Recognition for outstanding contributions to AI research</span>
+                            </li>
+                            <li class="link-item">
+                                <span class="link-title">TEDxSanabaad Speaker</span>
+                                <span class="link-description">Invited speaker at prestigious TEDx event</span>
+                            </li>
+                            <li class="link-item">
+                                <span class="link-title">Google Research Grant</span>
+                                <span class="link-description">Funding for AI research in healthcare applications</span>
+                            </li>
+                            <li class="link-item">
+                                <span class="link-title">Springer Nature Editorship</span>
+                                <span class="link-description">Associate Editor for Applied Intelligence journal</span>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+            </main>
         </div>
-        <div class="intro-text">
-          <h2>About Me</h2>
-          <p>I am an <span class="highlight">Artificial Intelligence Researcher</span> at <a href="https://med.stanford.edu/" target="_blank">Stanford University School of Medicine</a>, collaborating with Prof. Jayakumar Rajadas. I also work with Prof. Isabeau Prémont-Schwarz at Mila and serve as <span class="highlight">Chief AI Scientist</span> at <a href="https://nelladerm.com/" target="_blank">NellaDerm Inc.</a>, leading AI initiatives funded by a Google grant.</p>
-          <p>My research spans <span class="highlight">Artificial Intelligence, Machine Learning, and Applied Mathematics</span>. I am honored as a TEDxSanabad Speaker, recipient of the Young Scientist Award 2022, and Editor of AI-focused volumes published by Springer Nature. Currently, I serve as Associate Editor for Springer Applied Intelligence.</p>
-        </div>
-      </div>
     </div>
-  </section>
-  
-  <!-- بخش لینک‌های حرفه‌ای -->
-  <section class="section links-section" id="links">
-    <div class="container">
-      <h2 class="section-title">Professional Portfolio</h2>
-      <div class="links-grid">
-        <!-- کارت آثار آکادمیک -->
-        <div class="link-card">
-          <div class="link-card-header">
-            <div class="link-icon">
-              <i class="fas fa-graduation-cap"></i>
+
+    <!-- فوتر -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>Shirmohammad Tavangari</h3>
+                    <p>AI Research Scientist | Stanford Medicine</p>
+                </div>
+                
+                <div class="footer-links">
+                    <a href="#academic">Academic Works</a>
+                    <a href="#research">Research</a>
+                    <a href="#coding">Coding</a>
+                    <a href="#industry">Industry</a>
+                </div>
             </div>
-            <h3>Academic Works</h3>
-          </div>
-          <div class="link-item">
-            <a href="https://stanford.academia.edu/ShirmohammadTavangari" target="_blank">Academia.edu Profile</a>
-            <div class="link-desc">Published papers and research</div>
-            <div class="link-tags">
-              <span class="link-tag">Academic</span>
-              <span class="link-tag">2025</span>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Shirmohammad Tavangari. All rights reserved.</p>
+                <p style="margin-top: 5px;">Stanford University School of Medicine | NellaDerm Inc.</p>
             </div>
-          </div>
-          <div class="link-item">
-            <a href="https://arxiv.org/search/?query=Shirmohammad+Tavangari&searchtype=all&source=header" target="_blank">arXiv Research Profile</a>
-            <div class="link-desc">Research preprints in AI and Mathematics</div>
-            <div class="link-tags">
-              <span class="link-tag">Research</span>
-              <span class="link-tag">AI</span>
-            </div>
-          </div>
         </div>
+    </footer>
+
+    <script>
+        // اسکرول نرم برای لینک‌های داخلی
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
         
-        <!-- کارت تحقیقات و اختراعات -->
-        <div class="link-card">
-          <div class="link-card-header">
-            <div class="link-icon">
-              <i class="fas fa-flask"></i>
-            </div>
-            <h3>Research & Inventions</h3>
-          </div>
-          <div class="link-item">
-            <a href="https://otl.stanford.edu/patent" target="_blank">Stanford Patent: Mind as Boltzmann Machine</a>
-            <div class="link-desc">Patent registered at Stanford Technology Licensing Office</div>
-            <div class="link-tags">
-              <span class="link-tag">Patent</span>
-              <span class="link-tag">Neuroscience</span>
-            </div>
-          </div>
-          <div class="link-item">
-            <a href="https://www.youtube.com/watch?v=k6GCBSVcEDA" target="_blank">TEDxSanabaad Speaker</a>
-            <div class="link-desc">Featured speaker at TEDx event</div>
-            <div class="link-tags">
-              <span class="link-tag">Public Speaking</span>
-              <span class="link-tag">TEDx</span>
-            </div>
-          </div>
-        </div>
+        // هایلایت بخش فعلی هنگام اسکرول
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('.section');
+            const scrollPosition = window.scrollY + 150;
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                const sectionId = section.getAttribute('id');
+                
+                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                    document.querySelectorAll('.contact-item a').forEach(link => {
+                        link.style.fontWeight = 'normal';
+                        link.style.color = 'var(--accent)';
+                        
+                        if (link.getAttribute('href') === `#${sectionId}`) {
+                            link.style.fontWeight = '600';
+                            link.style.color = '#2980b9';
+                        }
+                    });
+                }
+            });
+        });
         
-        <!-- کارت پروژه‌های برنامه‌نویسی -->
-        <div class="link-card">
-          <div class="link-card-header">
-            <div class="link-icon">
-              <i class="fas fa-code"></i>
-            </div>
-            <h3>Coding Projects</h3>
-          </div>
-          <div class="link-item">
-            <a href="https://github.com/Shirmohammad-Ta" target="_blank">GitHub Profile</a>
-            <div class="link-desc">Explore my coding projects and repositories</div>
-            <div class="link-tags">
-              <span class="link-tag">GitHub</span>
-              <span class="link-tag">Code</span>
-            </div>
-          </div>
-          <div class="link-item">
-            <a href="https://pypi.org/project/binary-survivor/" target="_blank">PyPI Packages</a>
-            <div class="link-desc">Published Python packages on PyPI</div>
-            <div class="link-tags">
-              <span class="link-tag">Python</span>
-              <span class="link-tag">PyPI</span>
-            </div>
-          </div>
-        </div>
-        
-        <!-- کارت انتشارات و ویرایش -->
-        <div class="link-card">
-          <div class="link-card-header">
-            <div class="link-icon">
-              <i class="fas fa-book"></i>
-            </div>
-            <h3>Publications & Editorial</h3>
-          </div>
-          <div class="link-item">
-            <a href="https://link.springer.com/book/10.1007/978-3-031-57708-6" target="_blank">Springer Nature Books</a>
-            <div class="link-desc">Edited AI-focused volumes published by Springer</div>
-            <div class="link-tags">
-              <span class="link-tag">Publications</span>
-              <span class="link-tag">Springer</span>
-            </div>
-          </div>
-          <div class="link-item">
-            <a href="https://link.springer.com/journal/10489/editorial-board" target="_blank">Associate Editor: Applied Intelligence</a>
-            <div class="link-desc">Editorial board at Springer Nature journal</div>
-            <div class="link-tags">
-              <span class="link-tag">Editorial</span>
-              <span class="link-tag">Journal</span>
-            </div>
-          </div>
-        </div>
-        
-        <!-- کارت فعالیت‌های صنعتی -->
-        <div class="link-card">
-          <div class="link-card-header">
-            <div class="link-icon">
-              <i class="fas fa-industry"></i>
-            </div>
-            <h3>Industry Activities</h3>
-          </div>
-          <div class="link-item">
-            <a href="https://nelladerm.com/" target="_blank">Chief AI Scientist at NellaDerm Inc</a>
-            <div class="link-desc">Leading AI research in health tech</div>
-            <div class="link-tags">
-              <span class="link-tag">Leadership</span>
-              <span class="link-tag">Health Tech</span>
-            </div>
-          </div>
-          <div class="link-item">
-            <a href="https://myeczema.app/" target="_blank">Myeczema.app Official Launch</a>
-            <div class="link-desc">AI-powered eczema management platform</div>
-            <div class="link-tags">
-              <span class="link-tag">Product</span>
-              <span class="link-tag">Launch</span>
-            </div>
-          </div>
-        </div>
-        
-        <!-- کارت اطلاعات شخصی -->
-        <div class="link-card">
-          <div class="link-card-header">
-            <div class="link-icon">
-              <i class="fas fa-user"></i>
-            </div>
-            <h3>Personal Information</h3>
-          </div>
-          <div class="link-item">
-            <a href="https://scholar.google.ca/citations?hl=en&user=JmpmBXsAAAAJ" target="_blank">Google Scholar Profile</a>
-            <div class="link-desc">Complete academic citation profile</div>
-            <div class="link-tags">
-              <span class="link-tag">Academic</span>
-              <span class="link-tag">Citations</span>
-            </div>
-          </div>
-          <div class="link-item">
-            <a href="https://philosophy-ai-simulator-bnaqelec5c5ulsxxb47ust.streamlit.app/" target="_blank">Philosophy-to-Emotion Simulator</a>
-            <div class="link-desc">AI + Philosophy interactive demo</div>
-            <div class="link-tags">
-              <span class="link-tag">Demo</span>
-              <span class="link-tag">AI</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  
-  <!-- بخش دانشگاه‌ها و همکاری‌ها -->
-  <section class="section institutions-section" id="institutions">
-    <div class="container">
-      <h2 class="section-title">Academic Affiliations & Collaborations</h2>
-      <div class="institutions-grid">
-        <div class="institution-card">
-          <div class="institution-logo">
-            <i class="fas fa-university"></i>
-          </div>
-          <div class="institution-name">Stanford University</div>
-          <div class="institution-role">School of Medicine</div>
-        </div>
-        
-        <div class="institution-card">
-          <div class="institution-logo">
-            <i class="fas fa-graduation-cap"></i>
-          </div>
-          <div class="institution-name">Mila</div>
-          <div class="institution-role">AI Research Collaboration</div>
-        </div>
-        
-        <div class="institution-card">
-          <div class="institution-logo">
-            <i class="fas fa-heartbeat"></i>
-          </div>
-          <div class="institution-name">NellaDerm Inc.</div>
-          <div class="institution-role">Chief AI Scientist</div>
-        </div>
-        
-        <div class="institution-card">
-          <div class="institution-logo">
-            <i class="fas fa-book-open"></i>
-          </div>
-          <div class="institution-name">Springer Nature</div>
-          <div class="institution-role">Associate Editor</div>
-        </div>
-        
-        <div class="institution-card">
-          <div class="institution-logo">
-            <i class="fas fa-search"></i>
-          </div>
-          <div class="institution-name">Google</div>
-          <div class="institution-role">Research Grant</div>
-        </div>
-        
-        <div class="institution-card">
-          <div class="institution-logo">
-            <i class="fas fa-globe"></i>
-          </div>
-          <div class="institution-name">International</div>
-          <div class="institution-role">Multiple Collaborations</div>
-        </div>
-      </div>
-    </div>
-  </section>
-  
-  <!-- فوتر -->
-  <footer class="footer" id="contact">
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-section">
-          <h3>Shirmohammad Tavangari</h3>
-          <p>AI Researcher at Stanford Medicine with expertise in machine learning, applied mathematics, and health technology innovation.</p>
-          <div class="social-links">
-            <a href="https://github.com/Shirmohammad-Ta" target="_blank" class="social-link">
-              <i class="fab fa-github"></i>
-            </a>
-            <a href="https://scholar.google.ca/citations?hl=en&user=JmpmBXsAAAAJ" target="_blank" class="social-link">
-              <i class="fas fa-graduation-cap"></i>
-            </a>
-            <a href="https://www.linkedin.com/" target="_blank" class="social-link">
-              <i class="fab fa-linkedin-in"></i>
-            </a>
-            <a href="https://twitter.com/" target="_blank" class="social-link">
-              <i class="fab fa-twitter"></i>
-            </a>
-          </div>
-        </div>
-        
-        <div class="footer-section">
-          <h3>Quick Links</h3>
-          <div class="footer-links">
-            <a href="#home">Home</a>
-            <a href="#intro">About</a>
-            <a href="#links">Portfolio</a>
-            <a href="#institutions">Affiliations</a>
-          </div>
-        </div>
-        
-        <div class="footer-section">
-          <h3>Contact</h3>
-          <div class="footer-links">
-            <a href="mailto:example@stanford.edu">Email: example@stanford.edu</a>
-            <a href="https://med.stanford.edu/" target="_blank">Stanford Medicine</a>
-            <a href="https://nelladerm.com/" target="_blank">NellaDerm Inc.</a>
-            <a href="https://myeczema.app/" target="_blank">Myeczema.app</a>
-          </div>
-        </div>
-      </div>
-      
-      <div class="footer-bottom">
-        <p>&copy; 2023 Shirmohammad Tavangari. All rights reserved. | Stanford Medicine AI Researcher</p>
-      </div>
-    </div>
-  </footer>
-  
-  <script>
-    // منوی موبایل
-    document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
-      document.querySelector('.nav-links').classList.toggle('active');
-      this.querySelector('i').classList.toggle('fa-bars');
-      this.querySelector('i').classList.toggle('fa-times');
-    });
-    
-    // بستن منوی موبایل با کلیک روی لینک
-    document.querySelectorAll('.nav-links a').forEach(link => {
-      link.addEventListener('click', function() {
-        document.querySelector('.nav-links').classList.remove('active');
-        document.querySelector('.mobile-menu-btn i').classList.add('fa-bars');
-        document.querySelector('.mobile-menu-btn i').classList.remove('fa-times');
-      });
-    });
-    
-    // اسکرول نرم
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        
-        const targetId = this.getAttribute('href');
-        if (targetId === '#') return;
-        
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-          window.scrollTo({
-            top: targetElement.offsetTop - 80,
-            behavior: 'smooth'
-          });
+        // ساده‌سازی نمایش جدول در موبایل
+        function adjustTableForMobile() {
+            const table = document.querySelector('.simple-table');
+            if (window.innerWidth < 600 && table) {
+                table.style.fontSize = '14px';
+            } else if (table) {
+                table.style.fontSize = '';
+            }
         }
-      });
-    });
-    
-    // تغییر رنگ نوار ناوبری هنگام اسکرول
-    window.addEventListener('scroll', function() {
-      const navbar = document.querySelector('.navbar');
-      if (window.scrollY > 100) {
-        navbar.style.backgroundColor = 'rgba(26, 61, 124, 0.98)';
-        navbar.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
-      } else {
-        navbar.style.backgroundColor = 'rgba(26, 61, 124, 0.95)';
-        navbar.style.boxShadow = 'none';
-      }
-    });
-  </script>
+        
+        window.addEventListener('resize', adjustTableForMobile);
+        window.addEventListener('load', adjustTableForMobile);
+    </script>
 </body>
 </html>
