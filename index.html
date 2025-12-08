@@ -5,248 +5,177 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Shirmohammad Tavangari | Stanford Medicine</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-
 <style>
-
-/* ===== GLOBAL RESET ===== */
+/* --- POSTMODERN MINIMAL FUTURISTIC STYLE --- */
 body {
   margin: 0;
-  font-family: "Inter", sans-serif;
-  background: radial-gradient(circle at 20% 30%, #0e0f16, #111827 60%, #000);
-  color: #f3f4f6;
+  font-family: 'Inter', sans-serif;
+  background: #0a0a0a;
+  color: #e6e6e6;
 }
 
-/* ===== CONTAINER ===== */
-.container {
-  max-width: 960px;
-  margin: auto;
+/* GRID BASE LAYOUT */
+.main-wrapper {
+  display: grid;
+  grid-template-columns: 1fr minmax(300px, 900px) 1fr;
   padding: 60px 20px;
 }
 
-/* ===== TITLE ===== */
-.hero-title {
-  font-size: 3rem;
-  font-weight: 800;
-  text-align: center;
-  margin-bottom: 40px;
-  background: linear-gradient(90deg, #00eaff, #e600ff);
+/* CARD */
+.card {
+  grid-column: 2;
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(12px);
+  border-radius: 22px;
+  padding: 40px;
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 0 25px rgba(0,0,0,0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 40px rgba(255,255,255,0.05);
+}
+
+/* TITLE */
+h1 {
+  font-size: 2.7rem;
+  font-weight: 700;
+  letter-spacing: -1px;
+  background: linear-gradient(90deg, #5ab9ff, #ff6cf9);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-/* ===== PROFILE CARD ===== */
-.profile-card {
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.09);
-  box-shadow: 0 8px 32px rgba(0,0,0,0.45);
-  backdrop-filter: blur(16px);
-  border-radius: 22px;
-  padding: 28px;
+/* PROFILE */
+.profile-box {
   display: flex;
-  gap: 22px;
-  flex-wrap: wrap;
+  gap: 30px;
   align-items: center;
-  transition: transform 0.3s;
+  flex-wrap: wrap;
+  margin-top: 30px;
 }
-
-.profile-card:hover {
-  transform: translateY(-4px);
-}
-
-/* ===== PROFILE PHOTO ===== */
 .profile-pic {
-  width: 165px;
-  height: 165px;
-  border-radius: 20px;
+  width: 150px;
+  height: 150px;
+  border-radius: 22px;
   object-fit: cover;
-  border: 3px solid rgba(255,255,255,0.25);
-  box-shadow: 0 0 20px rgba(0, 238, 255, 0.4);
+  border: 2px solid rgba(255,255,255,0.2);
+  box-shadow: 0 0 18px rgba(255,255,255,0.07);
+  transition: 0.3s;
+}
+.profile-pic:hover {
+  transform: scale(1.05);
 }
 
-/* ===== INTRO TEXT ===== */
 .intro-text {
-  flex: 1;
-  font-size: 1.12rem;
+  max-width: 600px;
+  font-size: 1.05rem;
   line-height: 1.7;
-  color: #d5d7db;
+  color: #dcdcdc;
 }
-
-.intro-text b {
-  color: #00eaff;
-}
-
 .intro-text a {
-  color: #77c8ff;
+  color: #5ab9ff;
   text-decoration: none;
-  font-weight: 600;
+  transition: 0.2s;
 }
 .intro-text a:hover {
-  color: #e600ff;
+  color: #ff6cf9;
 }
 
-/* ===== SECTION TITLE ===== */
+/* SECTION TITLES */
 .section-title {
-  margin-top: 60px;
-  margin-bottom: 25px;
-  font-size: 1.8rem;
-  font-weight: 700;
-  letter-spacing: -0.5px;
-  color: #ffffff;
+  margin-top: 40px;
+  font-size: 1.6rem;
+  font-weight: 600;
+  background: linear-gradient(90deg, #ff6cf9, #5ab9ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-/* ===== LINK BOX (Cards) ===== */
-.links-box {
+/* LINKS GRID */
+.links-grid {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.link-box {
+  padding: 18px 20px;
   background: rgba(255,255,255,0.05);
+  border-radius: 16px;
   border: 1px solid rgba(255,255,255,0.08);
-  padding: 30px;
-  border-radius: 18px;
-  backdrop-filter: blur(16px);
-  box-shadow: 0 6px 24px rgba(0,0,0,0.4);
+  transition: 0.3s;
+  cursor: pointer;
 }
-
-/* GROUP TITLE */
-.group-title {
-  font-size: 1.2rem;
-  margin-bottom: 14px;
-  border-left: 4px solid #00eaff;
-  padding-left: 10px;
-  color: #d9e6ff;
-  font-weight: 600;
+.link-box:hover {
+  background: rgba(255,255,255,0.12);
+  transform: translateY(-4px);
 }
-
-/* SINGLE LINK ROW */
-.link-row {
-  padding: 14px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.06);
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-
-.link-row:last-child {
-  border-bottom: none;
-}
-
-/* LINK MAIN TEXT */
-.link-main {
-  color: #ffffff;
+.link-box a {
   text-decoration: none;
-  font-size: 1.05rem;
-  font-weight: 600;
+  color: #e6e6e6;
+  font-weight: 500;
+  font-size: 1rem;
 }
 
-.link-main:hover {
-  color: #00eaff;
-}
-
-/* DESCRIPTION */
 .link-desc {
-  color: #bfc4ce;
-  font-size: 0.9rem;
-}
-
-/* TAGS */
-.link-tags {
-  margin-top: 6px;
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-}
-
-.tag {
-  padding: 3px 10px;
-  font-size: 0.75rem;
-  border-radius: 20px;
-  background: rgba(255,255,255,0.07);
-  border: 1px solid rgba(255,255,255,0.15);
-  color: #00eaff;
-}
-
-/* MULTI-LINK BUTTONS */
-.multi-links {
-  margin-top: 10px;
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-}
-
-.multi-link {
-  padding: 6px 14px;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.15);
-  border-radius: 10px;
-  text-decoration: none;
-  color: #ffffff;
   font-size: 0.85rem;
-  transition: all 0.25s;
+  opacity: 0.7;
+  margin-top: 6px;
 }
-
-.multi-link:hover {
-  background: #00eaff;
-  color: #000;
-}
-
 </style>
 </head>
 
 <body>
+<div class="main-wrapper">
+  <div class="card">
+    <h1>Shirmohammad Tavangari</h1>
 
-<div class="container">
-
-  <!-- ===== TOP TITLE ===== -->
-  <h1 class="hero-title">Shirmohammad Tavangari</h1>
-
-  <!-- ===== PROFILE CARD ===== -->
-  <div class="profile-card">
-    <img src="Me.jpeg" class="profile-pic">
-
-    <div class="intro-text">
-      I am an <b>Artificial Intelligence Researcher</b> at 
-      <a href="https://med.stanford.edu/">Stanford University School of Medicine</a>,
-      collaborating with Prof. Jayakumar Rajadas.  
-      I also work with Prof. Isabeau Prémont-Schwarz at Mila and serve as 
-      <b>Chief AI Scientist</b> at 
-      <a href="https://nelladerm.com/">NellaDerm Inc.</a> funded by Google.<br><br>
-      My research involves AI, Machine Learning, and Applied Mathematics.  
-      TEDx Speaker, Young Scientist Award 2022, and Associate Editor at Springer Applied Intelligence.
-    </div>
-  </div>
-
-  <!-- ===== LINKS SECTION ===== -->
-  <h2 class="section-title">Professional Links & Portfolio</h2>
-
-  <div class="links-box">
-
-    <!-- Group 1 -->
-    <div class="group-title">Academic Works</div>
-
-    <div class="link-row">
-      <a class="link-main" target="_blank" href="#">
-        My Latest Works on Academia.edu
-      </a>
-      <div class="link-desc">Published papers and research</div>
-      <div class="link-tags">
-        <span class="tag">Academic</span>
-        <span class="tag">2025</span>
+    <div class="profile-box">
+      <img src="Me.jpeg" class="profile-pic" alt="Profile" />
+      <div class="intro-text">
+        Artificial Intelligence Researcher at <a href="https://med.stanford.edu/" target="_blank">Stanford Medicine</a>, working with Prof. Jayakumar Rajadas. Collaborating with Prof. Isabeau Prémont‑Schwarz at Mila. Chief AI Scientist at <a href="https://nelladerm.com/" target="_blank">NellaDerm Inc.</a><br><br>
+        TEDx Speaker • Young Scientist Award 2022 • Associate Editor, Springer Applied Intelligence.
       </div>
     </div>
 
-    <div class="link-row">
-      <a class="link-main" target="_blank" href="#">
-        arXiv Research Profile on AI and Math
-      </a>
-      <div class="link-desc">Research preprints</div>
-      <div class="link-tags">
-        <span class="tag">Research</span>
-        <span class="tag">AI</span>
+    <h2 class="section-title">Professional Links</h2>
+    <div class="links-grid">
+
+      <div class="link-box">
+        <a href="https://stanford.academia.edu/ShirmohammadTavangari" target="_blank">Academia.edu Profile</a>
+        <div class="link-desc">Published research & academic works</div>
       </div>
+
+      <div class="link-box">
+        <a href="https://arxiv.org" target="_blank">arXiv Papers</a>
+        <div class="link-desc">AI & Mathematics preprints</div>
+      </div>
+
+      <div class="link-box">
+        <a href="https://otl.stanford.edu/patent" target="_blank">Stanford Patent</a>
+        <div class="link-desc">Mind as Boltzmann Machine</div>
+      </div>
+
+      <div class="link-box">
+        <a href="https://github.com/Shirmohammad-Ta" target="_blank">GitHub</a>
+        <div class="link-desc">Coding projects</div>
+      </div>
+
+      <div class="link-box">
+        <a href="https://pypi.org/project/binary-survivor/" target="_blank">Binary-Survivor</a>
+        <div class="link-desc">Python package</div>
+      </div>
+
+      <div class="link-box">
+        <a href="https://myeczema.app/" target="_blank">MyEczema.app</a>
+        <div class="link-desc">AI-powered dermatology</div>
+      </div>
+
     </div>
-
-    <!-- More groups... (You can paste full list here) -->
-
   </div>
-
 </div>
 </body>
 </html>
