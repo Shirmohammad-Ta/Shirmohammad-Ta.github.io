@@ -4,47 +4,49 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Shirmohammad Tavangari | Stanford Medicine</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-/* --- POSTMODERN MINIMAL FUTURISTIC STYLE --- */
+/* --- MODERN CLEAN WHITE STYLE --- */
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
-  background: #0a0a0a;
-  color: #e6e6e6;
+  background: #ffffff;
+  color: #333333;
+  line-height: 1.6;
 }
 
 /* GRID BASE LAYOUT */
 .main-wrapper {
   display: grid;
   grid-template-columns: 1fr minmax(300px, 900px) 1fr;
-  padding: 60px 20px;
+  padding: 40px 20px;
 }
 
 /* CARD */
 .card {
   grid-column: 2;
-  background: rgba(255, 255, 255, 0.04);
-  backdrop-filter: blur(12px);
-  border-radius: 22px;
+  background: #f8f9fa;
+  border-radius: 18px;
   padding: 40px;
-  border: 1px solid rgba(255,255,255,0.08);
-  box-shadow: 0 0 25px rgba(0,0,0,0.6);
+  border: 1px solid #eaeaea;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 0 40px rgba(255,255,255,0.05);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
 }
 
 /* TITLE */
 h1 {
   font-size: 2.7rem;
   font-weight: 700;
-  letter-spacing: -1px;
-  background: linear-gradient(90deg, #5ab9ff, #ff6cf9);
+  letter-spacing: -0.5px;
+  background: linear-gradient(90deg, #2563eb, #7c3aed);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  margin-bottom: 10px;
 }
 
 /* PROFILE */
@@ -54,76 +56,122 @@ h1 {
   align-items: center;
   flex-wrap: wrap;
   margin-top: 30px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #eaeaea;
 }
 .profile-pic {
   width: 150px;
   height: 150px;
-  border-radius: 22px;
+  border-radius: 18px;
   object-fit: cover;
-  border: 2px solid rgba(255,255,255,0.2);
-  box-shadow: 0 0 18px rgba(255,255,255,0.07);
+  border: 3px solid #eaeaea;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   transition: 0.3s;
 }
 .profile-pic:hover {
-  transform: scale(1.05);
+  transform: scale(1.03);
 }
 
 .intro-text {
   max-width: 600px;
   font-size: 1.05rem;
   line-height: 1.7;
-  color: #dcdcdc;
+  color: #444444;
 }
 .intro-text a {
-  color: #5ab9ff;
+  color: #2563eb;
   text-decoration: none;
+  font-weight: 500;
   transition: 0.2s;
 }
 .intro-text a:hover {
-  color: #ff6cf9;
+  color: #7c3aed;
+  text-decoration: underline;
 }
 
 /* SECTION TITLES */
 .section-title {
   margin-top: 40px;
+  margin-bottom: 20px;
   font-size: 1.6rem;
   font-weight: 600;
-  background: linear-gradient(90deg, #ff6cf9, #5ab9ff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #1f2937;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #eaeaea;
 }
 
 /* LINKS GRID */
 .links-grid {
-  margin-top: 20px;
+  margin-top: 10px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 20px;
 }
 
 .link-box {
-  padding: 18px 20px;
-  background: rgba(255,255,255,0.05);
-  border-radius: 16px;
-  border: 1px solid rgba(255,255,255,0.08);
-  transition: 0.3s;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 14px;
+  border: 1px solid #eaeaea;
+  transition: all 0.3s ease;
   cursor: pointer;
 }
 .link-box:hover {
-  background: rgba(255,255,255,0.12);
+  background: #f3f4f6;
   transform: translateY(-4px);
+  border-color: #d1d5db;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
 }
 .link-box a {
   text-decoration: none;
-  color: #e6e6e6;
+  color: #1e40af;
   font-weight: 500;
   font-size: 1rem;
+  display: block;
+  margin-bottom: 6px;
+}
+.link-box a:hover {
+  color: #7c3aed;
+  text-decoration: underline;
 }
 
 .link-desc {
   font-size: 0.85rem;
-  opacity: 0.7;
+  color: #6b7280;
   margin-top: 6px;
+  line-height: 1.5;
+}
+
+/* Multiple links in one box */
+.link-box .multi-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.link-box .multi-links a {
+  display: inline;
+  margin-right: 10px;
+  margin-bottom: 0;
+}
+.link-box .multi-links a:after {
+  content: "|";
+  margin-left: 10px;
+  color: #d1d5db;
+}
+.link-box .multi-links a:last-child:after {
+  content: "";
+  margin: 0;
+}
+
+/* Footer note */
+.footer-note {
+  margin-top: 50px;
+  padding-top: 20px;
+  border-top: 1px solid #eaeaea;
+  text-align: center;
+  color: #6b7280;
+  font-size: 0.9rem;
 }
 </style>
 </head>
@@ -134,10 +182,10 @@ h1 {
     <h1>Shirmohammad Tavangari</h1>
 
     <div class="profile-box">
-      <img src="Me.jpeg" class="profile-pic" alt="Profile" />
+      <img src="Me.jpeg" class="profile-pic" alt="Shirmohammad Tavangari Profile" />
       <div class="intro-text">
         I am an Artificial Intelligence Researcher at <a href="https://med.stanford.edu/" target="_blank">Stanford Medicine</a>, working with Prof. Jayakumar Rajadas. Collaborating with Prof. Isabeau Prémont‑Schwarz at Mila. Chief AI Scientist at <a href="https://nelladerm.com/" target="_blank">NellaDerm Inc.</a><br><br>
-        TEDx Speaker • Young Scientist Award 2022 • Associate Editor, Springer Applied Intelligence.
+        <strong>TEDx Speaker • Young Scientist Award 2022 • Associate Editor, Springer Applied Intelligence</strong>
       </div>
     </div>
 
@@ -147,127 +195,147 @@ h1 {
       
       <div class="link-box">
         <a href="https://stanford.academia.edu/ShirmohammadTavangari" target="_blank" rel="noopener noreferrer">My Latest Works on Academia.edu (2025)</a>
-        <div class="link-desc">Recent publications and research outputs</div>
+        <div class="link-desc">Recent publications and research outputs from 2025</div>
       </div>
 
       <div class="link-box">
         <a href="https://arxiv.org/search/?query=Shirmohammad+Tavangari&searchtype=all&source=header" target="_blank" rel="noopener noreferrer">arXiv Research Profile on AI and Math</a>
-        <div class="link-desc">Preprints and technical papers</div>
+        <div class="link-desc">Preprints and technical papers in artificial intelligence and mathematics</div>
       </div>
 
       <div class="link-box">
         <a href="https://otl.stanford.edu/patent" target="_blank" rel="noopener noreferrer">Stanford University Patent: Mind as Boltzmann Machine</a>
-        <div class="link-desc">Innovative patent in computational neuroscience</div>
+        <div class="link-desc">Innovative patent in computational neuroscience and machine learning</div>
       </div>
       
       <div class="link-box">
-        <a href="https://www.youtube.com/watch?v=k6GCBSVcEDA" target="_blank" rel="noopener noreferrer">My TED Speaker in TEDxSanabaad</a>
-        <div class="link-desc">Watch my TEDx talk</div>
+        <a href="https://www.youtube.com/watch?v=k6GCBSVcEDA" target="_blank" rel="noopener noreferrer">My TEDx Talk at TEDxSanabaad</a>
+        <div class="link-desc">Watch my TEDx presentation on artificial intelligence and innovation</div>
       </div>
 
       <div class="link-box">
-        <a href="https://github.com/Shirmohammad-Ta" target="_blank" rel="noopener noreferrer">GitHub Projects</a> | 
-        <a href="https://www.kaggle.com/smtavangari" target="_blank" rel="noopener noreferrer">Kaggle Projects</a>
-        <div class="link-desc">Code repositories and data science competitions</div>
+        <div class="multi-links">
+          <a href="https://github.com/Shirmohammad-Ta" target="_blank" rel="noopener noreferrer">GitHub Projects</a>
+          <a href="https://www.kaggle.com/smtavangari" target="_blank" rel="noopener noreferrer">Kaggle Projects</a>
+        </div>
+        <div class="link-desc">Code repositories and data science competition projects</div>
       </div>
 
       <div class="link-box">
-        <a href="https://pypi.org/project/binary-survivor/">Binary-Survivor</a> | 
-        <a href="https://pypi.org/project/survivor-optimizer/">Survivor-Optimizer</a>
-        <div class="link-desc">My PyPI packages for optimization algorithms</div>
+        <div class="multi-links">
+          <a href="https://pypi.org/project/binary-survivor/">Binary-Survivor</a>
+          <a href="https://pypi.org/project/survivor-optimizer/">Survivor-Optimizer</a>
+        </div>
+        <div class="link-desc">My Python packages on PyPI for optimization algorithms</div>
       </div>
 
       <div class="link-box">
-        <a href="https://www.harvard.edu/" target="_blank" rel="noopener noreferrer">Harvard University</a>, 
-        <a href="https://www.ubc.ca/" target="_blank" rel="noopener noreferrer">UBC</a>, 
-        <a href="https://nus.edu.sg/" target="_blank" rel="noopener noreferrer">NUS</a>, 
-        <a href="https://www.cityu.edu.hk/" target="_blank" rel="noopener noreferrer">City University of Hong Kong</a>
-        <div class="link-desc">Academic collaborations</div>
+        <div class="multi-links">
+          <a href="https://www.harvard.edu/" target="_blank" rel="noopener noreferrer">Harvard University</a>
+          <a href="https://www.ubc.ca/" target="_blank" rel="noopener noreferrer">UBC</a>
+          <a href="https://nus.edu.sg/" target="_blank" rel="noopener noreferrer">NUS</a>
+          <a href="https://www.cityu.edu.hk/" target="_blank" rel="noopener noreferrer">CityU HK</a>
+        </div>
+        <div class="link-desc">Academic collaborations with leading universities worldwide</div>
       </div>
       
       <div class="link-box">
         <a href="https://scholar.google.com/citations?hl=en&user=XhsmWO4AAAAJ&view_op=list_works&sortby=pubdate" target="_blank" rel="noopener noreferrer">Google Scholar Profile</a>
-        <div class="link-desc">Citations and academic impact</div>
+        <div class="link-desc">Citations, publications, and academic impact metrics</div>
       </div>
 
       <div class="link-box">
-        <a href="https://www.asefyilki.com/" target="_blank" rel="noopener noreferrer">Dr. Asef Yelghi Lab</a>
-        <div class="link-desc">Collaborative research lab</div>
+        <a href="https://www.asefyilki.com/" target="_blank" rel="noopener noreferrer">Dr. Asef Yelghi Lab Collaboration</a>
+        <div class="link-desc">Collaborative research in computational methods</div>
       </div>
       
       <div class="link-box">
         <a href="https://startup.google.com/programs/">Google Research Grant – Eczema.app</a>
-        <div class="link-desc">Awarded for AI research in Eczema (2025)</div>
+        <div class="link-desc">Google grant awarded for AI research in eczema management (2025)</div>
       </div>
   
       <div class="link-box">
         <a href="https://nelladerm.com/">Chief AI Scientist at NellaDerm Inc</a>
-        <div class="link-desc">Industry leadership in AI health tech</div>
+        <div class="link-desc">Leading AI research initiatives in health technology</div>
       </div>
 
       <div class="link-box">
         <a href="https://myeczema.app/">Myeczema.app Official Launch</a>
-        <div class="link-desc">AI-powered eczema management platform</div>
+        <div class="link-desc">AI-powered platform for eczema management and treatment</div>
       </div>
   
       <div class="link-box">
         <a href="https://www.amolikamankidy.com/">Mentor to Amolika Mankidy (UBC)</a>
-        <div class="link-desc">Mentorship in academic research</div>
+        <div class="link-desc">Academic research mentorship at University of British Columbia</div>
       </div>
 
       <div class="link-box">
         <a href="https://mailchi.mp/naturalproductscanada/nelladerm-crush-vegain-and-more-21421471?e=694cd49dfe">NellaDerm x Google Partnership</a>
-        <div class="link-desc">Featured by Natural Products Canada</div>
+        <div class="link-desc">Featured by Natural Products Canada in health tech news</div>
       </div>
 
       <div class="link-box">
-        <a href="https://link.springer.com/book/10.1007/978-3-031-57708-6" target="_blank" rel="noopener noreferrer">Springer Book 2024</a> | 
-        <a href="https://www.springer.com/series/7092/books?page=10" target="_blank" rel="noopener noreferrer">Springer Book 2025</a>
-        <div class="link-desc">Edited volumes published by Springer Nature</div>
+        <div class="multi-links">
+          <a href="https://link.springer.com/book/10.1007/978-3-031-57708-6" target="_blank" rel="noopener noreferrer">Springer Book 2024</a>
+          <a href="https://www.springer.com/series/7092/books?page=10" target="_blank" rel="noopener noreferrer">Springer Book 2025</a>
+        </div>
+        <div class="link-desc">Edited academic volumes published by Springer Nature</div>
       </div>
 
       <div class="link-box">
         <a href="https://link.springer.com/journal/10489/editorial-board">Associate Editor: Applied Intelligence Journal</a>
-        <div class="link-desc">Springer Nature editorial role</div>
+        <div class="link-desc">Editorial role at Springer Nature's Applied Intelligence journal</div>
       </div>
 
       <div class="link-box">
-        <a href="http://academic.oup.com/comjnl" target="_blank" rel="noopener noreferrer">Oxford</a> | 
-        <a href="https://www.sciencedirect.com/journal/decision-support-systems" target="_blank" rel="noopener noreferrer">Elsevier</a> | 
-        <a href="https://link.springer.com/journal/10994" target="_blank" rel="noopener noreferrer">Springer</a>
-        <div class="link-desc">Journal reviewer activities</div>
+        <div class="multi-links">
+          <a href="http://academic.oup.com/comjnl" target="_blank" rel="noopener noreferrer">Oxford</a>
+          <a href="https://www.sciencedirect.com/journal/decision-support-systems" target="_blank" rel="noopener noreferrer">Elsevier</a>
+          <a href="https://link.springer.com/journal/10994" target="_blank" rel="noopener noreferrer">Springer</a>
+        </div>
+        <div class="link-desc">Journal reviewer for leading academic publishers</div>
       </div>
 
       <div class="link-box">
-        <a href="https://aaai.org/conference/aaai/" target="_blank" rel="noopener noreferrer">AAAI Reviewer</a> | 
-        <a href="https://wcnc2019.ieee-wcnc.org/program.html" target="_blank" rel="noopener noreferrer">IEEE WCNC Session Chair</a>
-        <div class="link-desc">Conference contributions</div>
+        <div class="multi-links">
+          <a href="https://aaai.org/conference/aaai/" target="_blank" rel="noopener noreferrer">AAAI Reviewer</a>
+          <a href="https://wcnc2019.ieee-wcnc.org/program.html" target="_blank" rel="noopener noreferrer">IEEE WCNC Chair</a>
+        </div>
+        <div class="link-desc">Conference reviewing and session chair responsibilities</div>
       </div>
 
       <div class="link-box">
-        <a href="https://www.icacds.com/" target="_blank" rel="noopener noreferrer">ICACDS Advisor Board</a> | 
-        <a href="https://crgconferences.com/biomaterials/2024/" target="_blank" rel="noopener noreferrer">Bio Mat Organization Committee</a>
-        <div class="link-desc">Conference leadership roles</div>
+        <div class="multi-links">
+          <a href="https://www.icacds.com/" target="_blank" rel="noopener noreferrer">ICACDS Advisor</a>
+          <a href="https://crgconferences.com/biomaterials/2024/" target="_blank" rel="noopener noreferrer">Bio Mat Committee</a>
+        </div>
+        <div class="link-desc">Advisory and organizational committee roles</div>
       </div>
 
       <div class="link-box">
-        <a href="https://camad2023.ieee-camad.org/committees/technical-program-committee" target="_blank" rel="noopener noreferrer">IEEE CAMAD TPC</a> | 
-        <a href="https://iceece2021.avrasya.edu.tr/conference-advisory-scientific-committee/" target="_blank" rel="noopener noreferrer">ICEECE Scientific Committee</a>
-        <div class="link-desc">Technical program committees</div>
+        <div class="multi-links">
+          <a href="https://camad2023.ieee-camad.org/committees/technical-program-committee" target="_blank" rel="noopener noreferrer">IEEE CAMAD TPC</a>
+          <a href="https://iceece2021.avrasya.edu.tr/conference-advisory-scientific-committee/" target="_blank" rel="noopener noreferrer">ICEECE Committee</a>
+        </div>
+        <div class="link-desc">Technical program committee memberships</div>
       </div>
 
       <div class="link-box">
-        <a href="https://philosophy-ai-simulator-bnaqelec5c5ulsxxb47ust.streamlit.app/" target="_blank" rel="noopener noreferrer">Philosophy-to-Emotion Simulator</a>
-        <div class="link-desc">AI + Philosophy interactive demo</div>
+        <a href="https://philosophy-ai-simulator-bnaqelec5c5ulsxxb47ust.streamlit.app/" target="_blank" rel="noopener noreferrer">Philosophy-to-Emotion AI Simulator</a>
+        <div class="link-desc">Interactive demo combining artificial intelligence and philosophy</div>
       </div>
 
       <div class="link-box">
-        <a href="https://www.google.com/search?q=bandar+torkaman" target="_blank" rel="noopener noreferrer">Bandar-e Torkaman, Iran</a>
-        <div class="link-desc">My hometown</div>
+        <a href="https://www.google.com/search?q=bandar+torkaman" target="_blank" rel="noopener noreferrer">Bandar-e Torkaman, Iran - My Hometown</a>
+        <div class="link-desc">The city where I was born and raised</div>
       </div>
 
     </div>
-    <!-- End of New Links Section -->
+    
+    <div class="footer-note">
+      Shirmohammad Tavangari | Stanford Medicine AI Research<br>
+      Last updated: 2024
+    </div>
 
   </div>
 </div>
