@@ -3,155 +3,312 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Shirmohammad Tavangari | Stanford Medicine</title>
+<title>Shirmohammad Tavangari | Stanford Medicine AI Researcher</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
-/* --- MODERN CLEAN WHITE STYLE --- */
+/* --- MODERN & ELEGANT STYLE --- */
+:root {
+  --primary: #2563eb;
+  --primary-dark: #1d4ed8;
+  --secondary: #7c3aed;
+  --accent: #06b6d4;
+  --light-bg: #f8fafc;
+  --card-bg: #ffffff;
+  --text-primary: #1e293b;
+  --text-secondary: #64748b;
+  --border: #e2e8f0;
+  --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+  --shadow-hover: 0 20px 40px -10px rgba(0, 0, 0, 0.08);
+  --gradient: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
-  background: #ffffff;
-  color: #333333;
+  background: var(--light-bg);
+  color: var(--text-primary);
   line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Animated background pattern */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(37, 99, 235, 0.03) 0%, transparent 20%),
+    radial-gradient(circle at 90% 80%, rgba(124, 58, 237, 0.03) 0%, transparent 20%);
+  z-index: -1;
 }
 
 /* GRID BASE LAYOUT */
 .main-wrapper {
   display: grid;
-  grid-template-columns: 1fr minmax(300px, 900px) 1fr;
+  grid-template-columns: 1fr minmax(300px, 1000px) 1fr;
   padding: 40px 20px;
+  animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* CARD */
 .card {
   grid-column: 2;
-  background: #f8f9fa;
-  border-radius: 18px;
-  padding: 40px;
-  border: 1px solid #eaeaea;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  background: var(--card-bg);
+  border-radius: 24px;
+  padding: 48px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+  position: relative;
+  overflow: hidden;
 }
 
-/* TITLE - SMALLER */
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--gradient);
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-hover);
+}
+
+/* HEADER SECTION */
+.header-section {
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid var(--border);
+}
+
 h1 {
-  font-size: 1.8rem; /* Changed from 2.7rem to 1.8rem */
-  font-weight: 700;
-  letter-spacing: -0.3px;
-  color: #1f2937;
+  font-size: 2.5rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   margin-bottom: 8px;
+  line-height: 1.2;
 }
 
 .subtitle {
-  font-size: 1.1rem;
-  color: #6b7280;
-  margin-bottom: 20px;
-  font-weight: 400;
+  font-size: 1.3rem;
+  color: var(--text-secondary);
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+.title-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.tag {
+  background: rgba(37, 99, 235, 0.1);
+  color: var(--primary);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.tag i {
+  font-size: 0.8rem;
 }
 
 /* PROFILE */
 .profile-box {
   display: flex;
-  gap: 30px;
+  gap: 40px;
   align-items: center;
   flex-wrap: wrap;
-  margin-top: 20px;
-  padding-bottom: 30px;
-  border-bottom: 1px solid #eaeaea;
+  margin: 40px 0;
+  padding: 30px;
+  background: rgba(248, 250, 252, 0.8);
+  border-radius: 20px;
+  border: 1px solid rgba(226, 232, 240, 0.6);
 }
+
 .profile-pic {
-  width: 150px;
-  height: 150px;
-  border-radius: 18px;
+  width: 180px;
+  height: 180px;
+  border-radius: 20px;
   object-fit: cover;
-  border: 3px solid #eaeaea;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  transition: 0.3s;
+  border: 4px solid white;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+  filter: grayscale(15%);
 }
+
 .profile-pic:hover {
-  transform: scale(1.03);
+  transform: scale(1.05) rotate(2deg);
+  filter: grayscale(0%);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
 }
 
 .intro-text {
-  max-width: 600px;
-  font-size: 1.05rem;
-  line-height: 1.7;
-  color: #444444;
+  flex: 1;
+  min-width: 300px;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-primary);
 }
+
 .intro-text a {
-  color: #2563eb;
+  color: var(--primary);
   text-decoration: none;
-  font-weight: 500;
-  transition: 0.2s;
+  font-weight: 600;
+  position: relative;
+  transition: all 0.3s;
+  padding: 0 2px;
 }
+
+.intro-text a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
 .intro-text a:hover {
-  color: #7c3aed;
-  text-decoration: underline;
+  color: var(--secondary);
+}
+
+.intro-text a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
 }
 
 /* SECTION TITLES */
 .section-title {
-  margin-top: 40px;
-  margin-bottom: 25px;
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #1f2937;
-  padding-bottom: 12px;
-  border-bottom: 2px solid #eaeaea;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  padding-bottom: 15px;
+  border-bottom: 2px solid var(--border);
   display: flex;
   align-items: center;
-  gap: 10px;
-}
-.section-title i {
-  color: #2563eb;
+  gap: 12px;
+  position: relative;
 }
 
-/* LINKS GRID - REORGANIZED */
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 60px;
+  height: 2px;
+  background: var(--gradient);
+}
+
+.section-title i {
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 1.4rem;
+}
+
+/* LINKS GRID */
 .links-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  gap: 25px;
-  margin-top: 15px;
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  gap: 30px;
+  margin-top: 20px;
 }
 
 .link-category {
-  background: #ffffff;
-  border-radius: 14px;
-  border: 1px solid #eaeaea;
-  padding: 25px;
+  background: var(--card-bg);
+  border-radius: 18px;
+  border: 1px solid var(--border);
+  padding: 28px;
   transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
+
+.link-category::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--gradient);
+  transform: scaleY(0);
+  transition: transform 0.3s ease;
+}
+
 .link-category:hover {
-  border-color: #d1d5db;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  border-color: var(--primary);
+  box-shadow: var(--shadow);
+  transform: translateY(-5px);
+}
+
+.link-category:hover::before {
+  transform: scaleY(1);
 }
 
 .category-title {
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #1f2937;
-  margin-bottom: 20px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid #eaeaea;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 24px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
 }
+
 .category-title i {
-  color: #7c3aed;
+  color: var(--primary);
+  width: 24px;
+  text-align: center;
 }
 
 .link-item {
-  margin-bottom: 16px;
-  padding-bottom: 16px;
-  border-bottom: 1px solid #f3f4f6;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #f1f5f9;
+  position: relative;
+  padding-left: 10px;
 }
+
 .link-item:last-child {
   margin-bottom: 0;
   padding-bottom: 0;
@@ -159,92 +316,140 @@ h1 {
 }
 
 .link-item a {
-  color: #1e40af;
+  color: var(--text-primary);
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 1rem;
   display: flex;
   align-items: flex-start;
-  gap: 10px;
-  transition: color 0.2s;
+  gap: 12px;
+  transition: all 0.2s;
+  line-height: 1.5;
 }
+
 .link-item a:hover {
-  color: #7c3aed;
-  text-decoration: underline;
+  color: var(--primary);
+  transform: translateX(5px);
 }
-.link-item a i {
-  margin-top: 3px;
-  color: #6b7280;
+
+.link-item a i:first-child {
+  color: var(--secondary);
   font-size: 0.9rem;
+  margin-top: 4px;
+  flex-shrink: 0;
 }
 
 .link-desc {
-  font-size: 0.85rem;
-  color: #6b7280;
-  margin-top: 5px;
-  margin-left: 26px;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-top: 6px;
+  margin-left: 32px;
   line-height: 1.5;
 }
 
 .multi-link {
-  display: inline-flex;
+  display: flex;
   flex-wrap: wrap;
-  gap: 5px;
-  margin-left: 5px;
-}
-.multi-link a {
-  display: inline;
-  font-size: 0.95rem;
-}
-.multi-link a:after {
-  content: "•";
-  margin: 0 8px;
-  color: #d1d5db;
-}
-.multi-link a:last-child:after {
-  content: "";
-  margin: 0;
+  gap: 8px;
+  margin-top: 8px;
 }
 
-/* Badge for important items */
+.multi-link a {
+  display: inline-block;
+  font-size: 0.9rem;
+  color: var(--primary);
+  text-decoration: none;
+  padding: 4px 10px;
+  background: rgba(37, 99, 235, 0.08);
+  border-radius: 12px;
+  transition: all 0.2s;
+}
+
+.multi-link a:hover {
+  background: rgba(37, 99, 235, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Badge */
 .badge {
   display: inline-block;
-  background: #e0f2fe;
-  color: #0369a1;
+  background: var(--gradient);
+  color: white;
   font-size: 0.7rem;
-  font-weight: 600;
-  padding: 2px 8px;
+  font-weight: 700;
+  padding: 3px 10px;
   border-radius: 12px;
   margin-left: 8px;
   vertical-align: middle;
+  letter-spacing: 0.3px;
 }
 
-/* Footer note */
+/* Footer */
 .footer-note {
-  margin-top: 50px;
-  padding-top: 20px;
-  border-top: 1px solid #eaeaea;
+  margin-top: 60px;
+  padding-top: 25px;
+  border-top: 1px solid var(--border);
   text-align: center;
-  color: #6b7280;
-  font-size: 0.9rem;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.footer-note strong {
+  color: var(--text-primary);
+  font-weight: 600;
 }
 
 /* Responsive */
+@media (max-width: 1024px) {
+  .links-grid {
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  }
+}
+
 @media (max-width: 768px) {
   .main-wrapper {
     grid-template-columns: 1fr;
-    padding: 20px;
+    padding: 20px 15px;
   }
+  
   .card {
     grid-column: 1;
-    padding: 25px;
+    padding: 30px 25px;
+    border-radius: 20px;
   }
+  
   .links-grid {
     grid-template-columns: 1fr;
   }
+  
   .profile-box {
     flex-direction: column;
     text-align: center;
+    padding: 25px;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  .subtitle {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    padding: 25px 20px;
+  }
+  
+  .profile-pic {
+    width: 150px;
+    height: 150px;
+  }
+  
+  h1 {
+    font-size: 1.8rem;
   }
 }
 </style>
@@ -253,14 +458,21 @@ h1 {
 <body>
 <div class="main-wrapper">
   <div class="card">
-    <h1>Shirmohammad Tavangari</h1>
-    <div class="subtitle">AI Researcher at Stanford Medicine | Chief AI Scientist at NellaDerm Inc.</div>
+    <div class="header-section">
+      <h1>Shirmohammad Tavangari</h1>
+      <div class="subtitle">AI Researcher at Stanford Medicine | Chief AI Scientist at NellaDerm Inc.</div>
+      <div class="title-tags">
+        <span class="tag"><i class="fas fa-microphone"></i> TEDx Speaker</span>
+        <span class="tag"><i class="fas fa-award"></i> Young Scientist Award 2022</span>
+        <span class="tag"><i class="fas fa-edit"></i> Associate Editor, Springer</span>
+      </div>
+    </div>
 
     <div class="profile-box">
       <img src="Me.jpeg" class="profile-pic" alt="Shirmohammad Tavangari Profile" />
       <div class="intro-text">
-        I am an Artificial Intelligence Researcher at <a href="https://med.stanford.edu/" target="_blank">Stanford Medicine</a>, working with Prof. Jayakumar Rajadas. Collaborating with Prof. Isabeau Prémont‑Schwarz at Mila. Chief AI Scientist at <a href="https://nelladerm.com/" target="_blank">NellaDerm Inc.</a><br><br>
-        <strong>TEDx Speaker • Young Scientist Award 2022 • Associate Editor, Springer Applied Intelligence</strong>
+        <p>I am an Artificial Intelligence Researcher at <a href="https://med.stanford.edu/" target="_blank">Stanford Medicine</a>, working with Prof. Jayakumar Rajadas. Collaborating with Prof. Isabeau Prémont‑Schwarz at Mila. Chief AI Scientist at <a href="https://nelladerm.com/" target="_blank">NellaDerm Inc.</a></p>
+        <p>My research bridges computational neuroscience, AI theory, and practical applications in healthcare. I'm passionate about developing intelligent systems that enhance human understanding and medical outcomes.</p>
       </div>
     </div>
 
@@ -295,17 +507,6 @@ h1 {
           </a>
           <div class="link-desc">Preprints in AI and Mathematics</div>
         </div>
-        
-        <!-- Google Scholar - دی‌اکتیو شده -->
-        <!--
-        <div class="link-item">
-          <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=JmpmBXsAAAAJ" target="_blank" rel="noopener noreferrer">
-            <i class="fas fa-external-link-alt"></i>
-            Google Scholar
-          </a>
-          <div class="link-desc">Citations and academic impact</div>
-        </div>
-        -->
       </div>
       
       <!-- Publications & Patents -->
@@ -331,7 +532,7 @@ h1 {
           <div class="link-desc">Edited volume published by Springer Nature</div>
         </div>
 
-         <div class="link-item">
+        <div class="link-item">
           <a href="https://www.springernature.com/gp/products/books" target="_blank" rel="noopener noreferrer">
             <i class="fas fa-external-link-alt"></i>
             Springer Book 2026 (Upcoming)
@@ -360,9 +561,7 @@ h1 {
             <i class="fas fa-external-link-alt"></i>
             AAAI Conference Reviewer
           </a>
-          <div class="multi-link">
-            <a href="https://wcnc2019.ieee-wcnc.org/program.html" target="_blank">IEEE WCNC Session Chair</a>
-          </div>
+          <div class="link-desc">Peer reviewer for AAAI conference</div>
         </div>
         
         <div class="link-item">
@@ -370,9 +569,7 @@ h1 {
             <i class="fas fa-external-link-alt"></i>
             ICACDS Advisory Board
           </a>
-          <div class="multi-link">
-            <a href="https://crgconferences.com/biomaterials/2024/" target="_blank">Bio Mat Organization Committee</a>
-          </div>
+          <div class="link-desc">Advisory board member for ICACDS</div>
         </div>
         
         <div class="link-item">
@@ -380,9 +577,7 @@ h1 {
             <i class="fas fa-external-link-alt"></i>
             IEEE CAMAD TPC Member
           </a>
-          <div class="multi-link">
-            <a href="https://iceece2021.avrasya.edu.tr/conference-advisory-scientific-committee/" target="_blank">ICEECE Scientific Committee</a>
-          </div>
+          <div class="link-desc">Technical Program Committee member</div>
         </div>
         
         <div class="link-item">
@@ -407,9 +602,7 @@ h1 {
             <i class="fab fa-github"></i>
             GitHub Projects
           </a>
-          <div class="multi-link">
-            <a href="https://www.kaggle.com/smtavangari" target="_blank">Kaggle Projects</a>
-          </div>
+          <div class="link-desc">Open-source AI and research projects</div>
         </div>
         
         <div class="link-item">
@@ -417,9 +610,7 @@ h1 {
             <i class="fab fa-python"></i>
             PyPI: Binary-Survivor
           </a>
-          <div class="multi-link">
-            <a href="https://pypi.org/project/survivor-optimizer/" target="_blank">Survivor-Optimizer</a>
-          </div>
+          <div class="link-desc">Python optimization library</div>
         </div>
         
         <div class="link-item">
@@ -454,18 +645,6 @@ h1 {
           <div class="link-desc">AI-powered eczema management platform</div>
         </div>
         
-        <!-- Google Research Grant - Eczema.app - دی‌اکتیو شده -->
-        <!--
-        <div class="link-item">
-          <a href="https://startup.google.com/programs/" target="_blank" rel="noopener noreferrer">
-            <i class="fab fa-google"></i>
-            Google Research Grant - Eczema.app
-            <span class="badge">2025</span>
-          </a>
-          <div class="link-desc">Awarded for AI research in eczema</div>
-        </div>
-        -->
-        
         <div class="link-item">
           <a href="https://mailchi.mp/naturalproductscanada/nelladerm-crush-vegain-and-more-21421471?e=694cd49dfe" target="_blank" rel="noopener noreferrer">
             <i class="fas fa-external-link-alt"></i>
@@ -490,18 +669,14 @@ h1 {
           <div class="link-desc">Watch my TEDx presentation</div>
         </div>
         
-        <!-- Young Scientist Award 2022 - دی‌اکتیو شده -->
-        <!--
         <div class="link-item">
-        <a href="https://www.ubc.ca/" target="_blank" rel="noopener noreferrer">
-          <i class="fas fa-award"></i>
-          Young Scientist Award 2022
-        </a>
+          <a href="https://www.ubc.ca/" target="_blank" rel="noopener noreferrer">
+            <i class="fas fa-award"></i>
+            Young Scientist Award 2022
+          </a>
           <div class="link-desc">Recognition for scientific contributions</div>
         </div>
-        -->
       </div>
-     
       
       <!-- Collaborations -->
       <div class="link-category">
@@ -555,7 +730,8 @@ h1 {
       
     </div>
     <!-- END OF REORGANIZED LINKS SECTION -->
-        <!-- AWARDS SECTION -->
+    
+    <!-- AWARDS SECTION -->
     <div class="section-title">
       <i class="fas fa-award"></i>
       Selected Awards & Grants
@@ -570,7 +746,6 @@ h1 {
           Awards & Honors
         </div>
         
-        <!-- 2023 - ACM (جدیدترین) -->
         <div class="link-item">
           <a href="https://www.acm.org/" target="_blank" rel="noopener noreferrer">
             <i class="fas fa-external-link-alt"></i>
@@ -580,17 +755,15 @@ h1 {
           <div class="link-desc">Honored by ACM for contributions to digital library</div>
         </div>
         
-        <!-- 2023 - IBM -->
         <div class="link-item">
           <a href="https://www.ibm.com/" target="_blank" rel="noopener noreferrer">
             <i class="fab fa-ibm"></i>
             Selected for IBM Global Summer School | Top 50 Worldwide
             <span class="badge">2023</span>
           </a>
-          <div class="link-desc">Chosen among top 50 participants globally for IBM's prestigious summer program</div>
+          <div class="link-desc">Chosen among top 50 participants globally</div>
         </div>
         
-        <!-- 2022 -->
         <div class="link-item">
           <a href="https://www.ubc.ca/" target="_blank" rel="noopener noreferrer">
             <i class="fas fa-external-link-alt"></i>
@@ -600,16 +773,14 @@ h1 {
           <div class="link-desc">Recognition for outstanding scientific achievements</div>
         </div>
         
-        <!-- 2019 (قدیمی‌ترین) -->
         <div class="link-item">
           <a href="https://www.ubc.ca/" target="_blank" rel="noopener noreferrer">
             <i class="fas fa-external-link-alt"></i>
             Selected For UBC Research Study
             <span class="badge">2019</span>
           </a>
-          <div class="link-desc">Chosen for prestigious research program at University of British Columbia</div>
+          <div class="link-desc">Chosen for prestigious research program</div>
         </div>
-        
       </div>
       
       <!-- Grants Category -->
@@ -619,17 +790,15 @@ h1 {
           Research Grants
         </div>
         
-        <!-- 2025 (جدیدترین گرانت) -->
         <div class="link-item">
           <a href="https://startup.google.com/programs/" target="_blank" rel="noopener noreferrer">
             <i class="fab fa-google"></i>
             Google Research Award
             <span class="badge">2025</span>
           </a>
-          <div class="link-desc">Awarded for AI research in eczema management through Google Startup Program</div>
+          <div class="link-desc">Awarded for AI research in eczema management</div>
         </div>
         
-        <!-- 2019 (قدیمی‌ترین گرانت) -->
         <div class="link-item">
           <a href="https://bsip.ba/blog-items/bsip-at-foan-2019/" target="_blank" rel="noopener noreferrer">
             <i class="fas fa-external-link-alt"></i>
@@ -639,18 +808,15 @@ h1 {
           <div class="link-desc">Awarded travel grant to present at FOAN2019</div>
         </div>
       </div>
-      
     </div>
     <!-- END OF AWARDS SECTION -->
     
     <div class="footer-note">
-      Shirmohammad Tavangari | Stanford Medicine AI Research<br>
-      Last updated: 2025
+      <strong>Shirmohammad Tavangari</strong><br>
+      AI Researcher at Stanford Medicine | Building intelligent systems for better healthcare<br>
+      Last updated: 2025 | Designed with modern aesthetics
     </div>
-
   </div>
 </div>
 </body>
 </html>
-
-
