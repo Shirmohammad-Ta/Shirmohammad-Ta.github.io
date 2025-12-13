@@ -89,6 +89,7 @@ body::before {
   max-width: 300px;
   width: auto;
   transition: transform 0.3s ease;
+  object-fit: contain;
 }
 
 .stanford-logo:hover {
@@ -146,7 +147,7 @@ body::before {
   margin-bottom: 30px;
 }
 
-h2 {
+h1 {
   font-size: 2.5rem;
   font-weight: 800;
   letter-spacing: -0.5px;
@@ -188,16 +189,11 @@ h2 {
   font-size: 0.8rem;
 }
 
-.tag.stanford-tag {
-  background: rgba(177, 4, 14, 0.1);
-  color: var(--stanford-cardinal);
-}
-
 /* PROFILE */
 .profile-box {
   display: flex;
   gap: 40px;
-  align-items: center;
+  align-items: flex-start;
   flex-wrap: wrap;
   margin: 40px 0;
   padding: 30px;
@@ -505,6 +501,10 @@ h2 {
   .title-tags {
     justify-content: center;
   }
+  
+  .stanford-logo {
+    height: 80px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -522,7 +522,16 @@ h2 {
   }
   
   .stanford-logo {
-    height: 40px;
+    height: 60px;
+  }
+  
+  .title-tags {
+    gap: 8px;
+  }
+  
+  .tag {
+    font-size: 0.8rem;
+    padding: 5px 10px;
   }
 }
 </style>
@@ -535,30 +544,26 @@ h2 {
     <div class="header-with-logo">
       <div class="stanford-logo-container">
         <!-- عکس دپارتمان Stanford Medicine -->
-        <img src="download.png" class="stanford-logo" alt="Stanford Medicine Department Logo">
-        
-        <div class="stanford-text">
-          <div class="stanford-university">Stanford University</div>
-          <div class="stanford-medicine">School of Medicine</div>
-        </div>
+        <img src="download.png" class="stanford-logo" alt="Stanford Medicine">
       </div>
       
       <div class="personal-info-section">
         <h1>Shirmohammad Tavangari</h1>
-        <div class="subtitle">AI Researcher at Stanford Medicine | Chief AI Scientist at NellaDerm Inc.</div>
+        <div class="subtitle">AI Researcher at Stanford Medicine</div>
+        
         <div class="title-tags">
-          <span class="tag stanford-tag"><i class="fas fa-university"></i> Stanford Medicine</span>
           <span class="tag"><i class="fas fa-microphone"></i> TEDx Speaker</span>
-          <span class="tag"><i class="fas fa-award"></i> Young Scientist Award 2022</span>
-          <span class="tag"><i class="fas fa-edit"></i> Associate Editor, Springer</span>
+          <span class="tag"><i class="fas fa-award"></i> Young Scientist Award</span>
+          <span class="tag"><i class="fas fa-edit"></i> Springer Editor</span>
         </div>
       </div>
     </div>
 
     <div class="profile-box">
-      <img src="Me.jpeg" class="profile-pic" alt="Shirmohammad Tavangari Profile" />
+      <img src="Me.jpeg" class="profile-pic" alt="Profile Photo" />
       <div class="intro-text">
-        <p>I am an Artificial Intelligence Researcher at <a href="https://med.stanford.edu/" target="_blank">Stanford Medicine</a>, working with Prof. Jayakumar Rajadas. Collaborating with Prof. Isabeau Prémont‑Schwarz at Mila. Chief AI Scientist at <a href="https://nelladerm.com/" target="_blank">NellaDerm Inc.</a></p>
+        <p><strong>Chief AI Scientist at NellaDerm Inc.</strong></p>
+        <p>I am an Artificial Intelligence Researcher at <a href="https://med.stanford.edu/" target="_blank">Stanford Medicine</a>, working with Prof. Jayakumar Rajadas. Collaborating with Prof. Isabeau Prémont‑Schwarz at Mila.</p>
         <p>My research bridges computational neuroscience, AI theory, and practical applications in healthcare. I'm passionate about developing intelligent systems that enhance human understanding and medical outcomes.</p>
       </div>
     </div>
@@ -868,7 +873,7 @@ h2 {
         
         <div class="link-item">
           <a href="https://www.ibm.com/" target="_blank" rel="noopener noreferrer">
-           <i class="fas fa-external-link-alt"></i>
+            <i class="fas fa-external-link-alt"></i>
             Selected for IBM Global Summer School | Top 50 Worldwide
             <span class="badge">2023</span>
           </a>
@@ -925,12 +930,9 @@ h2 {
     <div class="footer-note">
       <strong>Shirmohammad Tavangari</strong><br>
       AI Researcher at Stanford Medicine | Building intelligent systems for better healthcare<br>
-      Last updated: 2025 | Designed with modern aesthetics
+      Last updated: 2025
     </div>
   </div>
 </div>
 </body>
 </html>
-
-
-
