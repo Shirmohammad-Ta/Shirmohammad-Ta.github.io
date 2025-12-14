@@ -66,53 +66,6 @@ body::before {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* HEADER WITH STANFORD LOGO */
-.header-with-logo {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 30px;
-  padding-bottom: 30px;
-  border-bottom: 1px solid var(--border);
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-.stanford-logo-container {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
-.stanford-logo {
-  height: 100px;
-  width: auto;
-  max-width: 220px;
-  transition: transform 0.3s ease;
-}
-
-.stanford-logo:hover {
-  transform: scale(1.05);
-}
-
-.stanford-text {
-  display: flex;
-  flex-direction: column;
-}
-
-.stanford-university {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: var(--stanford-cardinal);
-  letter-spacing: 0.5px;
-}
-
-.stanford-medicine {
-  font-size: 0.9rem;
-  color: var(--text-secondary);
-  font-weight: 500;
-}
-
 /* CARD */
 .card {
   grid-column: 2;
@@ -141,9 +94,43 @@ body::before {
   box-shadow: var(--shadow-hover);
 }
 
-/* PERSONAL INFO SECTION */
-.personal-info-section {
-  margin-bottom: 30px;
+/* HEADER SECTION - MERGED DESIGN */
+.header-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 40px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid var(--border);
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  flex: 1;
+  min-width: 300px;
+}
+
+.stanford-logo {
+  height: 80px;
+  width: auto;
+  max-width: 180px;
+  transition: transform 0.3s ease;
+}
+
+.stanford-logo:hover {
+  transform: scale(1.05);
+}
+
+.header-info {
+  flex: 1;
+}
+
+.name-and-stanford {
+  margin-bottom: 15px;
 }
 
 h1 {
@@ -154,15 +141,35 @@ h1 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  margin-bottom: 8px;
+  margin-bottom: 5px;
   line-height: 1.2;
+}
+
+.stanford-titles {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.stanford-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--stanford-cardinal);
+  letter-spacing: 0.5px;
+}
+
+.medicine-title {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  font-weight: 500;
 }
 
 .subtitle {
   font-size: 1.3rem;
   color: var(--text-secondary);
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   font-weight: 500;
+  line-height: 1.5;
 }
 
 .title-tags {
@@ -175,13 +182,13 @@ h1 {
 .tag {
   background: rgba(37, 99, 235, 0.1);
   color: var(--primary);
-  padding: 6px 14px;
+  padding: 8px 16px;
   border-radius: 20px;
   font-size: 0.85rem;
   font-weight: 600;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
 }
 
 .tag i {
@@ -551,15 +558,18 @@ h1 {
     border-radius: 20px;
   }
   
-  .header-with-logo {
+  .header-section {
     flex-direction: column;
     text-align: center;
     align-items: center;
+    gap: 20px;
   }
   
-  .stanford-logo-container {
-    justify-content: center;
-    margin-bottom: 10px;
+  .header-left {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    gap: 20px;
   }
   
   .links-grid {
@@ -612,7 +622,7 @@ h1 {
   }
   
   .stanford-logo {
-    height: 40px;
+    height: 60px;
   }
   
   .tab-button {
@@ -627,31 +637,37 @@ h1 {
 
 <body>
 <div class="main-wrapper">
+  <!-- MAIN CARD -->
   <div class="card">
-    <!-- HEADER WITH STANFORD LOGO -->
-    <div class="header-with-logo">
-      <div class="stanford-logo-container">
-        <!-- عکس دپارتمان Stanford Medicine -->
+    <!-- HEADER SECTION - MERGED DESIGN -->
+    <div class="header-section">
+      <div class="header-left">
+        <!-- Stanford Logo -->
         <img src="download.png" class="stanford-logo" alt="Stanford Medicine Department Logo">
         
-        <div class="stanford-text">
-          <div class="stanford-university">Stanford University</div>
-          <div class="stanford-medicine">School of Medicine</div>
-        </div>
-      </div>
-      
-      <div class="personal-info-section">
-        <h1>Shirmohammad Tavangari</h1>
-        <div class="subtitle">AI Researcher at Stanford Medicine | Chief AI Scientist at NellaDerm Inc.</div>
-        <div class="title-tags">
-          <span class="tag stanford-tag"><i class="fas fa-university"></i> Stanford Medicine</span>
-          <span class="tag"><i class="fas fa-microphone"></i> TEDx Speaker</span>
-          <span class="tag"><i class="fas fa-award"></i> Young Scientist Award 2022</span>
-          <span class="tag"><i class="fas fa-edit"></i> Associate Editor, Springer</span>
+        <!-- Name and Stanford Info -->
+        <div class="header-info">
+          <div class="name-and-stanford">
+            <h1>Shirmohammad Tavangari</h1>
+            <div class="stanford-titles">
+              <div class="stanford-title">Stanford University</div>
+              <div class="medicine-title">School of Medicine</div>
+            </div>
+          </div>
+          
+          <div class="subtitle">AI Researcher at Stanford Medicine | Chief AI Scientist at NellaDerm Inc.</div>
+          
+          <div class="title-tags">
+            <span class="tag stanford-tag"><i class="fas fa-university"></i> Stanford Medicine</span>
+            <span class="tag"><i class="fas fa-microphone"></i> TEDx Speaker</span>
+            <span class="tag"><i class="fas fa-award"></i> Young Scientist Award 2022</span>
+            <span class="tag"><i class="fas fa-edit"></i> Associate Editor, Springer</span>
+          </div>
         </div>
       </div>
     </div>
 
+    <!-- PROFILE SECTION -->
     <div class="profile-box">
       <img src="Me.jpeg" class="profile-pic" alt="Shirmohammad Tavangari Profile" />
       <div class="intro-text">
@@ -660,7 +676,12 @@ h1 {
       </div>
     </div>
 
-    
+    <!-- FOOTER -->
+    <div class="footer-note">
+      <strong>Shirmohammad Tavangari</strong><br>
+      AI Researcher at Stanford Medicine | Building intelligent systems for better healthcare<br>
+      Last updated: 2025 | Designed with modern aesthetics
+    </div>
   </div>
   
   <!-- TABS CONTAINER - MOVED TO BOTTOM -->
