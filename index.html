@@ -37,7 +37,6 @@ body {
   color: var(--text-primary);
   line-height: 1.6;
   overflow-x: hidden;
-  padding-top: 80px; /* Space for fixed navbar */
 }
 
 /* Animated background pattern */
@@ -52,83 +51,6 @@ body::before {
     radial-gradient(circle at 10% 20%, rgba(37, 99, 235, 0.03) 0%, transparent 20%),
     radial-gradient(circle at 90% 80%, rgba(124, 58, 237, 0.03) 0%, transparent 20%);
   z-index: -1;
-}
-
-/* MAIN NAVBAR - Fixed at top like Prorok Lab */
-.main-navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: var(--card-bg);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  z-index: 1000;
-  border-bottom: 1px solid var(--border);
-}
-
-.navbar-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 70px;
-}
-
-.navbar-menu {
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  gap: 0;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-}
-
-.navbar-item {
-  position: relative;
-}
-
-.navbar-link {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 0 22px;
-  height: 70px;
-  text-decoration: none;
-  color: var(--text-secondary);
-  font-weight: 600;
-  font-size: 0.95rem;
-  white-space: nowrap;
-  transition: all 0.3s ease;
-  border-bottom: 3px solid transparent;
-}
-
-.navbar-link:hover {
-  color: var(--primary);
-  background: rgba(37, 99, 235, 0.05);
-}
-
-.navbar-link.active {
-  color: var(--primary);
-  border-bottom: 3px solid var(--gradient);
-  background: rgba(37, 99, 235, 0.08);
-}
-
-.navbar-link i {
-  font-size: 0.9rem;
-}
-
-/* Mobile menu toggle (hidden on desktop) */
-.menu-toggle {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  color: var(--text-secondary);
-  cursor: pointer;
-  padding: 10px;
 }
 
 /* GRID BASE LAYOUT */
@@ -237,7 +159,7 @@ body::before {
 }
 
 h1 {
-  font-size: 2.2rem;
+  font-size: 2.2rem; /* تغییر از 2.8rem به 2.2rem */
   font-weight: 800;
   letter-spacing: -0.5px;
   background: var(--gradient);
@@ -249,7 +171,7 @@ h1 {
 }
 
 .subtitle {
-  font-size: 1.3rem;
+  font-size: 1.3rem; /* کمی کوچکتر از قبل */
   color: var(--text-secondary);
   margin-bottom: 25px;
   font-weight: 500;
@@ -615,13 +537,6 @@ h1 {
 }
 
 /* Responsive */
-@media (max-width: 1100px) {
-  .navbar-link {
-    padding: 0 18px;
-    font-size: 0.9rem;
-  }
-}
-
 @media (max-width: 1024px) {
   .links-grid {
     grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
@@ -634,57 +549,7 @@ h1 {
   }
 }
 
-@media (max-width: 900px) {
-  .navbar-menu {
-    display: none;
-    position: absolute;
-    top: 70px;
-    left: 0;
-    width: 100%;
-    background: var(--card-bg);
-    flex-direction: column;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease;
-  }
-  
-  .navbar-menu.active {
-    display: flex;
-    max-height: 500px;
-  }
-  
-  .navbar-item {
-    width: 100%;
-  }
-  
-  .navbar-link {
-    height: 60px;
-    padding: 0 25px;
-    border-bottom: 1px solid var(--border);
-    border-left: 4px solid transparent;
-  }
-  
-  .navbar-link.active {
-    border-left: 4px solid var(--gradient);
-    border-bottom: 1px solid var(--border);
-  }
-  
-  .menu-toggle {
-    display: block;
-    margin-left: auto;
-  }
-  
-  .navbar-container {
-    justify-content: space-between;
-  }
-}
-
 @media (max-width: 768px) {
-  body {
-    padding-top: 70px;
-  }
-  
   .main-wrapper {
     grid-template-columns: 1fr;
     padding: 20px 15px;
@@ -724,7 +589,7 @@ h1 {
   }
   
   h1 {
-    font-size: 1.8rem;
+    font-size: 1.8rem; /* کوچکتر در موبایل */
   }
   
   .subtitle {
@@ -757,7 +622,7 @@ h1 {
   }
   
   h1 {
-    font-size: 1.6rem;
+    font-size: 1.6rem; /* کوچکتر در موبایل کوچک */
   }
   
   .stanford-logo-img {
@@ -779,85 +644,11 @@ h1 {
     font-size: 0.85rem;
     justify-content: flex-start;
   }
-  
-  .navbar-link {
-    padding: 0 20px;
-    font-size: 0.85rem;
-  }
-  
-  .navbar-link i {
-    font-size: 0.8rem;
-  }
 }
 </style>
 </head>
 
 <body>
-<!-- MAIN NAVBAR - Fixed at top -->
-<nav class="main-navbar">
-  <div class="navbar-container">
-    <button class="menu-toggle" id="menuToggle">
-      <i class="fas fa-bars"></i>
-    </button>
-    <ul class="navbar-menu" id="navbarMenu">
-      <li class="navbar-item">
-        <a href="#" class="navbar-link active" data-target="research">
-          <i class="fas fa-graduation-cap"></i>
-          <span>Research Profiles</span>
-        </a>
-      </li>
-      <li class="navbar-item">
-        <a href="#" class="navbar-link" data-target="publications">
-          <i class="fas fa-book"></i>
-          <span>Publications</span>
-        </a>
-      </li>
-      <li class="navbar-item">
-        <a href="#" class="navbar-link" data-target="conferences">
-          <i class="fas fa-users"></i>
-          <span>Conferences</span>
-        </a>
-      </li>
-      <li class="navbar-item">
-        <a href="#" class="navbar-link" data-target="projects">
-          <i class="fas fa-code"></i>
-          <span>Projects & Code</span>
-        </a>
-      </li>
-      <li class="navbar-item">
-        <a href="#" class="navbar-link" data-target="industry">
-          <i class="fas fa-briefcase"></i>
-          <span>Industry</span>
-        </a>
-      </li>
-      <li class="navbar-item">
-        <a href="#" class="navbar-link" data-target="talks">
-          <i class="fas fa-video"></i>
-          <span>Talks & Media</span>
-        </a>
-      </li>
-      <li class="navbar-item">
-        <a href="#" class="navbar-link" data-target="collaborations">
-          <i class="fas fa-handshake"></i>
-          <span>Collaborations</span>
-        </a>
-      </li>
-      <li class="navbar-item">
-        <a href="#" class="navbar-link" data-target="personal">
-          <i class="fas fa-user"></i>
-          <span>Personal</span>
-        </a>
-      </li>
-      <li class="navbar-item">
-        <a href="#" class="navbar-link" data-target="awards">
-          <i class="fas fa-award"></i>
-          <span>Awards</span>
-        </a>
-      </li>
-    </ul>
-  </div>
-</nav>
-
 <div class="main-wrapper">
   <!-- MAIN CARD -->
   <div class="card">
@@ -1323,87 +1114,42 @@ h1 {
 </div>
 
 <script>
-// Tab and Navigation switching functionality - UPDATED
+// Tab switching functionality
 document.addEventListener('DOMContentLoaded', function() {
-    const allNavItems = document.querySelectorAll('.tab-button, .navbar-link');
-    const tabContents = document.querySelectorAll('.tab-content');
-    const menuToggle = document.getElementById('menuToggle');
-    const navbarMenu = document.getElementById('navbarMenu');
-    
-    // Function to switch tabs and sync navigation
-    function switchToTab(tabId) {
-        // Hide all tab contents
-        tabContents.forEach(content => {
-            content.classList.remove('active');
-        });
-        
-        // Remove active class from all nav items (both navbar and tabs)
-        allNavItems.forEach(item => {
-            item.classList.remove('active');
-        });
-        
-        // Show the selected tab content
-        document.getElementById(tabId).classList.add('active');
-        
-        // Add active class to corresponding nav items
-        document.querySelectorAll(`[data-target="${tabId}"]`).forEach(item => {
-            item.classList.add('active');
-        });
-        
-        // Also activate corresponding tab button if exists
-        const tabButton = document.querySelector(`.tab-button[data-tab="${tabId}"]`);
-        if (tabButton) {
-            tabButton.classList.add('active');
-        }
-        
-        // Close mobile menu after selection
-        if (navbarMenu.classList.contains('active')) {
-            navbarMenu.classList.remove('active');
-        }
-    }
-    
-    // Add click event to all navigation items
-    allNavItems.forEach(item => {
-        item.addEventListener('click', function(e) {
-            e.preventDefault();
-            const tabId = this.getAttribute('data-target') || this.getAttribute('data-tab');
-            if (tabId) {
-                switchToTab(tabId);
-                
-                // Smooth scroll to tabs container for navbar items
-                if (this.classList.contains('navbar-link')) {
-                    document.querySelector('.tabs-container').scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            }
-        });
+  const tabButtons = document.querySelectorAll('.tab-button');
+  const tabContents = document.querySelectorAll('.tab-content');
+  
+  // Function to switch tabs
+  function switchTab(tabId) {
+    // Hide all tab contents
+    tabContents.forEach(content => {
+      content.classList.remove('active');
     });
     
-    // Mobile menu toggle
-    menuToggle.addEventListener('click', function() {
-        navbarMenu.classList.toggle('active');
-        this.querySelector('i').classList.toggle('fa-bars');
-        this.querySelector('i').classList.toggle('fa-times');
+    // Remove active class from all tab buttons
+    tabButtons.forEach(button => {
+      button.classList.remove('active');
     });
     
-    // Close menu when clicking outside
-    document.addEventListener('click', function(e) {
-        if (!navbarMenu.contains(e.target) && !menuToggle.contains(e.target)) {
-            navbarMenu.classList.remove('active');
-            menuToggle.querySelector('i').classList.add('fa-bars');
-            menuToggle.querySelector('i').classList.remove('fa-times');
-        }
-    });
+    // Show the selected tab content
+    document.getElementById(tabId).classList.add('active');
     
-    // Set the first tab as active by default
-    if (allNavItems.length > 0) {
-        const firstTabId = allNavItems[0].getAttribute('data-target') || allNavItems[0].getAttribute('data-tab');
-        if (firstTabId) {
-            switchToTab(firstTabId);
-        }
-    }
+    // Add active class to the clicked tab button
+    document.querySelector(`.tab-button[data-tab="${tabId}"]`).classList.add('active');
+  }
+  
+  // Add click event to all tab buttons
+  tabButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      const tabId = this.getAttribute('data-tab');
+      switchTab(tabId);
+    });
+  });
+  
+  // Set the first tab as active by default
+  if (tabButtons.length > 0) {
+    switchTab(tabButtons[0].getAttribute('data-tab'));
+  }
 });
 </script>
 </body>
