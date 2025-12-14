@@ -452,10 +452,10 @@ h1 {
   font-weight: 600;
 }
 
-/* TABS STYLING */
+/* TABS STYLING - MOVED TO BOTTOM */
 .tabs-container {
   grid-column: 2;
-  margin-bottom: 30px;
+  margin-top: 40px;
   background: var(--card-bg);
   border-radius: 24px;
   padding: 0;
@@ -627,7 +627,43 @@ h1 {
 
 <body>
 <div class="main-wrapper">
-  <!-- TABS CONTAINER -->
+  <div class="card">
+    <!-- HEADER WITH STANFORD LOGO -->
+    <div class="header-with-logo">
+      <div class="stanford-logo-container">
+        <!-- عکس دپارتمان Stanford Medicine -->
+        <img src="download.png" class="stanford-logo" alt="Stanford Medicine Department Logo">
+        
+        <div class="stanford-text">
+          <div class="stanford-university">Stanford University</div>
+          <div class="stanford-medicine">School of Medicine</div>
+        </div>
+      </div>
+      
+      <div class="personal-info-section">
+        <h1>Shirmohammad Tavangari</h1>
+        <div class="subtitle">AI Researcher at Stanford Medicine | Chief AI Scientist at NellaDerm Inc.</div>
+        <div class="title-tags">
+          <span class="tag stanford-tag"><i class="fas fa-university"></i> Stanford Medicine</span>
+          <span class="tag"><i class="fas fa-microphone"></i> TEDx Speaker</span>
+          <span class="tag"><i class="fas fa-award"></i> Young Scientist Award 2022</span>
+          <span class="tag"><i class="fas fa-edit"></i> Associate Editor, Springer</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="profile-box">
+      <img src="Me.jpeg" class="profile-pic" alt="Shirmohammad Tavangari Profile" />
+      <div class="intro-text">
+        <p>I am an Artificial Intelligence Researcher at <a href="https://med.stanford.edu/" target="_blank">Stanford Medicine</a>, working with Prof. Jayakumar Rajadas. Collaborating with Prof. Isabeau Prémont‑Schwarz at Mila. Chief AI Scientist at <a href="https://nelladerm.com/" target="_blank">NellaDerm Inc.</a></p>
+        <p>My research bridges computational neuroscience, AI theory, and practical applications in healthcare. I'm passionate about developing intelligent systems that enhance human understanding and medical outcomes.</p>
+      </div>
+    </div>
+
+    
+  </div>
+  
+  <!-- TABS CONTAINER - MOVED TO BOTTOM -->
   <div class="tabs-container">
     <div class="tabs-header">
       <button class="tab-button active" data-tab="research">
@@ -1042,46 +1078,6 @@ h1 {
     </div>
   </div>
   <!-- END OF TABS CONTAINER -->
-  
-  <div class="card">
-    <!-- HEADER WITH STANFORD LOGO -->
-    <div class="header-with-logo">
-      <div class="stanford-logo-container">
-        <!-- عکس دپارتمان Stanford Medicine -->
-        <img src="download.png" class="stanford-logo" alt="Stanford Medicine Department Logo">
-        
-        <div class="stanford-text">
-          <div class="stanford-university">Stanford University</div>
-          <div class="stanford-medicine">School of Medicine</div>
-        </div>
-      </div>
-      
-      <div class="personal-info-section">
-        <h1>Shirmohammad Tavangari</h1>
-        <div class="subtitle">AI Researcher at Stanford Medicine | Chief AI Scientist at NellaDerm Inc.</div>
-        <div class="title-tags">
-          <span class="tag stanford-tag"><i class="fas fa-university"></i> Stanford Medicine</span>
-          <span class="tag"><i class="fas fa-microphone"></i> TEDx Speaker</span>
-          <span class="tag"><i class="fas fa-award"></i> Young Scientist Award 2022</span>
-          <span class="tag"><i class="fas fa-edit"></i> Associate Editor, Springer</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="profile-box">
-      <img src="Me.jpeg" class="profile-pic" alt="Shirmohammad Tavangari Profile" />
-      <div class="intro-text">
-        <p>I am an Artificial Intelligence Researcher at <a href="https://med.stanford.edu/" target="_blank">Stanford Medicine</a>, working with Prof. Jayakumar Rajadas. Collaborating with Prof. Isabeau Prémont‑Schwarz at Mila. Chief AI Scientist at <a href="https://nelladerm.com/" target="_blank">NellaDerm Inc.</a></p>
-        <p>My research bridges computational neuroscience, AI theory, and practical applications in healthcare. I'm passionate about developing intelligent systems that enhance human understanding and medical outcomes.</p>
-      </div>
-    </div>
-
-    <div class="footer-note">
-      <strong>Shirmohammad Tavangari</strong><br>
-      AI Researcher at Stanford Medicine | Building intelligent systems for better healthcare<br>
-      Last updated: 2025 | Designed with modern aesthetics
-    </div>
-  </div>
 </div>
 
 <script>
