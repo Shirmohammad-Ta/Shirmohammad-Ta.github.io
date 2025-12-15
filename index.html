@@ -4,24 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Shirmohammad Tavangari | Stanford AI Researcher</title>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* --- REVOLUTIONARY DESIGN --- */
-        :root {
-            --neon-blue: #00f3ff;
-            --neon-purple: #9d4edd;
-            --deep-space: #0a0a0f;
-            --cyber-gray: #1a1a2e;
-            --matrix-green: #00ff88;
-            --electric-pink: #ff0080;
-            --stanford-cardinal: #8C1515;
-            --hologram-white: rgba(255, 255, 255, 0.95);
-            --glass-bg: rgba(255, 255, 255, 0.05);
-            --glass-border: rgba(255, 255, 255, 0.1);
-        }
-        
         * {
             margin: 0;
             padding: 0;
@@ -29,691 +15,250 @@
         }
         
         body {
-            font-family: 'Space Grotesk', sans-serif;
-            background: var(--deep-space);
-            color: var(--hologram-white);
-            overflow-x: hidden;
-            line-height: 1.6;
-        }
-        
-        /* ANIMATED BACKGROUND */
-        .bg-animation {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -2;
-            background: 
-                radial-gradient(circle at 20% 50%, rgba(0, 243, 255, 0.05) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(157, 78, 221, 0.05) 0%, transparent 50%),
-                linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 100%);
-        }
-        
-        .grid-lines {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: 
-                linear-gradient(to right, rgba(0, 243, 255, 0.03) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(0, 243, 255, 0.03) 1px, transparent 1px);
-            background-size: 50px 50px;
-            z-index: -1;
-            animation: gridMove 20s linear infinite;
-        }
-        
-        @keyframes gridMove {
-            0% { transform: translate(0, 0); }
-            100% { transform: translate(50px, 50px); }
-        }
-        
-        /* MAIN CONTAINER */
-        .cyber-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 40px 30px;
-        }
-        
-        /* HERO SECTION */
-        .hero-section {
-            position: relative;
-            padding: 60px 0;
-            margin-bottom: 80px;
-            border-bottom: 1px solid var(--glass-border);
-        }
-        
-        .hero-glow {
-            position: absolute;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, var(--neon-blue) 0%, transparent 70%);
-            opacity: 0.1;
-            filter: blur(100px);
-            top: -200px;
-            left: -200px;
-            z-index: -1;
-        }
-        
-        /* STANFORD BADGE */
-        .stanford-badge {
-            display: inline-flex;
+            font-family: 'Inter', sans-serif;
+            background: #ffffff;
+            color: #1a1a1a;
+            min-height: 100vh;
+            display: flex;
             align-items: center;
-            gap: 12px;
-            background: rgba(140, 21, 21, 0.15);
-            border: 1px solid rgba(140, 21, 21, 0.3);
-            padding: 12px 24px;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            width: 100%;
+        }
+        
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        }
+        
+        .stanford-badge {
+            display: inline-block;
+            background: #8C1515;
+            color: white;
+            padding: 10px 25px;
             border-radius: 50px;
-            margin-bottom: 30px;
-            backdrop-filter: blur(10px);
-            animation: pulse 3s infinite;
-        }
-        
-        @keyframes pulse {
-            0%, 100% { box-shadow: 0 0 10px rgba(140, 21, 21, 0.3); }
-            50% { box-shadow: 0 0 20px rgba(140, 21, 21, 0.6); }
-        }
-        
-        .stanford-icon {
-            color: var(--stanford-cardinal);
-            font-size: 1.5rem;
-        }
-        
-        .stanford-text {
             font-size: 1rem;
             font-weight: 600;
-            letter-spacing: 1px;
-            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 20px;
         }
         
-        /* MAIN TITLE */
-        .main-title {
-            font-size: 4.5rem;
+        .title {
+            font-size: 2.8rem;
             font-weight: 700;
+            color: #1a1a1a;
             line-height: 1.1;
-            margin: 30px 0;
-            background: linear-gradient(135deg, var(--neon-blue), var(--neon-purple), var(--electric-pink));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-shadow: 0 0 30px rgba(0, 243, 255, 0.3);
+            margin-top: 10px;
         }
         
-        /* SUBTITLE */
-        .subtitle {
-            font-size: 1.8rem;
-            color: rgba(255, 255, 255, 0.8);
-            margin-bottom: 40px;
-            font-weight: 300;
-        }
-        
-        /* PROFILE GRID */
-        .profile-grid {
+        /* Profile Section */
+        .profile-section {
             display: grid;
             grid-template-columns: 300px 1fr;
             gap: 60px;
-            margin: 60px 0;
+            align-items: start;
         }
         
-        .profile-image-container {
+        .photo-container {
             position: relative;
         }
         
-        .profile-img {
+        .profile-photo {
             width: 100%;
+            height: auto;
             border-radius: 20px;
-            border: 2px solid var(--neon-blue);
-            box-shadow: 0 0 40px rgba(0, 243, 255, 0.3);
-            transition: all 0.5s ease;
-            filter: contrast(1.1) saturate(1.2);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
         }
         
-        .profile-img:hover {
-            transform: scale(1.02);
-            box-shadow: 0 0 60px rgba(0, 243, 255, 0.5);
+        .profile-photo:hover {
+            transform: translateY(-5px);
         }
         
-        /* GLASS CARDS */
-        .glass-card {
-            background: var(--glass-bg);
-            backdrop-filter: blur(20px);
-            border: 1px solid var(--glass-border);
+        /* About Section */
+        .about-card {
+            background: #f8f9fa;
             border-radius: 20px;
             padding: 40px;
-            margin-bottom: 40px;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.4s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
         }
         
-        .glass-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-            transition: left 0.7s ease;
-        }
-        
-        .glass-card:hover::before {
-            left: 100%;
-        }
-        
-        .glass-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--neon-blue);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-        }
-        
-        /* SECTION HEADERS */
-        .section-header {
+        .about-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 25px;
+            color: #2c3e50;
             display: flex;
             align-items: center;
-            gap: 15px;
-            margin-bottom: 30px;
-            padding-bottom: 15px;
-            border-bottom: 2px solid var(--glass-border);
-        }
-        
-        .section-icon {
-            font-size: 1.8rem;
-            background: linear-gradient(45deg, var(--neon-blue), var(--neon-purple));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        
-        .section-title {
-            font-size: 2rem;
-            font-weight: 600;
-            background: linear-gradient(45deg, #fff, var(--neon-blue));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        
-        /* TAG CLOUD */
-        .tag-cloud {
-            display: flex;
-            flex-wrap: wrap;
             gap: 12px;
-            margin: 20px 0;
         }
         
-        .cyber-tag {
-            padding: 10px 20px;
-            background: rgba(0, 243, 255, 0.1);
-            border: 1px solid rgba(0, 243, 255, 0.3);
-            border-radius: 50px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            cursor: pointer;
+        .about-title i {
+            color: #8C1515;
         }
         
-        .cyber-tag:hover {
-            background: rgba(0, 243, 255, 0.2);
-            transform: scale(1.05);
-            box-shadow: 0 0 15px rgba(0, 243, 255, 0.3);
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #444;
+            margin-bottom: 25px;
         }
         
-        /* HOLOGRAPHIC LINKS */
-        .holographic-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
+        .about-text a {
+            color: #8C1515;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+            position: relative;
         }
         
-        .holo-card {
-            background: linear-gradient(145deg, rgba(0, 243, 255, 0.05), rgba(157, 78, 221, 0.05));
-            border: 1px solid var(--glass-border);
+        .about-text a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: #8C1515;
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .about-text a:hover {
+            color: #6b0f0f;
+        }
+        
+        .about-text a:hover::after {
+            transform: scaleX(1);
+        }
+        
+        .highlight-box {
+            background: white;
             border-radius: 15px;
             padding: 25px;
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
+            margin-top: 30px;
+            border-left: 4px solid #8C1515;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
         }
         
-        .holo-card::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--neon-blue), transparent);
-        }
-        
-        .holo-card:hover {
-            transform: translateY(-8px);
-            border-color: var(--neon-blue);
-            box-shadow: 0 20px 40px rgba(0, 243, 255, 0.1);
-        }
-        
-        .link-title {
-            font-size: 1.2rem;
+        .highlight-title {
+            font-size: 1.1rem;
             font-weight: 600;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+        
+        .highlight-item {
             display: flex;
             align-items: center;
             gap: 10px;
-        }
-        
-        .link-desc {
-            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 12px;
             font-size: 0.95rem;
-            line-height: 1.5;
+            color: #555;
         }
         
-        /* NEON BUTTON */
-        .neon-button {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 15px 30px;
-            background: transparent;
-            border: 2px solid var(--neon-blue);
-            color: var(--neon-blue);
-            border-radius: 50px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            position: relative;
-            overflow: hidden;
+        .highlight-item i {
+            color: #8C1515;
+            font-size: 0.9rem;
         }
         
-        .neon-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(0, 243, 255, 0.2), transparent);
-            transition: left 0.5s ease;
-        }
-        
-        .neon-button:hover::before {
-            left: 100%;
-        }
-        
-        .neon-button:hover {
-            background: rgba(0, 243, 255, 0.1);
-            box-shadow: 0 0 20px rgba(0, 243, 255, 0.4);
-            transform: translateY(-2px);
-        }
-        
-        /* SCAN LINE EFFECT */
-        .scan-line {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background: linear-gradient(90deg, transparent, var(--matrix-green), transparent);
-            box-shadow: 0 0 10px var(--matrix-green);
-            z-index: 1000;
-            animation: scan 3s linear infinite;
-        }
-        
-        @keyframes scan {
-            0% { top: 0%; }
-            100% { top: 100%; }
-        }
-        
-        /* RESPONSIVE */
-        @media (max-width: 1200px) {
-            .main-title {
-                font-size: 3.5rem;
-            }
-            
-            .profile-grid {
+        /* Responsive */
+        @media (max-width: 900px) {
+            .profile-section {
                 grid-template-columns: 1fr;
                 gap: 40px;
             }
             
-            .profile-image-container {
+            .photo-container {
                 max-width: 300px;
                 margin: 0 auto;
             }
         }
         
-        @media (max-width: 768px) {
-            .cyber-container {
-                padding: 20px;
+        @media (max-width: 600px) {
+            .title {
+                font-size: 2.2rem;
             }
             
-            .main-title {
-                font-size: 2.5rem;
+            .about-card {
+                padding: 30px 25px;
             }
             
-            .subtitle {
-                font-size: 1.3rem;
+            .about-title {
+                font-size: 1.5rem;
             }
             
-            .glass-card {
-                padding: 25px;
+            .stanford-badge {
+                font-size: 0.9rem;
+                padding: 8px 20px;
             }
-            
-            .holographic-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-        
-        /* GLOWING TEXT */
-        .glowing-text {
-            text-shadow: 0 0 10px currentColor;
-            animation: glow 2s ease-in-out infinite alternate;
-        }
-        
-        @keyframes glow {
-            from { text-shadow: 0 0 5px currentColor; }
-            to { text-shadow: 0 0 15px currentColor; }
-        }
-        
-        /* BINARY RAIN (OPTIONAL EFFECT) */
-        .binary-rain {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1;
-            opacity: 0.1;
-        }
-        
-        .binary-digit {
-            position: absolute;
-            color: var(--matrix-green);
-            font-family: monospace;
-            font-size: 14px;
-            animation: fall linear infinite;
-        }
-        
-        @keyframes fall {
-            to { transform: translateY(100vh); }
         }
     </style>
 </head>
 
 <body>
-    <!-- BACKGROUND ELEMENTS -->
-    <div class="bg-animation"></div>
-    <div class="grid-lines"></div>
-    <div class="scan-line"></div>
-    
-    <div class="cyber-container">
-        <!-- HERO SECTION -->
-        <section class="hero-section">
-            <div class="hero-glow"></div>
-            
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
             <div class="stanford-badge">
-                <i class="fas fa-university stanford-icon"></i>
-                <span class="stanford-text">Stanford Medicine • AI Research</span>
+                Stanford Medicine • AI Researcher
             </div>
-            
-            <h1 class="main-title">
-                SHIRMOHAMMAD<br>
-                TAVANGARI
-            </h1>
-            
-            <p class="subtitle">
-                Pushing the boundaries of AI research at Stanford Medicine.<br>
-                Chief AI Scientist at NellaDerm Inc. • TEDx Speaker • Young Scientist Award 2022
-            </p>
-            
-            <div class="tag-cloud">
-                <span class="cyber-tag"><i class="fas fa-brain"></i> Computational Neuroscience</span>
-                <span class="cyber-tag"><i class="fas fa-robot"></i> Artificial Intelligence</span>
-                <span class="cyber-tag"><i class="fas fa-heartbeat"></i> Medical AI</span>
-                <span class="cyber-tag"><i class="fas fa-microphone"></i> TEDx Speaker</span>
-                <span class="cyber-tag"><i class="fas fa-edit"></i> Springer Editor</span>
-                <span class="cyber-tag"><i class="fas fa-rocket"></i> Innovation</span>
-            </div>
-        </section>
+            <h1 class="title">Shirmohammad Tavangari</h1>
+        </div>
         
-        <!-- PROFILE SECTION -->
-        <div class="profile-grid">
-            <div class="profile-image-container">
-                <img src="Me.jpeg" alt="Shirmohammad Tavangari" class="profile-img">
+        <!-- Profile Section -->
+        <div class="profile-section">
+            <!-- Photo -->
+            <div class="photo-container">
+                <img src="Me.jpeg" alt="Shirmohammad Tavangari" class="profile-photo">
             </div>
             
-            <div class="glass-card">
-                <div class="section-header">
-                    <i class="fas fa-user-astronaut section-icon"></i>
-                    <h2 class="section-title">About Me</h2>
-                </div>
+            <!-- About Me -->
+            <div class="about-card">
+                <h2 class="about-title">
+                    <i class="fas fa-user"></i>
+                    About Me
+                </h2>
                 
-                <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 25px;">
+                <p class="about-text">
                     I am an Artificial Intelligence Researcher at 
-                    <span class="glowing-text" style="color: var(--stanford-cardinal);">Stanford Medicine</span>, 
+                    <a href="https://med.stanford.edu/" target="_blank">Stanford Medicine</a>, 
                     working with Prof. Jayakumar Rajadas. Currently collaborating with 
                     Prof. Isabeau Prémont‑Schwarz at Mila, and serving as 
-                    <span class="glowing-text" style="color: var(--neon-blue);">Chief AI Scientist</span> 
-                    at NellaDerm Inc.
+                    <strong>Chief AI Scientist</strong> at 
+                    <a href="https://nelladerm.com/" target="_blank">NellaDerm Inc.</a>
                 </p>
                 
-                <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 30px;">
+                <p class="about-text">
                     My research bridges the gap between theoretical AI and practical medical applications. 
                     I'm passionate about creating intelligent systems that can transform healthcare 
                     and enhance human understanding of complex biological systems.
                 </p>
                 
-                <div style="display: flex; gap: 15px; flex-wrap: wrap;">
-                    <a href="https://med.stanford.edu/" class="neon-button" target="_blank">
-                        <i class="fas fa-external-link-alt"></i>
-                        Stanford Medicine
-                    </a>
-                    <a href="https://nelladerm.com/" class="neon-button" style="border-color: var(--electric-pink); color: var(--electric-pink);" target="_blank">
+                <div class="highlight-box">
+                    <div class="highlight-title">Current Focus</div>
+                    <div class="highlight-item">
+                        <i class="fas fa-brain"></i>
+                        <span>Computational Neuroscience & AI Theory</span>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-heartbeat"></i>
+                        <span>Medical AI Applications at Stanford Medicine</span>
+                    </div>
+                    <div class="highlight-item">
                         <i class="fas fa-briefcase"></i>
-                        NellaDerm Inc.
-                    </a>
+                        <span>Chief AI Scientist at NellaDerm Inc.</span>
+                    </div>
                 </div>
-            </div>
-        </div>
-        
-        <!-- RESEARCH HIGHLIGHTS -->
-        <div class="glass-card">
-            <div class="section-header">
-                <i class="fas fa-flask section-icon"></i>
-                <h2 class="section-title">Research Highlights</h2>
-            </div>
-            
-            <div class="holographic-grid">
-                <div class="holo-card">
-                    <h3 class="link-title">
-                        <i class="fas fa-cogs" style="color: var(--neon-blue);"></i>
-                        Stanford Patent
-                    </h3>
-                    <p class="link-desc">"Mind as Boltzmann Machine" - A computational neuroscience innovation at Stanford University.</p>
-                    <a href="https://otl.stanford.edu/patent" class="neon-button" style="margin-top: 15px; padding: 8px 20px; font-size: 0.9rem;">
-                        View Patent
-                    </a>
-                </div>
-                
-                <div class="holo-card">
-                    <h3 class="link-title">
-                        <i class="fas fa-book" style="color: var(--neon-purple);"></i>
-                        Springer Books
-                    </h3>
-                    <p class="link-desc">Edited volumes published by Springer Nature in 2024, with another upcoming in 2026.</p>
-                    <a href="https://link.springer.com/book/10.1007/978-3-031-57708-6" class="neon-button" style="margin-top: 15px; padding: 8px 20px; font-size: 0.9rem;">
-                        View 2024 Book
-                    </a>
-                </div>
-                
-                <div class="holo-card">
-                    <h3 class="link-title">
-                        <i class="fas fa-code" style="color: var(--matrix-green);"></i>
-                        AI Simulator
-                    </h3>
-                    <p class="link-desc">Philosophy-to-Emotion AI Simulator - Interactive demo blending AI with philosophical concepts.</p>
-                    <a href="https://philosophy-ai-simulator-bnaqelec5c5ulsxxb47ust.streamlit.app/" class="neon-button" style="margin-top: 15px; padding: 8px 20px; font-size: 0.9rem;">
-                        Try Demo
-                    </a>
-                </div>
-            </div>
-        </div>
-        
-        <!-- KEY LINKS -->
-        <div class="glass-card">
-            <div class="section-header">
-                <i class="fas fa-network-wired section-icon"></i>
-                <h2 class="section-title">Digital Presence</h2>
-            </div>
-            
-            <div class="holographic-grid">
-                <div class="holo-card">
-                    <h3 class="link-title">
-                        <i class="fab fa-github" style="color: var(--electric-pink);"></i>
-                        GitHub Projects
-                    </h3>
-                    <p class="link-desc">Open-source AI projects and research code repositories.</p>
-                    <a href="https://github.com/Shirmohammad-Ta" class="neon-button" style="margin-top: 15px; padding: 8px 20px; font-size: 0.9rem;">
-                        Explore Code
-                    </a>
-                </div>
-                
-                <div class="holo-card">
-                    <h3 class="link-title">
-                        <i class="fas fa-graduation-cap" style="color: var(--neon-blue);"></i>
-                        Academic Profile
-                    </h3>
-                    <p class="link-desc">Latest research works and publications on Academia.edu.</p>
-                    <a href="https://stanford.academia.edu/ShirmohammadTavangari" class="neon-button" style="margin-top: 15px; padding: 8px 20px; font-size: 0.9rem;">
-                        View Profile
-                    </a>
-                </div>
-                
-                <div class="holo-card">
-                    <h3 class="link-title">
-                        <i class="fab fa-youtube" style="color: #ff0000;"></i>
-                        TEDx Talk
-                    </h3>
-                    <p class="link-desc">Watch my presentation at TEDxSanabaad on YouTube.</p>
-                    <a href="https://www.youtube.com/watch?v=k6GCBSVcEDA" class="neon-button" style="margin-top: 15px; padding: 8px 20px; font-size: 0.9rem;">
-                        Watch Talk
-                    </a>
-                </div>
-                
-                <div class="holo-card">
-                    <h3 class="link-title">
-                        <i class="fas fa-award" style="color: gold;"></i>
-                        Awards
-                    </h3>
-                    <p class="link-desc">Young Scientist Award 2022, ACM Honorarium, IBM Global School.</p>
-                    <a href="#awards" class="neon-button" style="margin-top: 15px; padding: 8px 20px; font-size: 0.9rem;">
-                        View Awards
-                    </a>
-                </div>
-            </div>
-        </div>
-        
-        <!-- COLLABORATIONS -->
-        <div class="glass-card">
-            <div class="section-header">
-                <i class="fas fa-handshake section-icon"></i>
-                <h2 class="section-title">Global Collaborations</h2>
-            </div>
-            
-            <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 30px;">
-                <div class="cyber-tag" style="background: rgba(140, 21, 21, 0.1); border-color: rgba(140, 21, 21, 0.3);">
-                    <i class="fas fa-university"></i> Stanford University
-                </div>
-                <div class="cyber-tag" style="background: rgba(155, 0, 0, 0.1); border-color: rgba(155, 0, 0, 0.3);">
-                    <i class="fas fa-university"></i> Harvard University
-                </div>
-                <div class="cyber-tag" style="background: rgba(0, 100, 200, 0.1); border-color: rgba(0, 100, 200, 0.3);">
-                    <i class="fas fa-university"></i> University of British Columbia
-                </div>
-                <div class="cyber-tag" style="background: rgba(200, 0, 100, 0.1); border-color: rgba(200, 0, 100, 0.3);">
-                    <i class="fas fa-university"></i> National University of Singapore
-                </div>
-                <div class="cyber-tag" style="background: rgba(0, 200, 100, 0.1); border-color: rgba(0, 200, 100, 0.3);">
-                    <i class="fas fa-university"></i> City University of Hong Kong
-                </div>
-                <div class="cyber-tag" style="background: rgba(157, 78, 221, 0.1); border-color: rgba(157, 78, 221, 0.3);">
-                    <i class="fas fa-brain"></i> Mila - Quebec AI Institute
-                </div>
-            </div>
-        </div>
-        
-        <!-- FOOTER -->
-        <div style="text-align: center; margin-top: 60px; padding-top: 40px; border-top: 1px solid var(--glass-border);">
-            <p style="color: rgba(255, 255, 255, 0.6); font-size: 0.9rem;">
-                <span class="glowing-text" style="color: var(--neon-blue);">© 2024 Shirmohammad Tavangari</span><br>
-                Stanford Medicine • AI Researcher • Innovator
-            </p>
-            <div style="display: flex; justify-content: center; gap: 20px; margin-top: 20px;">
-                <a href="https://bandartorkaman.com/" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; transition: color 0.3s;">
-                    <i class="fas fa-map-marker-alt"></i> Bandar-e Torkaman, Iran
-                </a>
             </div>
         </div>
     </div>
-    
-    <!-- BINARY RAIN SCRIPT (OPTIONAL) -->
-    <script>
-        // Create binary rain effect
-        function createBinaryRain() {
-            const container = document.createElement('div');
-            container.className = 'binary-rain';
-            document.body.appendChild(container);
-            
-            for (let i = 0; i < 50; i++) {
-                setTimeout(() => {
-                    const digit = document.createElement('div');
-                    digit.className = 'binary-digit';
-                    digit.textContent = Math.random() > 0.5 ? '1' : '0';
-                    digit.style.left = `${Math.random() * 100}vw`;
-                    digit.style.animationDuration = `${Math.random() * 3 + 2}s`;
-                    digit.style.opacity = Math.random() * 0.3 + 0.1;
-                    container.appendChild(digit);
-                    
-                    // Remove digit after animation
-                    setTimeout(() => {
-                        digit.remove();
-                    }, parseFloat(digit.style.animationDuration) * 1000);
-                }, i * 100);
-            }
-            
-            // Keep creating new digits
-            setInterval(createBinaryRain, 3000);
-        }
-        
-        // Uncomment to enable binary rain effect
-        // createBinaryRain();
-        
-        // Glitch text effect
-        function glitchEffect() {
-            const titles = document.querySelectorAll('.main-title, .section-title');
-            titles.forEach(title => {
-                const originalText = title.textContent;
-                
-                title.addEventListener('mouseenter', () => {
-                    let glitchedText = '';
-                    for (let i = 0; i < originalText.length; i++) {
-                        if (Math.random() > 0.9) {
-                            glitchedText += Math.random() > 0.5 ? '1' : '0';
-                        } else {
-                            glitchedText += originalText[i];
-                        }
-                    }
-                    title.textContent = glitchedText;
-                    
-                    setTimeout(() => {
-                        title.textContent = originalText;
-                    }, 300);
-                });
-            });
-        }
-        
-        document.addEventListener('DOMContentLoaded', glitchEffect);
-    </script>
 </body>
 </html>
