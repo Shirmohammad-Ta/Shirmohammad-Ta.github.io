@@ -1,956 +1,559 @@
-<!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta charset="UTF-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" type="text/css" media="all" href="style.css" />
 <title>Shirmohammad Tavangari | Stanford Medicine AI Researcher</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
 <style>
-/* --- MODERN & ELEGANT STYLE --- */
-:root {
-  --primary: #2563eb;
-  --primary-dark: #1d4ed8;
-  --secondary: #7c3aed;
-  --accent: #06b6d4;
-  --light-bg: #f8fafc;
-  --card-bg: #ffffff;
-  --text-primary: #1e293b;
-  --text-secondary: #64748b;
-  --border: #e2e8f0;
-  --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
-  --shadow-hover: 0 20px 40px -10px rgba(0, 0, 0, 0.08);
-  --gradient: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
-  --stanford-red: #8C1515;
-  --stanford-cardinal: #B1040E;
-}
-
-* {
-  box-sizing: border-box;
-}
-
+/* ACADEMIC STYLE - Inspired by Anca Dragan's website */
 body {
-  margin: 0;
-  font-family: 'Inter', sans-serif;
-  background: var(--light-bg);
-  color: var(--text-primary);
-  line-height: 1.6;
-  overflow-x: hidden;
+    background: #FFFFFF;
+    font-family: 'Lucida Grande', 'Lucida Sans Unicode', Verdana, Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    line-height: 1.5;
+    color: #333333;
+    margin: 0;
+    padding: 0;
 }
 
-/* Animated background pattern */
-body::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: 
-    radial-gradient(circle at 10% 20%, rgba(37, 99, 235, 0.03) 0%, transparent 20%),
-    radial-gradient(circle at 90% 80%, rgba(124, 58, 237, 0.03) 0%, transparent 20%);
-  z-index: -1;
+#larger_container {
+    background: #FFFFFF;
+    width: 100%;
+    min-width: 800px;
+    margin: 0;
+    padding: 0;
 }
 
-/* GRID BASE LAYOUT */
-.main-wrapper {
-  display: grid;
-  grid-template-columns: 1fr minmax(300px, 1000px) 1fr;
-  padding: 40px 20px;
-  animation: fadeIn 0.8s ease-out;
+#container {
+    width: 800px;
+    margin: 0 auto;
+    padding: 20px 0 0 0;
+    background: #FFFFFF;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+/* Logo/Header Section */
+#logo {
+    margin: 0 0 10px 0;
+    padding: 0;
 }
 
-/* HEADER WITH STANFORD LOGO */
-.header-with-logo {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 30px;
-  padding-bottom: 30px;
-  border-bottom: 1px solid var(--border);
-  flex-wrap: wrap;
-  gap: 20px;
+#logo h1 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #003399;
+    margin: 0;
+    padding: 0;
+    letter-spacing: -0.5px;
 }
 
-.stanford-logo-container {
-  display: flex;
-  align-items: center;
-  gap: 15px;
+#logo a.title {
+    text-decoration: none;
 }
 
-.stanford-logo {
-  height: 100px;
-  width: auto;
-  max-width: 220px;
-  transition: transform 0.3s ease;
+#logo h4 {
+    color: #999999;
+    font-size: 12px;
+    font-weight: normal;
+    margin: 0 0 5px 0;
+    padding: 0;
 }
 
-.stanford-logo:hover {
-  transform: scale(1.05);
+/* Navigation */
+#navcontainer {
+    width: 100%;
+    margin: 0 0 15px 0;
+    padding: 5px 0;
+    border-top: 1px solid #CCCCCC;
+    border-bottom: 1px solid #CCCCCC;
+    overflow: hidden;
 }
 
-.stanford-text {
-  display: flex;
-  flex-direction: column;
+#navcontainer ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
 }
 
-.stanford-university {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: var(--stanford-cardinal);
-  letter-spacing: 0.5px;
+#navcontainer li {
+    float: right;
+    margin: 0;
+    padding: 0;
 }
 
-.stanford-medicine {
-  font-size: 0.9rem;
-  color: var(--text-secondary);
-  font-weight: 500;
+#navcontainer a {
+    display: block;
+    padding: 5px 15px;
+    color: #003399;
+    text-decoration: none;
+    font-size: 13px;
+    border-right: 1px solid #CCCCCC;
 }
 
-/* CARD */
-.card {
-  grid-column: 2;
-  background: var(--card-bg);
-  border-radius: 24px;
-  padding: 48px;
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow);
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
-  position: relative;
-  overflow: hidden;
+#navcontainer a:hover {
+    text-decoration: underline;
+    color: #003399;
 }
 
-.card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 4px;
-  background: var(--gradient);
+#navcontainer #current, #navcontainer .current_page {
+    color: #666666;
+    font-weight: bold;
 }
 
-.card:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--shadow-hover);
+/* Header/Image section */
+#header {
+    margin: 0 0 20px 0;
+    padding: 0;
+    text-align: center;
 }
 
-/* PERSONAL INFO SECTION */
-.personal-info-section {
-  margin-bottom: 30px;
+#header img {
+    max-width: 800px;
+    height: auto;
+    border: none;
 }
 
-h1 {
-  font-size: 2.5rem;
-  font-weight: 800;
-  letter-spacing: -0.5px;
-  background: var(--gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  margin-bottom: 8px;
-  line-height: 1.2;
+/* Middle content area */
+#middle {
+    width: 100%;
+    margin: 0 0 30px 0;
+    padding: 0;
+    text-align: left;
 }
 
-.subtitle {
-  font-size: 1.3rem;
-  color: var(--text-secondary);
-  margin-bottom: 15px;
-  font-weight: 500;
+#middle p {
+    margin: 0 0 15px 0;
+    padding: 0;
+    color: #333333;
 }
 
-.title-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 15px;
+#middle a.body {
+    color: #003399;
+    text-decoration: none;
 }
 
-.tag {
-  background: rgba(37, 99, 235, 0.1);
-  color: var(--primary);
-  padding: 6px 14px;
-  border-radius: 20px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.tag i {
-  font-size: 0.8rem;
-}
-
-.tag.stanford-tag {
-  background: rgba(177, 4, 14, 0.1);
-  color: var(--stanford-cardinal);
-}
-
-/* PROFILE */
-.profile-box {
-  display: flex;
-  gap: 40px;
-  align-items: center;
-  flex-wrap: wrap;
-  margin: 40px 0;
-  padding: 30px;
-  background: rgba(248, 250, 252, 0.8);
-  border-radius: 20px;
-  border: 1px solid rgba(226, 232, 240, 0.6);
-}
-
-.profile-pic {
-  width: 180px;
-  height: 180px;
-  border-radius: 20px;
-  object-fit: cover;
-  border: 4px solid white;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  transition: all 0.4s ease;
-  filter: grayscale(15%);
-}
-
-.profile-pic:hover {
-  transform: scale(1.05) rotate(2deg);
-  filter: grayscale(0%);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-}
-
-.intro-text {
-  flex: 1;
-  min-width: 300px;
-  font-size: 1.1rem;
-  line-height: 1.8;
-  color: var(--text-primary);
-}
-
-.intro-text a {
-  color: var(--primary);
-  text-decoration: none;
-  font-weight: 600;
-  position: relative;
-  transition: all 0.3s;
-  padding: 0 2px;
-}
-
-.intro-text a::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: var(--accent);
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: transform 0.3s ease;
-}
-
-.intro-text a:hover {
-  color: var(--secondary);
-}
-
-.intro-text a:hover::after {
-  transform: scaleX(1);
-  transform-origin: left;
-}
-
-/* SECTION TITLES */
-.section-title {
-  margin-top: 50px;
-  margin-bottom: 30px;
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  padding-bottom: 15px;
-  border-bottom: 2px solid var(--border);
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  position: relative;
-}
-
-.section-title::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 60px;
-  height: 2px;
-  background: var(--gradient);
-}
-
-.section-title i {
-  background: var(--gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  font-size: 1.4rem;
-}
-
-/* LINKS GRID */
-.links-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
-  gap: 30px;
-  margin-top: 20px;
-}
-
-.link-category {
-  background: var(--card-bg);
-  border-radius: 18px;
-  border: 1px solid var(--border);
-  padding: 28px;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.link-category::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 4px;
-  height: 100%;
-  background: var(--gradient);
-  transform: scaleY(0);
-  transition: transform 0.3s ease;
-}
-
-.link-category:hover {
-  border-color: var(--primary);
-  box-shadow: var(--shadow);
-  transform: translateY(-5px);
-}
-
-.link-category:hover::before {
-  transform: scaleY(1);
-}
-
-.category-title {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: 24px;
-  padding-bottom: 12px;
-  border-bottom: 1px solid var(--border);
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.category-title i {
-  color: var(--primary);
-  width: 24px;
-  text-align: center;
-}
-
-.link-item {
-  margin-bottom: 20px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid #f1f5f9;
-  position: relative;
-  padding-left: 10px;
-}
-
-.link-item:last-child {
-  margin-bottom: 0;
-  padding-bottom: 0;
-  border-bottom: none;
-}
-
-.link-item a {
-  color: var(--text-primary);
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 1rem;
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  transition: all 0.2s;
-  line-height: 1.5;
-}
-
-.link-item a:hover {
-  color: var(--primary);
-  transform: translateX(5px);
-}
-
-.link-item a i:first-child {
-  color: var(--secondary);
-  font-size: 0.9rem;
-  margin-top: 4px;
-  flex-shrink: 0;
-}
-
-.link-desc {
-  font-size: 0.9rem;
-  color: var(--text-secondary);
-  margin-top: 6px;
-  margin-left: 32px;
-  line-height: 1.5;
-}
-
-.multi-link {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 8px;
-}
-
-.multi-link a {
-  display: inline-block;
-  font-size: 0.9rem;
-  color: var(--primary);
-  text-decoration: none;
-  padding: 4px 10px;
-  background: rgba(37, 99, 235, 0.08);
-  border-radius: 12px;
-  transition: all 0.2s;
-}
-
-.multi-link a:hover {
-  background: rgba(37, 99, 235, 0.15);
-  transform: translateY(-2px);
-}
-
-/* Badge */
-.badge {
-  display: inline-block;
-  background: var(--gradient);
-  color: white;
-  font-size: 0.7rem;
-  font-weight: 700;
-  padding: 3px 10px;
-  border-radius: 12px;
-  margin-left: 8px;
-  vertical-align: middle;
-  letter-spacing: 0.3px;
+#middle a:hover {
+    text-decoration: underline;
 }
 
 /* Footer */
-.footer-note {
-  margin-top: 60px;
-  padding-top: 25px;
-  border-top: 1px solid var(--border);
-  text-align: center;
-  color: var(--text-secondary);
-  font-size: 0.95rem;
-  line-height: 1.6;
+#footer {
+    width: 100%;
+    margin: 20px 0 0 0;
+    padding: 10px 0;
+    border-top: 1px solid #CCCCCC;
+    color: #666666;
+    font-size: 11px;
+    text-align: center;
+    clear: both;
 }
 
-.footer-note strong {
-  color: var(--text-primary);
-  font-weight: 600;
+/* Additional styling for your content */
+.subhead {
+    color: #666666;
+    font-size: 14px;
+    font-weight: normal;
+    margin: 5px 0 10px 0;
+    padding: 0;
 }
 
-/* Responsive */
-@media (max-width: 1024px) {
-  .links-grid {
-    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-  }
+.tags-section {
+    margin: 15px 0 20px 0;
+    padding: 0;
 }
 
-@media (max-width: 768px) {
-  .main-wrapper {
-    grid-template-columns: 1fr;
-    padding: 20px 15px;
-  }
-  
-  .card {
-    grid-column: 1;
-    padding: 30px 25px;
-    border-radius: 20px;
-  }
-  
-  .header-with-logo {
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-  }
-  
-  .stanford-logo-container {
-    justify-content: center;
-    margin-bottom: 10px;
-  }
-  
-  .links-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .profile-box {
-    flex-direction: column;
-    text-align: center;
-    padding: 25px;
-  }
-  
-  h1 {
-    font-size: 2rem;
-    text-align: center;
-  }
-  
-  .subtitle {
-    font-size: 1.1rem;
-    text-align: center;
-  }
-  
-  .title-tags {
-    justify-content: center;
-  }
+.tag {
+    display: inline-block;
+    margin: 0 5px 5px 0;
+    padding: 2px 8px;
+    background: #F5F5F5;
+    border: 1px solid #DDDDDD;
+    color: #666666;
+    font-size: 11px;
 }
 
-@media (max-width: 480px) {
-  .card {
-    padding: 25px 20px;
-  }
-  
-  .profile-pic {
+.publications-list, .links-list {
+    margin: 15px 0 20px 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.publications-list li, .links-list li {
+    margin: 0 0 15px 0;
+    padding: 0 0 15px 0;
+    border-bottom: 1px dashed #DDDDDD;
+}
+
+.publications-list li:last-child, .links-list li:last-child {
+    border-bottom: none;
+}
+
+.publication-title, .link-title {
+    font-weight: bold;
+    color: #003399;
+    margin: 0 0 3px 0;
+}
+
+.publication-desc, .link-desc {
+    color: #666666;
+    font-size: 12px;
+    margin: 3px 0 0 15px;
+}
+
+.section-header {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333333;
+    margin: 25px 0 15px 0;
+    padding: 0 0 5px 0;
+    border-bottom: 1px solid #CCCCCC;
+}
+
+.badge {
+    background: #003399;
+    color: #FFFFFF;
+    font-size: 10px;
+    padding: 1px 5px;
+    margin-left: 5px;
+    border-radius: 2px;
+}
+
+.profile-section {
+    margin: 0 0 20px 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.profile-image {
+    float: left;
     width: 150px;
     height: 150px;
-  }
-  
-  h1 {
-    font-size: 1.8rem;
-  }
-  
-  .stanford-logo {
-    height: 40px;
-  }
+    margin: 0 20px 10px 0;
+    border: 1px solid #CCCCCC;
+    padding: 3px;
+}
+
+.profile-text {
+    margin-left: 180px;
+}
+
+.clear {
+    clear: both;
+}
+
+.small-note {
+    color: #999999;
+    font-size: 11px;
+    font-style: italic;
+    margin: 5px 0 0 0;
+}
+
+/* Two column layout for awards */
+.two-column {
+    width: 100%;
+    overflow: hidden;
+    margin: 0 0 20px 0;
+}
+
+.column {
+    width: 48%;
+    float: left;
+    margin-right: 4%;
+}
+
+.column.last {
+    margin-right: 0;
+}
+
+@media (max-width: 800px) {
+    #larger_container {
+        min-width: 100%;
+    }
+    
+    #container {
+        width: 100%;
+        padding: 10px;
+    }
+    
+    #header img {
+        width: 100%;
+        height: auto;
+    }
+    
+    .profile-image {
+        float: none;
+        margin: 0 auto 15px auto;
+        display: block;
+    }
+    
+    .profile-text {
+        margin-left: 0;
+    }
+    
+    .column {
+        width: 100%;
+        float: none;
+        margin-right: 0;
+    }
 }
 </style>
 </head>
 
 <body>
-<div class="main-wrapper">
-  <div class="card">
-    <!-- HEADER WITH STANFORD LOGO -->
-    <div class="header-with-logo">
-      <div class="stanford-logo-container">
-        <!-- عکس دپارتمان Stanford Medicine -->
-        <img src="download.png" class="stanford-logo" alt="Stanford Medicine Department Logo">
-        
-        <div class="stanford-text">
-          <div class="stanford-university">Stanford University</div>
-          <div class="stanford-medicine">School of Medicine</div>
-        </div>
-      </div>
-      
-      <div class="personal-info-section">
-        <h1>Shirmohammad Tavangari</h1>
-        <div class="subtitle">AI Researcher at Stanford Medicine | Chief AI Scientist at NellaDerm Inc.</div>
-        <div class="title-tags">
-          <span class="tag stanford-tag"><i class="fas fa-university"></i> Stanford Medicine</span>
-          <span class="tag"><i class="fas fa-microphone"></i> TEDx Speaker</span>
-          <span class="tag"><i class="fas fa-award"></i> Young Scientist Award 2022</span>
-          <span class="tag"><i class="fas fa-edit"></i> Associate Editor, Springer</span>
-        </div>
-      </div>
-    </div>
+<div id="larger_container">
+<div id="container">
 
-    <div class="profile-box">
-      <img src="Me.jpeg" class="profile-pic" alt="Shirmohammad Tavangari Profile" />
-      <div class="intro-text">
-        <p>I am an Artificial Intelligence Researcher at <a href="https://med.stanford.edu/" target="_blank">Stanford Medicine</a>, working with Prof. Jayakumar Rajadas. Collaborating with Prof. Isabeau Prémont‑Schwarz at Mila. Chief AI Scientist at <a href="https://nelladerm.com/" target="_blank">NellaDerm Inc.</a></p>
-        <p>My research bridges computational neuroscience, AI theory, and practical applications in healthcare. I'm passionate about developing intelligent systems that enhance human understanding and medical outcomes.</p>
-      </div>
-    </div>
+<div id="logo">
+    <h4><br/></h4>
+    <a href="index.html" class="title"><h1>Shirmohammad Tavangari</h1></a>
+    <div class="subhead">AI Researcher at Stanford Medicine | Chief AI Scientist at NellaDerm Inc.</div>
+</div>
 
-    <!-- REORGANIZED LINKS SECTION -->
-    <div class="section-title">
-      <i class="fas fa-link"></i>
-      Academic & Professional Links
+<div id="navcontainer">
+<ul>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="activities-awards.html">CV</a></li>
+    <li><a href="publications.html">Publications</a></li>
+    <li><a href="teaching.html">Teaching</a></li>
+    <li><a href="#" id="current" class="current_page">Home</a></li>
+</ul>
+</div>
+
+<div id="header">
+    <center>
+        <img src="download.png" width="800" alt="Stanford Medicine Department Logo" />
+    </center>
+</div>
+
+<div id="middle">
+    
+    <div class="profile-section">
+        <img src="Me.jpeg" class="profile-image" width="150" height="150" alt="Shirmohammad Tavangari Profile" />
+        <div class="profile-text">
+            <p>I am an Artificial Intelligence Researcher at <a href="https://med.stanford.edu/" class="body">Stanford Medicine</a>, working with Prof. Jayakumar Rajadas. Collaborating with Prof. Isabeau Prémont‑Schwarz at Mila. Chief AI Scientist at <a href="https://nelladerm.com/" class="body">NellaDerm Inc.</a></p>
+            
+            <p>My research bridges computational neuroscience, AI theory, and practical applications in healthcare. I'm passionate about developing intelligent systems that enhance human understanding and medical outcomes.</p>
+            
+            <div class="tags-section">
+                <span class="tag">Stanford Medicine</span>
+                <span class="tag">TEDx Speaker</span>
+                <span class="tag">Young Scientist Award 2022</span>
+                <span class="tag">Associate Editor, Springer</span>
+            </div>
+        </div>
+        <div class="clear"></div>
     </div>
     
-    <div class="links-grid">
-      
-      <!-- Research Profiles -->
-      <div class="link-category">
-        <div class="category-title">
-          <i class="fas fa-graduation-cap"></i>
-          Research Profiles
-        </div>
-        
-        <div class="link-item">
-          <a href="https://stanford.academia.edu/ShirmohammadTavangari" target="_blank" rel="noopener noreferrer">
-            <i class="fas fa-external-link-alt"></i>
-            Academia.edu Profile
-            <span class="badge">2025</span>
-          </a>
-          <div class="link-desc">Latest research works and publications</div>
-        </div>
-        
-        <div class="link-item">
-          <a href="https://arxiv.org/search/?query=Shirmohammad+Tavangari&searchtype=all&source=header" target="_blank" rel="noopener noreferrer">
-            <i class="fas fa-external-link-alt"></i>
-            arXiv Research Profile
-          </a>
-          <div class="link-desc">Preprints in AI and Mathematics</div>
-        </div>
-      </div>
-      
-      <!-- Publications & Patents -->
-      <div class="link-category">
-        <div class="category-title">
-          <i class="fas fa-book"></i>
-          Publications & Patents
-        </div>
-        
-        <div class="link-item">
-          <a href="https://otl.stanford.edu/patent" target="_blank" rel="noopener noreferrer">
-            <i class="fas fa-external-link-alt"></i>
-            Stanford Patent: Mind as Boltzmann Machine
-          </a>
-          <div class="link-desc">Computational neuroscience innovation</div>
-        </div>
-        
-        <div class="link-item">
-          <a href="https://link.springer.com/book/10.1007/978-3-031-57708-6" target="_blank" rel="noopener noreferrer">
-            <i class="fas fa-external-link-alt"></i>
-            Springer Book 2024
-          </a>
-          <div class="link-desc">Edited volume published by Springer Nature</div>
-        </div>
-
-        <div class="link-item">
-          <a href="https://link.springer.com/book/9783032179746" target="_blank" rel="noopener noreferrer">
-            <i class="fas fa-external-link-alt"></i>
-            Springer Book 2026 
-          </a>
-          <div class="link-desc">Edited volume published by Springer Nature</div>
-        </div>
-
-        <div class="link-item">
-          <a href="https://link.springer.com/series/7092" target="_blank" rel="noopener noreferrer">
-            <i class="fas fa-external-link-alt"></i>
-            Springer Book 2027 (Upcoming)
-          </a>
-          <div class="link-desc">Edited volume published by Springer Nature</div>
-        </div>
-        
-        <div class="link-item">
-          <a href="https://link.springer.com/journal/10489/editorial-board">
-            <i class="fas fa-external-link-alt"></i>
-            Associate Editor: Applied Intelligence Journal
-          </a>
-          <div class="link-desc">Springer Nature editorial role</div>
-        </div>
-      </div>
-      
-      <!-- Conferences & Committees - UPDATED -->
-      <div class="link-category">
-        <div class="category-title">
-          <i class="fas fa-users"></i>
-          Conferences & Committees
-        </div>
-        
-        <div class="link-item">
-          <a href="https://aaai.org/conference/aaai/" target="_blank" rel="noopener noreferrer">
-            <i class="fas fa-external-link-alt"></i>
-            AAAI Conference Reviewer
-          </a>
-          <div class="link-desc">Peer reviewer for AAAI conference</div>
-        </div>
-        
-        <div class="link-item">
-          <a href="https://wcnc2019.ieee-wcnc.org/program.html" target="_blank" rel="noopener noreferrer">
-            <i class="fas fa-external-link-alt"></i>
-            IEEE WCNC Session Chair
-          </a>
-          <div class="link-desc">Chaired session at IEEE WCNC 2019 conference</div>
-        </div>
-        
-        <div class="link-item">
-          <a href="https://iceece2021.avrasya.edu.tr/conference-advisory-scientific-committee/" target="_blank" rel="noopener noreferrer">
-            <i class="fas fa-external-link-alt"></i>
-            ICEECE Scientific Committee
-          </a>
-          <div class="link-desc">Scientific committee member for ICEECE 2021</div>
-        </div>
-        
-        <div class="link-item">
-          <a href="https://crgconferences.com/biomaterials/2024/" target="_blank" rel="noopener noreferrer">
-            <i class="fas fa-external-link-alt"></i>
-            Bio Mat Organization Committee
-          </a>
-          <div class="link-desc">Organization committee for Bio Mat 2024 conference</div>
-        </div>
-        
-        <div class="link-item">
-          <a href="https://www.icacds.com/" target="_blank" rel="noopener noreferrer">
-            <i class="fas fa-external-link-alt"></i>
-            ICACDS Advisory Board
-          </a>
-          <div class="link-desc">Advisory board member for ICACDS</div>
-        </div>
-        
-        <div class="link-item">
-          <a href="https://camad2023.ieee-camad.org/committees/technical-program-committee" target="_blank" rel="noopener noreferrer">
-            <i class="fas fa-external-link-alt"></i>
-            IEEE CAMAD TPC Member
-          </a>
-          <div class="link-desc">Technical Program Committee member</div>
-        </div>
-        
-        <div class="link-item">
-          Journal Reviewer:
-          <div class="multi-link">
-            <a href="http://academic.oup.com/comjnl" target="_blank">Oxford</a>
-            <a href="https://www.sciencedirect.com/journal/decision-support-systems" target="_blank">Elsevier</a>
-            <a href="https://link.springer.com/journal/10994" target="_blank">Springer</a>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Projects & Code -->
-      <div class="link-category">
-        <div class="category-title">
-          <i class="fas fa-code"></i>
-          Projects & Code
-        </div>
-        
-        <div class="link-item">
-          <a href="https://github.com/Shirmohammad-Ta" target="_blank" rel="noopener noreferrer">
-            <i class="fab fa-github"></i>
-            GitHub Projects
-          </a>
-          <div class="link-desc">Open-source AI and research projects</div>
-        </div>
-        
-        <div class="link-item">
-          <a href="https://pypi.org/project/binary-survivor/" target="_blank" rel="noopener noreferrer">
-            <i class="fab fa-python"></i>
-            PyPI: Binary-Survivor
-          </a>
-          <div class="link-desc">Python optimization library</div>
-        </div>
-        
-        <div class="link-item">
-          <a href="https://philosophy-ai-simulator-bnaqelec5c5ulsxxb47ust.streamlit.app/" target="_blank" rel="noopener noreferrer">
-            <i class="fas fa-robot"></i>
-            Philosophy-to-Emotion AI Simulator
-          </a>
-          <div class="link-desc">Interactive AI + Philosophy demo</div>
-        </div>
-      </div>
-      
-      <!-- Industry & Entrepreneurship -->
-      <div class="link-category">
-        <div class="category-title">
-          <i class="fas fa-briefcase"></i>
-          Industry & Entrepreneurship
-        </div>
-        
-        <div class="link-item">
-          <a href="https://nelladerm.com/" target="_blank" rel="noopener noreferrer">
-            <i class="fas fa-external-link-alt"></i>
-            Chief AI Scientist at NellaDerm Inc.
-          </a>
-          <div class="link-desc">Leading AI research initiatives</div>
-        </div>
-        
-        <div class="link-item">
-          <a href="https://myeczema.app/" target="_blank" rel="noopener noreferrer">
-            <i class="fas fa-external-link-alt"></i>
-            Myeczema.app - Official Launch
-          </a>
-          <div class="link-desc">AI-powered eczema management platform</div>
-        </div>
-        
-        <div class="link-item">
-          <a href="https://mailchi.mp/naturalproductscanada/nelladerm-crush-vegain-and-more-21421471?e=694cd49dfe" target="_blank" rel="noopener noreferrer">
-            <i class="fas fa-external-link-alt"></i>
-            NellaDerm x Google Partnership
-          </a>
-          <div class="link-desc">Featured by Natural Products Canada</div>
-        </div>
-      </div>
-      
-      <!-- Talks & Media -->
-      <div class="link-category">
-        <div class="category-title">
-          <i class="fas fa-video"></i>
-          Talks & Media
-        </div>
-        
-        <div class="link-item">
-          <a href="https://www.youtube.com/watch?v=k6GCBSVcEDA" target="_blank" rel="noopener noreferrer">
-            <i class="fab fa-youtube"></i>
-            TEDx Talk at TEDxSanabaad
-          </a>
-          <div class="link-desc">Watch my TEDx presentation</div>
-        </div>
-        
-        <div class="link-item">
-          <a href="https://www.ubc.ca/" target="_blank" rel="noopener noreferrer">
-            <i class="fas fa-award"></i>
-            Young Scientist Award 2022
-          </a>
-          <div class="link-desc">Recognition for scientific contributions</div>
-        </div>
-      </div>
-      
-      <!-- Collaborations -->
-      <div class="link-category">
-        <div class="category-title">
-          <i class="fas fa-handshake"></i>
-          Collaborations
-        </div>
-        
-        <div class="link-item">
-          Academic Collaborations:
-          <div class="multi-link">
-            <a href="https://www.harvard.edu/" target="_blank">Harvard</a>
-            <a href="https://www.ubc.ca/" target="_blank">UBC</a>
-            <a href="https://nus.edu.sg/" target="_blank">NUS</a>
-            <a href="https://www.cityu.edu.hk/" target="_blank">CityU HK</a>
-          </div>
-        </div>
-        
-        <div class="link-item">
-          <a href="https://areflogin.github.io/" target="_blank" rel="noopener noreferrer">
-            <i class="fas fa-external-link-alt"></i>
-            Dr. Aref Yelghi 
-          </a>
-          <div class="link-desc">Collaborative research partnership</div>
-        </div>
-        
-        <div class="link-item">
-          <a href="https://www.amolikamankidy.com/" target="_blank" rel="noopener noreferrer">
-            <i class="fas fa-external-link-alt"></i>
-            Mentor to Amolika Mankidy (UBC)
-          </a>
-          <div class="link-desc">Academic research mentorship</div>
-        </div>
-      </div>
-      
-      <!-- Personal -->
-      <div class="link-category">
-        <div class="category-title">
-          <i class="fas fa-user"></i>
-          Personal
-        </div>
-        
-        <div class="link-item">
-          <a href="https://www.google.com/search?q=bandar+torkaman" target="_blank" rel="noopener noreferrer">
-            <i class="fas fa-map-marker-alt"></i>
-            Bandar-e Torkaman, Iran
-          </a>
-          <div class="link-desc">My hometown where I was born and raised</div>
-        </div>
-      </div>
-      
-    </div>
-    <!-- END OF REORGANIZED LINKS SECTION -->
+    <div class="section-header">Academic & Professional Links</div>
     
-    <!-- AWARDS SECTION -->
-    <div class="section-title">
-      <i class="fas fa-award"></i>
-      Selected Awards & Grants
+    <div class="two-column">
+        <!-- Research Profiles Column -->
+        <div class="column">
+            <div class="publication-title">Research Profiles</div>
+            <ul class="publications-list">
+                <li>
+                    <div class="publication-title"><a href="https://stanford.academia.edu/ShirmohammadTavangari" class="body">Academia.edu Profile <span class="badge">2025</span></a></div>
+                    <div class="publication-desc">Latest research works and publications</div>
+                </li>
+                <li>
+                    <div class="publication-title"><a href="https://arxiv.org/search/?query=Shirmohammad+Tavangari&searchtype=all&source=header" class="body">arXiv Research Profile</a></div>
+                    <div class="publication-desc">Preprints in AI and Mathematics</div>
+                </li>
+            </ul>
+            
+            <div class="publication-title" style="margin-top:20px;">Publications & Patents</div>
+            <ul class="publications-list">
+                <li>
+                    <div class="publication-title"><a href="https://otl.stanford.edu/patent" class="body">Stanford Patent: Mind as Boltzmann Machine</a></div>
+                    <div class="publication-desc">Computational neuroscience innovation</div>
+                </li>
+                <li>
+                    <div class="publication-title"><a href="https://link.springer.com/book/10.1007/978-3-031-57708-6" class="body">Springer Book 2024</a></div>
+                    <div class="publication-desc">Edited volume published by Springer Nature</div>
+                </li>
+                <li>
+                    <div class="publication-title"><a href="https://link.springer.com/book/9783032179746" class="body">Springer Book 2026</a></div>
+                    <div class="publication-desc">Edited volume published by Springer Nature</div>
+                </li>
+                <li>
+                    <div class="publication-title"><a href="https://link.springer.com/series/7092" class="body">Springer Book 2027 (Upcoming)</a></div>
+                    <div class="publication-desc">Edited volume published by Springer Nature</div>
+                </li>
+                <li>
+                    <div class="publication-title"><a href="https://link.springer.com/journal/10489/editorial-board" class="body">Associate Editor: Applied Intelligence Journal</a></div>
+                    <div class="publication-desc">Springer Nature editorial role</div>
+                </li>
+            </ul>
+            
+            <div class="publication-title" style="margin-top:20px;">Projects & Code</div>
+            <ul class="publications-list">
+                <li>
+                    <div class="publication-title"><a href="https://github.com/Shirmohammad-Ta" class="body">GitHub Projects</a></div>
+                    <div class="publication-desc">Open-source AI and research projects</div>
+                </li>
+                <li>
+                    <div class="publication-title"><a href="https://pypi.org/project/binary-survivor/" class="body">PyPI: Binary-Survivor</a></div>
+                    <div class="publication-desc">Python optimization library</div>
+                </li>
+                <li>
+                    <div class="publication-title"><a href="https://philosophy-ai-simulator-bnaqelec5c5ulsxxb47ust.streamlit.app/" class="body">Philosophy-to-Emotion AI Simulator</a></div>
+                    <div class="publication-desc">Interactive AI + Philosophy demo</div>
+                </li>
+            </ul>
+        </div>
+        
+        <!-- Conferences & Committees Column -->
+        <div class="column last">
+            <div class="publication-title">Conferences & Committees</div>
+            <ul class="publications-list">
+                <li>
+                    <div class="publication-title"><a href="https://aaai.org/conference/aaai/" class="body">AAAI Conference Reviewer</a></div>
+                    <div class="publication-desc">Peer reviewer for AAAI conference</div>
+                </li>
+                <li>
+                    <div class="publication-title"><a href="https://wcnc2019.ieee-wcnc.org/program.html" class="body">IEEE WCNC Session Chair</a></div>
+                    <div class="publication-desc">Chaired session at IEEE WCNC 2019</div>
+                </li>
+                <li>
+                    <div class="publication-title"><a href="https://iceece2021.avrasya.edu.tr/conference-advisory-scientific-committee/" class="body">ICEECE Scientific Committee</a></div>
+                    <div class="publication-desc">Scientific committee member for ICEECE 2021</div>
+                </li>
+                <li>
+                    <div class="publication-title"><a href="https://crgconferences.com/biomaterials/2024/" class="body">Bio Mat Organization Committee</a></div>
+                    <div class="publication-desc">Organization committee for Bio Mat 2024</div>
+                </li>
+                <li>
+                    <div class="publication-title"><a href="https://www.icacds.com/" class="body">ICACDS Advisory Board</a></div>
+                    <div class="publication-desc">Advisory board member for ICACDS</div>
+                </li>
+                <li>
+                    <div class="publication-title"><a href="https://camad2023.ieee-camad.org/committees/technical-program-committee" class="body">IEEE CAMAD TPC Member</a></div>
+                    <div class="publication-desc">Technical Program Committee member</div>
+                </li>
+                <li>
+                    <div class="publication-title">Journal Reviewer:</div>
+                    <div class="publication-desc">
+                        <a href="http://academic.oup.com/comjnl" class="body">Oxford</a> | 
+                        <a href="https://www.sciencedirect.com/journal/decision-support-systems" class="body">Elsevier</a> | 
+                        <a href="https://link.springer.com/journal/10994" class="body">Springer</a>
+                    </div>
+                </li>
+            </ul>
+            
+            <div class="publication-title" style="margin-top:20px;">Industry & Entrepreneurship</div>
+            <ul class="publications-list">
+                <li>
+                    <div class="publication-title"><a href="https://nelladerm.com/" class="body">Chief AI Scientist at NellaDerm Inc.</a></div>
+                    <div class="publication-desc">Leading AI research initiatives</div>
+                </li>
+                <li>
+                    <div class="publication-title"><a href="https://myeczema.app/" class="body">Myeczema.app - Official Launch</a></div>
+                    <div class="publication-desc">AI-powered eczema management platform</div>
+                </li>
+                <li>
+                    <div class="publication-title"><a href="https://mailchi.mp/naturalproductscanada/nelladerm-crush-vegain-and-more-21421471?e=694cd49dfe" class="body">NellaDerm x Google Partnership</a></div>
+                    <div class="publication-desc">Featured by Natural Products Canada</div>
+                </li>
+            </ul>
+            
+            <div class="publication-title" style="margin-top:20px;">Collaborations</div>
+            <ul class="publications-list">
+                <li>
+                    <div class="publication-title">Academic Collaborations:</div>
+                    <div class="publication-desc">
+                        <a href="https://www.harvard.edu/" class="body">Harvard</a> | 
+                        <a href="https://www.ubc.ca/" class="body">UBC</a> | 
+                        <a href="https://nus.edu.sg/" class="body">NUS</a> | 
+                        <a href="https://www.cityu.edu.hk/" class="body">CityU HK</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="publication-title"><a href="https://areflogin.github.io/" class="body">Dr. Aref Yelghi</a></div>
+                    <div class="publication-desc">Collaborative research partnership</div>
+                </li>
+                <li>
+                    <div class="publication-title"><a href="https://www.amolikamankidy.com/" class="body">Mentor to Amolika Mankidy (UBC)</a></div>
+                    <div class="publication-desc">Academic research mentorship</div>
+                </li>
+            </ul>
+        </div>
     </div>
     
-    <div class="links-grid">
-      
-      <!-- Awards Category -->
-      <div class="link-category">
-        <div class="category-title">
-          <i class="fas fa-trophy"></i>
-          Awards & Honors
-        </div>
-
-        <div class="link-item">
-          <a href="https://mila.quebec/en" target="_blank" rel="noopener noreferrer">
-            <i class="fas fa-external-link-alt"></i>
-            Selected for Mila - Quebec AI Institute Global Summer School | Top 40 Worldwide(Fully Funded)
-            <span class="badge">2026</span>
-          </a>
-          <div class="link-desc">Chosen among top 40 participants globally</div>
-        </div>
-        
-        <div class="link-item">
-          <a href="https://www.acm.org/" target="_blank" rel="noopener noreferrer">
-            <i class="fas fa-external-link-alt"></i>
-            ACM Digital Library Honorarium Recipient
-            <span class="badge">2023</span>
-          </a>
-          <div class="link-desc">Honored by ACM for contributions to digital library</div>
-        </div>
-        
-        <div class="link-item">
-          <a href="https://www.ibm.com/" target="_blank" rel="noopener noreferrer">
-            <i class="fas fa-external-link-alt"></i>
-            Selected for IBM Global Summer School | Top 50 Worldwide
-            <span class="badge">2023</span>
-          </a>
-          <div class="link-desc">Chosen among top 50 participants globally</div>
-        </div>
-        
-        <div class="link-item">
-          <a href="https://www.ubc.ca/" target="_blank" rel="noopener noreferrer">
-            <i class="fas fa-external-link-alt"></i>
-            Young Scientist Award
-            <span class="badge">2022</span>
-          </a>
-          <div class="link-desc">Recognition for outstanding scientific achievements</div>
-        </div>
-        
-        <div class="link-item">
-          <a href="https://www.ubc.ca/" target="_blank" rel="noopener noreferrer">
-            <i class="fas fa-external-link-alt"></i>
-            Selected For UBC Research Study
-            <span class="badge">2019</span>
-          </a>
-          <div class="link-desc">Chosen for prestigious research program</div>
-        </div>
-      </div>
-      
-      <!-- Grants Category -->
-      <div class="link-category">
-        <div class="category-title">
-          <i class="fas fa-hand-holding-usd"></i>
-          Research Grants
-        </div>
-        
-        <div class="link-item">
-          <a href="https://startup.google.com/programs/" target="_blank" rel="noopener noreferrer">
-            <i class="fab fa-google"></i>
-            Google Research Award
-            <span class="badge">2025</span>
-          </a>
-          <div class="link-desc">Awarded for AI research in eczema management</div>
-        </div>
-        
-        <div class="link-item">
-          <a href="https://bsip.ba/blog-items/bsip-at-foan-2019/" target="_blank" rel="noopener noreferrer">
-            <i class="fas fa-external-link-alt"></i>
-            Travel Grant Award: FOAN2019 Conference
-            <span class="badge">2019</span>
-          </a>
-          <div class="link-desc">Awarded travel grant to present at FOAN2019</div>
-        </div>
-      </div>
-    </div>
-    <!-- END OF AWARDS SECTION -->
+    <div class="clear"></div>
     
-    <div class="footer-note">
-      <strong>Shirmohammad Tavangari</strong><br>
-      AI Researcher at Stanford Medicine | Building intelligent systems for better healthcare<br>
-      Last updated: 2025 | Designed with modern aesthetics
+    <div class="section-header">Selected Awards & Grants</div>
+    
+    <div class="two-column">
+        <div class="column">
+            <div class="publication-title">Awards & Honors</div>
+            <ul class="publications-list">
+                <li>
+                    <div class="publication-title"><a href="https://mila.quebec/en" class="body">Selected for Mila - Quebec AI Institute <span class="badge">2026</span></a></div>
+                    <div class="publication-desc">Top 40 Worldwide (Fully Funded)</div>
+                </li>
+                <li>
+                    <div class="publication-title"><a href="https://www.acm.org/" class="body">ACM Digital Library Honorarium Recipient <span class="badge">2023</span></a></div>
+                    <div class="publication-desc">Honored by ACM for contributions</div>
+                </li>
+                <li>
+                    <div class="publication-title"><a href="https://www.ibm.com/" class="body">IBM Global Summer School <span class="badge">2023</span></a></div>
+                    <div class="publication-desc">Top 50 Worldwide</div>
+                </li>
+                <li>
+                    <div class="publication-title"><a href="https://www.ubc.ca/" class="body">Young Scientist Award <span class="badge">2022</span></a></div>
+                    <div class="publication-desc">Recognition for scientific achievements</div>
+                </li>
+                <li>
+                    <div class="publication-title"><a href="https://www.ubc.ca/" class="body">UBC Research Study <span class="badge">2019</span></a></div>
+                    <div class="publication-desc">Selected for prestigious research program</div>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="column last">
+            <div class="publication-title">Research Grants</div>
+            <ul class="publications-list">
+                <li>
+                    <div class="publication-title"><a href="https://startup.google.com/programs/" class="body">Google Research Award <span class="badge">2025</span></a></div>
+                    <div class="publication-desc">Awarded for AI research in eczema management</div>
+                </li>
+                <li>
+                    <div class="publication-title"><a href="https://bsip.ba/blog-items/bsip-at-foan-2019/" class="body">FOAN2019 Travel Grant <span class="badge">2019</span></a></div>
+                    <div class="publication-desc">Awarded travel grant to present at FOAN2019</div>
+                </li>
+            </ul>
+            
+            <div class="publication-title" style="margin-top:20px;">Talks & Media</div>
+            <ul class="publications-list">
+                <li>
+                    <div class="publication-title"><a href="https://www.youtube.com/watch?v=k6GCBSVcEDA" class="body">TEDx Talk at TEDxSanabaad</a></div>
+                    <div class="publication-desc">Watch my TEDx presentation</div>
+                </li>
+            </ul>
+            
+            <div class="publication-title" style="margin-top:20px;">Personal</div>
+            <ul class="publications-list">
+                <li>
+                    <div class="publication-title"><a href="https://www.google.com/search?q=bandar+torkaman" class="body">Bandar-e Torkaman, Iran</a></div>
+                    <div class="publication-desc">My hometown where I was born and raised</div>
+                </li>
+            </ul>
+        </div>
     </div>
-  </div>
+    
+    <div class="clear"></div>
+    
+    <p class="small-note">Previously, I have consulted for Google, helped organize major conferences, and served on various scientific committees. I take most pride in my collaborative research and mentorship of young scientists.</p>
+
+</div>
+
+<div id="footer">
+    &copy; Shirmohammad Tavangari<br/>
+    AI Researcher at Stanford Medicine | Building intelligent systems for better healthcare<br/>
+    Last updated: 2025
+</div>
+
+</div><!-- close container -->
 </div>
 </body>
 </html>
-
-
-
-
-
-
