@@ -28,7 +28,7 @@
   h1 {
     font-size: 2.2rem;
     font-weight: normal;
-    margin: 1rem 0 0.25rem;
+    margin: 0.5rem 0 0.25rem;
     letter-spacing: -0.01em;
   }
 
@@ -43,7 +43,7 @@
   .subhead {
     font-size: 1.1rem;
     color: #555;
-    margin-bottom: 1rem;
+    margin-bottom: 0.25rem;
   }
 
   .affiliation {
@@ -99,20 +99,55 @@
     margin: 1.5rem 0;
   }
 
-  /* Profile photo - optional, small */
+  /* Stanford logo at top */
+  .stanford-top {
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 1rem;
+  }
+
+  .stanford-logo {
+    height: 50px;
+    width: auto;
+  }
+
+  .stanford-text {
+    font-size: 0.85rem;
+    color: #8C1515;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+  }
+
+  .stanford-text strong {
+    font-size: 1rem;
+    color: #8C1515;
+  }
+
+  /* Profile row with photo and text */
   .profile-row {
     display: flex;
-    gap: 1.5rem;
+    gap: 1.8rem;
     align-items: flex-start;
     flex-wrap: wrap;
-    margin: 1.5rem 0;
+    margin: 1.8rem 0;
   }
 
   .profile-pic {
-    width: 120px;
-    height: 120px;
+    width: 130px;
+    height: 130px;
     object-fit: cover;
     border-radius: 2px;
+  }
+
+  .profile-text {
+    flex: 1;
+  }
+
+  .profile-text p {
+    margin-bottom: 0.75rem;
   }
 
   @media (max-width: 600px) {
@@ -131,29 +166,41 @@
       align-items: center;
       text-align: center;
     }
+    .stanford-top {
+      justify-content: center;
+    }
   }
 </style>
 </head>
 <body>
 <div class="container">
   
+  <!-- Stanford logo at top (like original code) -->
+  <div class="stanford-top">
+    <img src="download.png" class="stanford-logo" alt="Stanford Medicine Logo">
+    <div class="stanford-text">
+      <strong>Stanford University</strong><br>
+      School of Medicine
+    </div>
+  </div>
+  
   <!-- Name and title -->
   <h1>Shirmohammad Tavangari</h1>
   <div class="subhead">AI Researcher at Stanford Medicine | Chief AI Scientist at NellaDerm Inc.</div>
   <div class="affiliation">Stanford University School of Medicine</div>
   
-  <!-- Optional profile photo (small, clean) -->
+  <!-- Profile photo with exact text you requested -->
   <div class="profile-row">
     <img src="Me.jpeg" class="profile-pic" alt="Shirmohammad Tavangari">
-    <div>
-      <p>I am an AI Researcher at <a href="https://med.stanford.edu/">Stanford Medicine</a> (working with Prof. Jayakumar Rajadas) and collaborate with Prof. Isabeau Prémont‑Schwarz at Mila. I also serve as Chief AI Scientist at <a href="https://nelladerm.com/">NellaDerm Inc.</a></p>
-      <p style="margin-top: 0.5rem;">My research bridges computational neuroscience, AI theory, and healthcare applications. I'm honored to be a Young Scientist Award 2022 recipient, a Google Research Awardee (2025), and a TEDxSanabad speaker. I have edited volumes published by Springer Nature.</p>
+    <div class="profile-text">
+      <p>I am an AI Researcher at Stanford Medicine (working with Prof. Jayakumar Rajadas) and collaborate with Prof. Isabeau Prémont‑Schwarz at Mila. I also serve as Chief AI Scientist at NellaDerm Inc.</p>
+      <p>My research bridges computational neuroscience, AI theory, and healthcare applications. I'm honored to be a Young Scientist Award 2022 recipient, a Google Research Awardee (2025), and a TEDxSanabad speaker. I have edited volumes published by Springer Nature.</p>
     </div>
   </div>
   
   <!-- Simple contact (email only, like Dhruv's style) -->
   <div class="contact">
-    <strong>Contact:</strong> shirmohammad [at] stanford.edu
+    <strong>Contact:</strong> s.tavangari [at] alumni.ubc.ca
   </div>
   
   <!-- About / Research focus -->
@@ -223,11 +270,3 @@
 </div>
 </body>
 </html>
-
-
-
-
-
-
-
-
